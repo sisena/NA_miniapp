@@ -1,9 +1,18 @@
 # NA报修网小程序前端
-## 框架
+## 
+app.wpy 的 urlRequest 需要自行添加
+## 展示
+<div align=center>
+<img src="https://cdn.jsdelivr.net/gh/kirarasmile/smilecli-tools-ImageHosting/img/githubrep/NA-miniapp/index.png" width="30%" height="auto" alt="主页"/>
+<img src="https://cdn.jsdelivr.net/gh/kirarasmile/smilecli-tools-ImageHosting/img/githubrep/NA-miniapp/baoxiu.png" width="30%" height="auto" alt="报修页面"/>
+<img src="https://cdn.jsdelivr.net/gh/kirarasmile/smilecli-tools-ImageHosting/img/githubrep/NA-miniapp/history.png" width="30%" height="auto" alt="保修历史"/>
+</div>
+
+## 技术栈
 * Wepy 2.X
 * vant
-* JavaScript
-## 项目目录
+
+## 主要文件树
 ./src/<br>
 ...<br>
 ├─baoxiu=>报修填写页面<br>
