@@ -1,0 +1,28 @@
+
+<view>
+<van-grid bind_init="_initComponent" column-num="4">
+  <van-grid-item bind_init="_initComponent" icon="more-o" text="所有" data-wpy-evt="8-0" bind:tap="_proxy"></van-grid-item>
+  <van-grid-item bind_init="_initComponent" icon="passed" text="已完成" data-wpy-evt="8-1" bind:tap="_proxy"></van-grid-item>
+  <van-grid-item bind_init="_initComponent" icon="clock-o" text="未修" data-wpy-evt="8-2" bind:tap="_proxy"></van-grid-item>
+  <van-grid-item bind_init="_initComponent" icon="info-o" text="未完成" data-wpy-evt="8-3" bind:tap="_proxy"></van-grid-item>
+</van-grid>
+</view>
+<view>
+  {{ showtickets }}
+</view>
+<view wx:for="{{ datas }}" wx:for-index="index" wx:for-item="item" wx:key="index">
+  <van-dropdown-menu bind_init="_initComponent">
+   <van-dropdown-item bind_init="_initComponent" id="items" title="{{ item.type }}《单号={{ item.id }}》{{ item.status }}" close-on-click-overlay>
+      <van-cell title="详情">
+      <van-field bind_init="_initComponent" value="{{ item.name }}" label="报修人" readonly></van-field>
+      <van-field bind_init="_initComponent" value="{{ item.owner }}" label="报修人学号" readonly></van-field>
+      <van-field bind_init="_initComponent" value="{{ item.phone }}" label="报修人电话" readonly></van-field>
+      <van-field bind_init="_initComponent" value="{{ item.destination }}" label="报修人宿舍" readonly></van-field>
+      <van-field bind_init="_initComponent" value="{{ item.schedule }}" label="报修班次" readonly></van-field>
+      <van-field bind_init="_initComponent" value="{{ item.title }}" label="报修标题" type="textarea" autosize readonly></van-field>
+      <van-field bind_init="_initComponent" value="{{ item.description }}" label="报修内容" type="textarea" autosize readonly></van-field>
+      </van-cell>
+      <van-switch bind_init="_initComponent" checked="{{ checked }}" data-wpy-evt="8-4" bind:change="_proxy"></van-switch>
+   </van-dropdown-item>
+  </van-dropdown-menu>
+</view>

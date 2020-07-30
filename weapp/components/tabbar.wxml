@@ -1,0 +1,5 @@
+
+<van-tabbar bind_init="_initComponent" active="{{ activeIndex }}" data-wpy-evt="23-0" bind:change="_proxy">
+  <van-tabbar-item bind_init="_initComponent" icon="aim">首页</van-tabbar-item>
+  <van-tabbar-item bind_init="_initComponent" icon="aim">个人</van-tabbar-item>
+</van-tabbar>

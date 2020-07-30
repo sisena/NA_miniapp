@@ -1,0 +1,28 @@
+{
+    "navigationBarTitleText": "报修填写",
+    "component": true,
+    "usingComponents": {
+        "van-button": "./../components/vant/button/index",
+        "van-tabbar-item": "./../components/vant/tabbar-item/index",
+        "van-tabbar": "./../components/vant/tabbar/index",
+        "van-icon": "./../components/vant/icon/index",
+        "van-field": "./../components/vant/field/index",
+        "van-cell-group": "./../components/vant/cell-group/index",
+        "van-switch": "./../components/vant/switch/index",
+        "van-cell": "./../components/vant/cell/index",
+        "van-row": "./../components/vant/row/index",
+        "van-submit-bar": "./../components/vant/submit-bar/index",
+        "van-panel": "./../components/vant/panel/index",
+        "van-col": "./../components/vant/col/index",
+        "van-dropdown-item": "./../components/vant/dropdown-item/index",
+        "van-dropdown-menu": "./../components/vant/dropdown-menu/index",
+        "van-toast": "./../components/vant/toast/index",
+        "van-checkbox": "./../components/vant/checkbox/index",
+        "van-checkbox-group": "./../components/vant/checkbox-group/index",
+        "van-radio-group": "./../components/vant/radio-group/index",
+        "van-radio": "./../components/vant/radio/index",
+        "van-collapse": "./../components/vant/collapse/index",
+        "van-collapse-item": "./../components/vant/collapse-item/index",
+        "ttabbar": "./../components/tabbar"
+    }
+}

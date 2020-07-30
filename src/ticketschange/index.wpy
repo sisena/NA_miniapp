@@ -1,0 +1,258 @@
+<style lang="less">
+
+</style>
+<template>
+  <view>
+    <van-toast id="van-toast" />
+    <van-cell-group>
+      <van-field
+        value="{{ dormitory }}"
+        clearable
+        label="宿舍"
+        left-icon="wap-home-o"
+        placeholder="请输入报修宿舍"
+        bind:input="dormitoryGet"
+      />
+      </van-cell-group>
+      <van-collapse value="{{ tickettime }}" bind:change="timeDrop">
+        <van-collapse-item icon="clock-o" title="{{ timetag }}" name="1">
+          <van-radio-group value="{{ quicktime }}" bind:change="timeGet" max="{{ 1 }}">
+              <van-cell-group>  
+                <van-cell
+                  v-for="item in option1"
+                  title="{{ item.text }}"
+                  data-index="{{ index }}"
+                >
+                <van-radio
+                  catch:tap="noop"
+                  class="radios-{{ index }}"
+                  name="{{ item.value }}"
+                />
+              </van-cell>
+            </van-cell-group>
+          </van-radio-group>
+        </van-collapse-item>
+      </van-collapse>
+      <van-cell-group>    
+      <van-field
+        value="{{ phone }}"
+        clearable
+        label="电话"
+        left-icon="phone-circle-o"
+        placeholder="请输入电话"
+        bind:input="phoneGet"
+      />
+      <van-field
+        value="{{ title }}"
+        label="报修简述"
+        type="textarea"
+        left-icon="orders-o"
+        placeholder="请描述你的问题"
+        autosize
+        border="{{ false }}"
+        bind:input="titleGet"
+      />
+
+      <van-field
+        value="{{ message }}"
+        label="报修详情"
+        type="textarea"
+        left-icon="edit"
+        placeholder="请描述你的问题"
+        autosize
+        border="{{ false }}"
+        bind:input="messageGet"
+      />
+    </van-cell-group>
+    <van-submit-bar
+      safe-area-inset-bottom
+      button-text="提交"
+      bind:submit="onSubmit"
+    />
+  </view>
+</template>
+
+<script>
+import wepy from '@wepy/core'
+import Toast from '../components/vant/toast/toast'
+wepy.page({
+  data: {
+    test:'',
+    name: '',
+    phone: '',
+    // checked: false ,
+    // daistatus: '否',
+    dormitory: '',
+    tickettime: [],
+    option1: [
+      { text: '', value: '' },
+      { text: '', value: '' },
+      { text: '', value: '' },
+      { text: '', value: '' },
+      { text: '', value: '' },
+      { text: '', value: '' }
+
+    ],
+    time: '',
+    quick: [],
+    quicktime: [],
+    timetag: '修改报修时间',
+    title: '',
+    message: '',
+    ticketid: '',
+    name: '',
+    uid: '',
+    schedule: ''
+  },
+  methods: {
+    dormitoryGet(e) { // 拿用户的宿舍
+      this.dormitory=e.$wx.detail
+    },
+    phoneGet(e) { // 拿用户的手机号
+      this.phone = e.$wx.detail
+    },
+    timeDrop(e){ // 展示报修时间的下拉
+      if(e){
+        this.tickettime = e.$wx.detail        
+      }
+    },
+    timeGet(e) { // 获得用户选择的报修时间
+      this.time = e.$wx.detail
+      this.quicktime = e.$wx.detail
+        for (var i=0;i<6;i++)
+          { 
+            if(this.time == this.option1[i].value){
+              this.timetag = this.option1[i].text
+            }
+          }
+        this.tickettime = false
+    },
+    noop() { },// 摆设
+    messageGet(e) { // 拿用户的报修详情
+    this.message = e.$wx.detail.value
+    },
+    titleGet(e) { // 拿用户的报修标题
+    this.title = e.$wx.detail.value
+    },
+    onSubmit(e) { // 提交
+      const _jwt = wx.getStorageSync('jwt')
+      const jwt = JSON.parse(_jwt)
+      if(this.dormitory&&this.phone&&this.time&&this.title&&this.message){
+        wx.request({
+        url: this.$app.$options.globalData.urlRequest + '/api/v1/ticket/ticketupdate',
+        method: 'POST',
+        data: {
+          jwt: this.jwt,
+          schedule: this.time,
+          description: this.message,
+          destination: this.dormitory,
+          phone: this.phone,
+          title: this.title,
+          name: this.name,
+          id: this.ticketid
+
+        },
+        header:{ // 依然是不携带jwt就无法验证
+          'Authorization': `Bearer ${ jwt }`
+        },
+        success: res=>{
+          wx.redirectTo({
+              url: '../ticketsupdate/index'
+            }
+          )
+          console.log('YES')
+        },
+        fail: res=>{
+          console.log('FAIL')
+        }
+      })
+      }else{
+        Toast('请确认是否填写完所有信息')
+      }
+    }
+  },
+  computed: {
+  },
+  onLoad: function (e) { // 拿到对应订单的消息
+    const _jwt = wx.getStorageSync('jwt')
+    if(_jwt){
+      const jwt = JSON.parse(_jwt)
+      wx.request({
+        url: this.$app.$options.globalData.urlRequest + '/api/v1/ticket/ticketdetail?ticketid='+this.ticketid,
+        method: 'GET',
+        data: {
+          ticketid: e.ticketid,
+          jwt: this.jwt
+        },
+        header:{
+          'Authorization': `Bearer ${ jwt }`
+        },
+        success: res=>{
+          if(res.statusCode == 200){
+            this.dormitory=res.data.destination
+            this.phone=res.data.phone
+            this.message=res.data.description
+            this.title=res.data.title
+            this.name=res.data.name
+            this.uid=res.data.owner
+            this.ticketid=e.ticketid
+          }else{
+            wx.redirectTo({
+              url: '../login/index'
+            })
+          }
+
+        },
+        fail: res=>{
+          console.log('Timeout')
+        }
+      })
+    wx.request({ // 从后台拿允许的报修时间
+      url: this.$app.$options.globalData.urlRequest + '/api/v1/schedule/getavailschedules',
+      method: 'GET',
+      data: {
+        jwt: this.jwt
+      },
+      header:{
+        'Authorization': `Bearer ${ jwt }`
+      },
+      success: res=>{
+        for (var i=0,j=0;i<res.data.length;i++,j++)
+          { 
+              this.option1[j].text=res.data[i].description
+              this.option1[j].value=res.data[i].id
+          }
+      }
+    })
+    }else{
+      wx.redirectTo({
+        url: '../login/index'
+      })
+    }
+  }
+})
+</script>
+
+<config>
+{
+  navigationBarTitleText: '报修填写',
+  usingComponents: {
+    "van-icon": "../components/vant/icon/index",
+    "van-tabbar": "../components/vant/tabbar/index",
+    "van-tabbar-item": "../components/vant/tabbar-item/index",
+    "van-field": "../components/vant/field/index",
+    "van-cell-group": "../components/vant/cell-group/index",
+    "van-cell": "../components/vant/cell/index",
+    "ttabbar": "../components/tabbar",
+    "van-submit-bar": "../components/vant/submit-bar/index",
+    "van-dropdown-menu": "../components/vant/dropdown-menu/index",
+    "van-radio": "../components/vant/radio/index",
+    "van-radio-group": "../components/vant/radio-group/index",
+    "van-dropdown-item": "../components/vant/dropdown-item/index",
+    "van-collapse": "../components/vant/collapse/index",
+    "van-collapse-item": "../components/vant/collapse-item/index",
+    "van-checkbox": "../components/vant/checkbox/index",
+    "van-checkbox-group": "../components/vant/checkbox-group/index"
+  }
+}
+</config>

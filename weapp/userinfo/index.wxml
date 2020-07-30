@@ -1,0 +1,16 @@
+
+<view>
+  <van-cell-group>
+    <van-field bind_init="_initComponent" value="{{ uid }}" left-icon="user-circle-o" label="学号/工号" disabled></van-field>
+    <van-field bind_init="_initComponent" value="{{ name }}" left-icon="user-o" label="姓名" disabled></van-field>
+    <van-field bind_init="_initComponent" value="{{ nickname }}" left-icon="smile-o" label="昵称" disabled></van-field>
+    <van-field bind_init="_initComponent" value="{{ email }}" left-icon="envelop-o" label="邮箱" disabled></van-field>
+    <van-field bind_init="_initComponent" value="{{ addres }}" left-icon="location-o" label="宿舍号" disabled></van-field>
+  </van-cell-group>
+  <van-row bind_init="_initComponent">
+  <van-col bind_init="_initComponent" span="8" offset="16">
+  <van-button bind_init="_initComponent" type="danger" data-wpy-evt="10-68" bind:tap="_proxy">注销</van-button>
+  </van-col>
+  </van-row>
+</view>
+  <ttabbar bind_init="_initComponent" activeIndex="{{ 1 }}"></ttabbar>

@@ -1,0 +1,93 @@
+<style lang="less">
+</style>
+<template>
+<view>
+<van-panel v-for="item in notice">
+  <view slot="header">
+    <van-divider
+    contentPosition="center"
+    customStyle="color: #1989fa; border-color: #1989fa; font-size: 18px;"
+    >
+    公告{{ item.id }}:{{ item.title }}
+    </van-divider>
+  </view>
+  <view>
+    {{ item.text }}
+    <van-divider />
+    <br>
+  </view>
+</van-panel>
+</view>
+</template>
+<script>
+import wepy from '@wepy/core'
+wepy.page({
+  data: {
+    notice: []
+  },
+  methods: {
+    click(e) {
+
+      console.log(this.notice)
+    }
+  },
+  computed: {
+  },
+  onLoad: function (e) { // 拿到公告
+    const _jwt = wx.getStorageSync('jwt')
+    if(_jwt){
+      const jwt = JSON.parse(_jwt)
+      wx.request({
+        url: this.$app.$options.globalData.urlRequest + '/api/v1/ann/getann',
+        method: 'GET',
+        data: {
+          jwt: this.jwt
+        },
+        header:{
+          'Authorization': `Bearer ${ jwt }`
+        },
+        success: res=>{
+          if(res.statusCode == 200){
+            // for (var i=0;i<res.data.length;i++)
+            //   { 
+            //     this.noticetest[i] = {text: res.data[i].text, desc: res.data[i].title}
+            //   }
+            //   console.log(this.noticetest)
+            this.notice = res.data
+          }else{
+            wx.redirectTo({
+              url: '../login/index'
+            })
+          }
+
+        },
+        fail: res=>{
+          console.log('Timeout')
+        }
+      })
+    }else{
+      wx.redirectTo({
+        url: '../login/index'
+      })
+    }
+  }
+
+})
+</script>
+<config>
+{
+  navigationBarTitleText: '更多公告',
+  usingComponents: {
+    "van-icon": "../components/vant/icon/index",
+    "van-tabbar": "../components/vant/tabbar/index",
+    "van-tabbar-item": "../components/vant/tabbar-item/index",
+    "van-field": "../components/vant/field/index",
+    "van-cell-group": "../components/vant/cell-group/index",
+    "van-cell": "../components/vant/cell/index",
+    "ttabbar": "../components/tabbar",
+    "van-panel": "../components/vant/panel/index",
+    "van-button": "../components/vant/button/index",
+    "van-divider": "../components/vant/divider/index"
+  }
+}
+</config>

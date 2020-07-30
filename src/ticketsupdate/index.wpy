@@ -1,0 +1,171 @@
+<template>
+<div>
+  {{ showtickets }}
+</div>
+<div v-for="item in datas">
+<van-collapse value="{{ activeNames }}" bind:change="onChange">
+  <van-collapse-item icon="todo-list-o" title="{{ item.schedule }}《状态={{ item.status }}》" name="{{ item.id }}">
+    <van-cell 
+      value="{{ item.staff }}"
+      icon="manager-o"
+      label="维修人"
+      readonly
+      />
+      <van-cell
+      value="{{ item.name }}"
+      icon="user-o"
+      label="报修人"
+      readonly
+      />
+      <van-cell 
+      value="{{ item.owner }}"
+      icon="user-circle-o"
+      label="报修人学号"
+      readonly
+      />
+      <van-cell 
+      value="{{ item.phone }}"
+      icon="phone-o"
+      label="报修人电话"
+      readonly
+      />
+      <van-cell 
+      value="{{ item.destination }}"
+      icon="location-o"
+      label="报修人宿舍"
+      readonly
+      />
+      <van-cell 
+      value="{{ item.schedule }}"
+      icon="coupon-o"
+      label="报修班次"
+      readonly
+      />
+      <van-cell 
+      value="{{ item.title }}"
+      icon="logistics"
+      label="报修简述"
+      type="textarea"
+      autosize
+      readonly
+      />
+      <van-cell
+      value="{{ item.description }}"
+      label="报修详情"
+      icon="edit"
+      type="textarea"
+      autosize
+      readonly
+      />
+      <van-cell
+      value="{{ item.reply }}"
+      label="回复"
+      icon="service-o"
+      type="textarea"
+      autosize
+      readonly
+      />
+      <van-button type="danger" bind:click="ticketDel" >取消订单 </van-button>
+      <van-button type="primary" bind:click="ticketChange" >修改订单</van-button>
+  </van-collapse-item>
+</van-collapse>
+</div>
+  
+</template>
+<script>
+import wepy from '@wepy/core'
+wepy.page({
+  data: {
+    activeNames: ['1'],
+    datas: {
+
+    },
+    ticketid: '',
+    getTime: '',
+    showtickets: ''
+  },
+  methods: {
+    onChange(event) { // 打开下拉
+      this.activeNames=event.$wx.detail
+      this.ticketid=event.$wx.detail[1]
+    },
+    ticketDel(e) { // 删单
+      const _jwt = wx.getStorageSync('jwt')
+      const jwt = JSON.parse(_jwt)
+      wx.request({
+        url: this.$app.$options.globalData.urlRequest + '/api/v1/ticket/cancelticket?ticketid='+this.ticketid,
+        method: 'DELETE',
+        data: {
+          jwt: this.jwt,
+          ticketid: this.ticketid
+        },
+        header:{ // 不带jwt过不了验证
+          'Authorization': `Bearer ${ jwt }`
+        },
+        success: res => {
+          console.log('DELETE SUCCESS')
+          wx.redirectTo({
+              url: './index'
+            }
+          )
+
+        },
+        fail :res => {
+          console.log('DELETE FAIL')
+        }
+      })
+    },
+    ticketChange() { // 更新报修单
+      wx.navigateTo({
+        url: '../ticketschange/index?ticketid='+this.ticketid
+      })
+    }
+  },
+  onLoad: function() {// 加载报修单
+    this.getTime=wx.getStorageSync("time")
+    const _jwt = wx.getStorageSync('jwt')
+    if(_jwt){
+      const jwt = JSON.parse(_jwt)
+      wx.request({ 
+        url: this.$app.$options.globalData.urlRequest + '/api/v1/ticket/getmyunfixticket',
+        method: 'GET',
+        data: {
+          jwt: this.jwt
+        },
+        header:{
+          'Authorization': `Bearer ${ jwt }`
+        },
+        success: res => {
+          if(res.data[0]){
+            this.datas=res.data
+          }else{
+            this.showtickets='无报修单'
+          }
+        },
+        fail :res => {
+          console.log(res)
+        }
+      })
+    }else{
+      wx.redirectTo({
+        url: '../login/index'
+      })
+    }
+  }
+})
+</script>
+<config>
+{
+  navigationBarTitleText: '修改报修单',
+  usingComponents: {
+    "van-button": "../components/vant/button/index",
+    "van-tabbar": "../components/vant/tabbar/index",
+    "van-tabbar-item": "../components/vant/tabbar-item/index",
+    "van-cell": "../components/vant/cell/index",
+    "ttabbar": "../components/tabbar",
+    "van-collapse": "../components/vant/collapse/index",
+    "van-collapse-item": "../components/vant/collapse-item/index"
+  }
+}
+</config>
+

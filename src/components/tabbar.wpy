@@ -1,0 +1,44 @@
+<style>
+
+</style>
+<template>
+  <van-tabbar active="{{ activeIndex }}" bind:change="onClick">
+    <van-tabbar-item icon="aim">首页</van-tabbar-item>
+    <van-tabbar-item icon="aim">个人</van-tabbar-item>
+  </van-tabbar>
+</template>
+
+<script>
+import wept from '@wepy/core'
+wept.component({
+  props: {
+    activeIndex:Number
+  },
+  data: {
+    list: [
+      '../mainpage/index',
+      '../userinfo/index'
+    ]
+  },
+  methods: {
+    onChange (e) {
+      console.log (e.$wx);
+    },
+    onClick (e) {
+      const url = this.list[e.$wx.detail];
+      wx.switchTab({
+        url
+      });
+    }
+  }
+})
+</script>
+
+<config>
+{
+  usingComponents: {
+    "van-tabbar": "./vant/tabbar/index",
+    "van-tabbar-item": "./vant/tabbar-item/index"
+  }
+}
+</config>

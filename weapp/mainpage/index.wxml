@@ -1,0 +1,25 @@
+
+<view>
+  <view class="swiper">
+      <swiper indicator-dots="{{ indicatorDots }}" autoplay="{{ autoplay }}" interval="{{ interval }}">
+        <swiper-item wx:for="{{ swiperData }}" wx:for-index="index" wx:for-item="item" wx:key="index">
+          <image src="{{ item.pic }}" mode="scaleToFill" class="slide-image"></image>
+        </swiper-item>
+      </swiper>
+  </view>
+    <van-notice-bar bind_init="_initComponent" left-icon="warning-o" backgroundColor="#8FBC8F" color="black" speed="30" text="{{ news1 }}"></van-notice-bar>
+    <van-notice-bar bind_init="_initComponent" left-icon="comment-circle-o" text="{{ news2 }}" wrapable></van-notice-bar>
+  <view>
+    <van-grid bind_init="_initComponent" column-num="2" gutter="{{ 10 }}">
+      <van-grid-item bind_init="_initComponent" icon="records" text="报修填写" url="../baoxiu/index"></van-grid-item>
+      <van-grid-item bind_init="_initComponent" icon="aim" text="报修历史" url="../myhistory/index"></van-grid-item>
+      <van-grid-item bind_init="_initComponent" icon="description" text="报修状态" url="../ticketsupdate/index"></van-grid-item>
+      <van-grid-item bind_init="_initComponent" icon="warning-o" text="更多公告" url="../noticebar/index"></van-grid-item>
+      <van-grid-item bind_init="_initComponent" icon="service-o" text="联系客服" data-wpy-evt="6-84" bind:tap="_proxy"></van-grid-item>
+    </van-grid>
+  </view>
+  <van-dialog bind_init="_initComponent" id="van-dialog" use-slot>
+    <image src="../static/img/support.jpg"></image>
+  </van-dialog>
+</view>
+<ttabbar bind_init="_initComponent" activeIndex="{{ 0 }}"></ttabbar>

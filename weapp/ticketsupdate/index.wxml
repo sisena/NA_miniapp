@@ -1,0 +1,22 @@
+
+<view>
+  {{ showtickets }}
+</view>
+<view wx:for="{{ datas }}" wx:for-index="index" wx:for-item="item" wx:key="index">
+<van-collapse bind_init="_initComponent" value="{{ activeNames }}" data-wpy-evt="12-12" bind:change="_proxy">
+  <van-collapse-item bind_init="_initComponent" icon="todo-list-o" title="{{ item.schedule }}《状态={{ item.status }}》" name="{{ item.id }}">
+    <van-cell bind_init="_initComponent" value="{{ item.staff }}" icon="manager-o" label="维修人" readonly></van-cell>
+      <van-cell bind_init="_initComponent" value="{{ item.name }}" icon="user-o" label="报修人" readonly></van-cell>
+      <van-cell bind_init="_initComponent" value="{{ item.owner }}" icon="user-circle-o" label="报修人学号" readonly></van-cell>
+      <van-cell bind_init="_initComponent" value="{{ item.phone }}" icon="phone-o" label="报修人电话" readonly></van-cell>
+      <van-cell bind_init="_initComponent" value="{{ item.destination }}" icon="location-o" label="报修人宿舍" readonly></van-cell>
+      <van-cell bind_init="_initComponent" value="{{ item.schedule }}" icon="coupon-o" label="报修班次" readonly></van-cell>
+      <van-cell bind_init="_initComponent" value="{{ item.title }}" icon="logistics" label="报修简述" type="textarea" autosize readonly></van-cell>
+      <van-cell bind_init="_initComponent" value="{{ item.description }}" label="报修详情" icon="edit" type="textarea" autosize readonly></van-cell>
+      <van-cell bind_init="_initComponent" value="{{ item.reply }}" label="回复" icon="service-o" type="textarea" autosize readonly></van-cell>
+      <van-button bind_init="_initComponent" type="danger" data-wpy-evt="12-13" bind:tap="_proxy">取消订单 </van-button>
+      <van-button bind_init="_initComponent" type="primary" data-wpy-evt="12-14" bind:tap="_proxy">修改订单</van-button>
+  </van-collapse-item>
+</van-collapse>
+</view>
+  

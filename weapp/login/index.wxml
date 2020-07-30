@@ -1,0 +1,13 @@
+
+<view>
+    <van-toast bind_init="_initComponent" id="van-toast"></van-toast>
+    <van-cell-group>
+      <van-field bind_init="_initComponent" value="{{ uid }}" placeholder="请输入用户名" border="{{ false }}" data-wpy-evt="7-27" bind:blur="_proxy"></van-field>
+      <van-field bind_init="_initComponent" value="{{ password }}" placeholder="请输入密码" type="password" border="{{ false }}" data-wpy-evt="7-28" bind:blur="_proxy"></van-field>
+    </van-cell-group>
+    <van-row bind_init="_initComponent">
+      <van-col bind_init="_initComponent" span="8" offset="16">
+        <van-button bind_init="_initComponent" type="info" data-wpy-evt="7-29" bind:tap="_proxy">登录</van-button>
+      </van-col>
+    </van-row>
+</view>

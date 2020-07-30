@@ -1,0 +1,13 @@
+.swiper-image {
+  text-align: center;
+  width: 100%;
+}
+.slide-image {
+  position: relative;
+  align: center;
+  left: 25%;
+  height: 100%;
+  width: 50%;
+  display: block;
+}
+

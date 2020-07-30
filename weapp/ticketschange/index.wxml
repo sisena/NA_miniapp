@@ -1,0 +1,25 @@
+
+<view>
+  <van-toast id="van-toast"></van-toast>
+  <van-cell-group bind_init="_initComponent">
+    <van-field bind_init="_initComponent" value="{{ dormitory }}" clearable label="宿舍" left-icon="wap-home-o" placeholder="请输入报修宿舍" data-wpy-evt="13-16" bind:input="_proxy"></van-field>
+    </van-cell-group>
+    <van-collapse bind_init="_initComponent" value="{{ tickettime }}" data-wpy-evt="13-17" bind:change="_proxy">
+      <van-collapse-item bind_init="_initComponent" icon="clock-o" title="{{ timetag }}" name="1">
+        <van-radio-group bind_init="_initComponent" value="{{ quicktime }}" max="{{ 1 }}" data-wpy-evt="13-18" bind:change="_proxy">
+            <van-cell-group bind_init="_initComponent">  
+              <van-cell bind_init="_initComponent" wx:for="{{ option1 }}" wx:for-index="index" wx:for-item="item" wx:key="index" title="{{ item.text }}" data-index="{{ index }}">
+              <van-radio bind_init="_initComponent" name="{{ item.value }}" data-wpy-evt="13-19" catch:tap="_proxy" class="radios-{{ index }}"></van-radio>
+            </van-cell>
+          </van-cell-group>
+        </van-radio-group>
+      </van-collapse-item>
+    </van-collapse>
+    <van-cell-group bind_init="_initComponent">    
+    <van-field bind_init="_initComponent" value="{{ phone }}" clearable label="电话" left-icon="phone-circle-o" placeholder="请输入电话" data-wpy-evt="13-20" bind:input="_proxy"></van-field>
+    <van-field bind_init="_initComponent" value="{{ title }}" label="报修简述" type="textarea" left-icon="orders-o" placeholder="请描述你的问题" autosize border="{{ false }}" data-wpy-evt="13-21" bind:input="_proxy"></van-field>
+
+    <van-field bind_init="_initComponent" value="{{ message }}" label="报修详情" type="textarea" left-icon="edit" placeholder="请描述你的问题" autosize border="{{ false }}" data-wpy-evt="13-22" bind:input="_proxy"></van-field>
+  </van-cell-group>
+  <van-submit-bar bind_init="_initComponent" safe-area-inset-bottom button-text="提交" data-wpy-evt="13-23" bind:submit="_proxy"></van-submit-bar>
+</view>
