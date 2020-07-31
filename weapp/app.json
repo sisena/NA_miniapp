@@ -1,33 +1,32 @@
 {
-  "pages": [
-    "mainpage/index",
-    "login/index",
-    "components/tickets",
-    "baoxiu/index",
-    "userinfo/index",
-    "myhistory/index",
-    "ticketsupdate/index",
-    "ticketschange/index",
-    "noticebar/index"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "custom": true,
-    "list": [
-      {
-        "pagePath": "mainpage/index",
-        "text": "首页1"
-      },
-      {
-        "pagePath": "userinfo/index",
-        "text": "个人信息"
-      }
-    ]
-  },
-  "sitemapLocation": "sitemap.json"
+    "pages": [
+        "mainpage/index",
+        "login/index",
+        "components/tickets",
+        "baoxiu/index",
+        "userinfo/index",
+        "myhistory/index",
+        "ticketsupdate/index",
+        "ticketschange/index",
+        "noticebar/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "custom": true,
+        "list": [
+            {
+                "pagePath": "mainpage/index",
+                "text": "首页1"
+            },
+            {
+                "pagePath": "userinfo/index",
+                "text": "个人信息"
+            }
+        ]
+    }
 }

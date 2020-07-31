@@ -35,7 +35,7 @@ _core["default"].page({
       value: ''
     }],
     time: '',
-    timetag: '选择报修时间',
+    timetag: '上门时间',
     title: '',
     message: '',
     uid: '',
@@ -242,98 +242,294 @@ _core["default"].page({
       });
     }
   }
-}, {info: {"components":{"van-button":{"path":"./../components/vant/button/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-field":{"path":"./../components/vant/field/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-switch":{"path":"./../components/vant/switch/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-row":{"path":"./../components/vant/row/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-panel":{"path":"./../components/vant/panel/index"},"van-col":{"path":"./../components/vant/col/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-toast":{"path":"./../components/vant/toast/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"9-42":["change"],"9-43":["input"],"9-44":["input"],"9-45":["input"],"9-46":["change"],"9-47":["change"],"9-48":["tap"],"9-49":["input"],"9-50":["change"],"9-51":["change"],"9-52":["tap"],"9-53":["input"],"9-54":["input"],"9-55":["submit"]}}, handlers: {'9-42': {"change": function proxy () {
+}, {info: {"components":{"van-button":{"path":"./../components/vant/button/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-field":{"path":"./../components/vant/field/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-switch":{"path":"./../components/vant/switch/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-panel":{"path":"./../components/vant/panel/index"},"van-row":{"path":"./../components/vant/row/index"},"van-col":{"path":"./../components/vant/col/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-toast":{"path":"./../components/vant/toast/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"9-14":["change"],"9-15":["input"],"9-16":["input"],"9-17":["input"],"9-18":["change"],"9-19":["change"],"9-20":["tap"],"9-21":["input"],"9-22":["change"],"9-23":["change"],"9-24":["tap"],"9-25":["input"],"9-26":["input"],"9-27":["submit"]}}, handlers: {'9-14': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.onCheck($event);
       })();
     
-  }},'9-43': {"input": function proxy () {
+  }},'9-15': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.nameGet($event);
       })();
     
-  }},'9-44': {"input": function proxy () {
+  }},'9-16': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.uidGet($event);
       })();
     
-  }},'9-45': {"input": function proxy () {
+  }},'9-17': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.dormitoryGet($event);
       })();
     
-  }},'9-46': {"change": function proxy () {
+  }},'9-18': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.timeDrop($event);
       })();
     
-  }},'9-47': {"change": function proxy () {
+  }},'9-19': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.timeGet($event);
       })();
     
-  }},'9-48': {"tap": function proxy () {
+  }},'9-20': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.noop($event);
       })();
     
-  }},'9-49': {"input": function proxy () {
+  }},'9-21': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.phoneGet($event);
       })();
     
-  }},'9-50': {"change": function proxy () {
+  }},'9-22': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.downDrop($event);
       })();
     
-  }},'9-51': {"change": function proxy () {
+  }},'9-23': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.quickGet($event);
       })();
     
-  }},'9-52': {"tap": function proxy () {
+  }},'9-24': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.noop($event);
       })();
     
-  }},'9-53': {"input": function proxy () {
+  }},'9-25': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.titleGet($event);
       })();
     
-  }},'9-54': {"input": function proxy () {
+  }},'9-26': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.messageGet($event);
       })();
     
-  }},'9-55': {"submit": function proxy () {
+  }},'9-27': {"submit": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onSubmit($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-button":{"path":"./../components/vant/button/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-field":{"path":"./../components/vant/field/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-switch":{"path":"./../components/vant/switch/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-panel":{"path":"./../components/vant/panel/index"},"van-row":{"path":"./../components/vant/row/index"},"van-col":{"path":"./../components/vant/col/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-toast":{"path":"./../components/vant/toast/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"9-14":["change"],"9-15":["input"],"9-16":["input"],"9-17":["input"],"9-18":["change"],"9-19":["change"],"9-20":["tap"],"9-21":["input"],"9-22":["change"],"9-23":["change"],"9-24":["tap"],"9-25":["input"],"9-26":["input"],"9-27":["submit"]}}, handlers: {'9-14': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onCheck($event);
+      })();
+    
+  }},'9-15': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.nameGet($event);
+      })();
+    
+  }},'9-16': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.uidGet($event);
+      })();
+    
+  }},'9-17': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.dormitoryGet($event);
+      })();
+    
+  }},'9-18': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.timeDrop($event);
+      })();
+    
+  }},'9-19': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.timeGet($event);
+      })();
+    
+  }},'9-20': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.noop($event);
+      })();
+    
+  }},'9-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.phoneGet($event);
+      })();
+    
+  }},'9-22': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.downDrop($event);
+      })();
+    
+  }},'9-23': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.quickGet($event);
+      })();
+    
+  }},'9-24': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.noop($event);
+      })();
+    
+  }},'9-25': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.titleGet($event);
+      })();
+    
+  }},'9-26': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.messageGet($event);
+      })();
+    
+  }},'9-27': {"submit": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onSubmit($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-button":{"path":"./../components/vant/button/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-field":{"path":"./../components/vant/field/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-switch":{"path":"./../components/vant/switch/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-panel":{"path":"./../components/vant/panel/index"},"van-row":{"path":"./../components/vant/row/index"},"van-col":{"path":"./../components/vant/col/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-toast":{"path":"./../components/vant/toast/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"9-14":["change"],"9-15":["input"],"9-16":["input"],"9-17":["input"],"9-18":["change"],"9-19":["change"],"9-20":["tap"],"9-21":["input"],"9-22":["change"],"9-23":["change"],"9-24":["tap"],"9-25":["input"],"9-26":["input"],"9-27":["submit"]}}, handlers: {'9-14': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onCheck($event);
+      })();
+    
+  }},'9-15': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.nameGet($event);
+      })();
+    
+  }},'9-16': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.uidGet($event);
+      })();
+    
+  }},'9-17': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.dormitoryGet($event);
+      })();
+    
+  }},'9-18': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.timeDrop($event);
+      })();
+    
+  }},'9-19': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.timeGet($event);
+      })();
+    
+  }},'9-20': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.noop($event);
+      })();
+    
+  }},'9-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.phoneGet($event);
+      })();
+    
+  }},'9-22': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.downDrop($event);
+      })();
+    
+  }},'9-23': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.quickGet($event);
+      })();
+    
+  }},'9-24': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.noop($event);
+      })();
+    
+  }},'9-25': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.titleGet($event);
+      })();
+    
+  }},'9-26': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.messageGet($event);
+      })();
+    
+  }},'9-27': {"submit": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {

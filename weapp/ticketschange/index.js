@@ -93,7 +93,7 @@ _core["default"].page({
       if (this.dormitory && this.phone && this.time && this.title && this.message) {
         wx.request({
           url: this.$app.$options.globalData.urlRequest + '/api/v1/ticket/ticketupdate',
-          method: 'POST',
+          method: 'PUT',
           data: {
             jwt: this.jwt,
             schedule: this.time,
@@ -184,56 +184,168 @@ _core["default"].page({
       });
     }
   }
-}, {info: {"components":{"van-icon":{"path":"./../components/vant/icon/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-field":{"path":"./../components/vant/field/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"13-16":["input"],"13-17":["change"],"13-18":["change"],"13-19":["tap"],"13-20":["input"],"13-21":["input"],"13-22":["input"],"13-23":["submit"]}}, handlers: {'13-16': {"input": function proxy () {
+}, {info: {"components":{"van-icon":{"path":"./../components/vant/icon/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-field":{"path":"./../components/vant/field/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-toast":{"path":"./../components/vant/toast/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"13-24":["input"],"13-25":["change"],"13-26":["change"],"13-27":["tap"],"13-28":["input"],"13-29":["input"],"13-30":["input"],"13-31":["submit"]}}, handlers: {'13-24': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.dormitoryGet($event);
       })();
     
-  }},'13-17': {"change": function proxy () {
+  }},'13-25': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.timeDrop($event);
       })();
     
-  }},'13-18': {"change": function proxy () {
+  }},'13-26': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.timeGet($event);
       })();
     
-  }},'13-19': {"tap": function proxy () {
+  }},'13-27': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.noop($event);
       })();
     
-  }},'13-20': {"input": function proxy () {
+  }},'13-28': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.phoneGet($event);
       })();
     
-  }},'13-21': {"input": function proxy () {
+  }},'13-29': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.titleGet($event);
       })();
     
-  }},'13-22': {"input": function proxy () {
+  }},'13-30': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.messageGet($event);
       })();
     
-  }},'13-23': {"submit": function proxy () {
+  }},'13-31': {"submit": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onSubmit($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-icon":{"path":"./../components/vant/icon/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-field":{"path":"./../components/vant/field/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-toast":{"path":"./../components/vant/toast/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"13-24":["input"],"13-25":["change"],"13-26":["change"],"13-27":["tap"],"13-28":["input"],"13-29":["input"],"13-30":["input"],"13-31":["submit"]}}, handlers: {'13-24': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.dormitoryGet($event);
+      })();
+    
+  }},'13-25': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.timeDrop($event);
+      })();
+    
+  }},'13-26': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.timeGet($event);
+      })();
+    
+  }},'13-27': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.noop($event);
+      })();
+    
+  }},'13-28': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.phoneGet($event);
+      })();
+    
+  }},'13-29': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.titleGet($event);
+      })();
+    
+  }},'13-30': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.messageGet($event);
+      })();
+    
+  }},'13-31': {"submit": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onSubmit($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-icon":{"path":"./../components/vant/icon/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-field":{"path":"./../components/vant/field/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-toast":{"path":"./../components/vant/toast/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"13-24":["input"],"13-25":["change"],"13-26":["change"],"13-27":["tap"],"13-28":["input"],"13-29":["input"],"13-30":["input"],"13-31":["submit"]}}, handlers: {'13-24': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.dormitoryGet($event);
+      })();
+    
+  }},'13-25': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.timeDrop($event);
+      })();
+    
+  }},'13-26': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.timeGet($event);
+      })();
+    
+  }},'13-27': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.noop($event);
+      })();
+    
+  }},'13-28': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.phoneGet($event);
+      })();
+    
+  }},'13-29': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.titleGet($event);
+      })();
+    
+  }},'13-30': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.messageGet($event);
+      })();
+    
+  }},'13-31': {"submit": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {

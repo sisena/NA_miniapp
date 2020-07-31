@@ -70,7 +70,21 @@ _core["default"].page({
       });
     }
   }
-}, {info: {"components":{"van-grid":{"path":"./../components/vant/grid/index"},"van-button":{"path":"./../components/vant/button/index"},"van-grid-item":{"path":"./../components/vant/grid-item/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-notice-bar":{"path":"./../components/vant/notice-bar/index"},"van-dialog":{"path":"./../components/vant/dialog/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"6-84":["tap"]}}, handlers: {'6-84': {"tap": function proxy () {
+}, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-button":{"path":"./../components/vant/button/index"},"van-grid-item":{"path":"./../components/vant/grid-item/index"},"van-grid":{"path":"./../components/vant/grid/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-dialog":{"path":"./../components/vant/dialog/index"},"van-notice-bar":{"path":"./../components/vant/notice-bar/index"}},"on":{"6-0":["tap"]}}, handlers: {'6-0': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.showSupport($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-button":{"path":"./../components/vant/button/index"},"van-grid-item":{"path":"./../components/vant/grid-item/index"},"van-grid":{"path":"./../components/vant/grid/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-dialog":{"path":"./../components/vant/dialog/index"},"van-notice-bar":{"path":"./../components/vant/notice-bar/index"}},"on":{"6-0":["tap"]}}, handlers: {'6-0': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.showSupport($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-button":{"path":"./../components/vant/button/index"},"van-grid-item":{"path":"./../components/vant/grid-item/index"},"van-grid":{"path":"./../components/vant/grid/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-dialog":{"path":"./../components/vant/dialog/index"},"van-notice-bar":{"path":"./../components/vant/notice-bar/index"}},"on":{"6-0":["tap"]}}, handlers: {'6-0': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {

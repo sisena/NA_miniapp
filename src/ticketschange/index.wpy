@@ -140,7 +140,7 @@ wepy.page({
       if(this.dormitory&&this.phone&&this.time&&this.title&&this.message){
         wx.request({
         url: this.$app.$options.globalData.urlRequest + '/api/v1/ticket/ticketupdate',
-        method: 'POST',
+        method: 'PUT',
         data: {
           jwt: this.jwt,
           schedule: this.time,
@@ -252,7 +252,8 @@ wepy.page({
     "van-collapse": "../components/vant/collapse/index",
     "van-collapse-item": "../components/vant/collapse-item/index",
     "van-checkbox": "../components/vant/checkbox/index",
-    "van-checkbox-group": "../components/vant/checkbox-group/index"
+    "van-checkbox-group": "../components/vant/checkbox-group/index",
+    "van-toast": "../components/vant/toast/index"
   }
 }
 </config>

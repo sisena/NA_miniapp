@@ -47,7 +47,7 @@ _core["default"].page({
     },
     ticketChange: function ticketChange() {
       // 更新报修单
-      wx.navigateTo({
+      wx.redirectTo({
         url: '../ticketschange/index?ticketid=' + this.ticketid
       });
     }
@@ -88,7 +88,49 @@ _core["default"].page({
       });
     }
   }
-}, {info: {"components":{"van-button":{"path":"./../components/vant/button/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"12-12":["change"],"12-13":["tap"],"12-14":["tap"]}}, handlers: {'12-12': {"change": function proxy () {
+}, {info: {"components":{"van-button":{"path":"./../components/vant/button/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"12-12":["change"],"12-13":["tap"],"12-14":["tap"]}}, handlers: {'12-12': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onChange($event);
+      })();
+    
+  }},'12-13': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.ticketDel($event);
+      })();
+    
+  }},'12-14': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.ticketChange($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-button":{"path":"./../components/vant/button/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"12-12":["change"],"12-13":["tap"],"12-14":["tap"]}}, handlers: {'12-12': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onChange($event);
+      })();
+    
+  }},'12-13': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.ticketDel($event);
+      })();
+    
+  }},'12-14': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.ticketChange($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-button":{"path":"./../components/vant/button/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"12-12":["change"],"12-13":["tap"],"12-14":["tap"]}}, handlers: {'12-12': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {

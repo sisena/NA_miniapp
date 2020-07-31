@@ -57,14 +57,6 @@
       autosize
       readonly
       />
-      <van-cell
-      value="{{ item.reply }}"
-      label="回复"
-      icon="service-o"
-      type="textarea"
-      autosize
-      readonly
-      />
       <van-button type="danger" bind:click="ticketDel" >取消订单 </van-button>
       <van-button type="primary" bind:click="ticketChange" >修改订单</van-button>
   </van-collapse-item>
@@ -116,7 +108,7 @@ wepy.page({
       })
     },
     ticketChange() { // 更新报修单
-      wx.navigateTo({
+      wx.redirectTo({
         url: '../ticketschange/index?ticketid='+this.ticketid
       })
     }

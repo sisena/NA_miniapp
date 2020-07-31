@@ -136,7 +136,7 @@ wepy.page({
       { text: '', value: '' }
     ],
     time: '',
-    timetag: '选择报修时间',
+    timetag: '上门时间',
     title: '',
     message: '',
     uid: '',
