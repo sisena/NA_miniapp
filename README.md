@@ -37,4 +37,4 @@ app.wpy 的 urlRequest 需要自行添加
 * 或许还有别的功能
 * 优化各页面前端显示(特别是订单查看页面)
 
-## <a href="./fix_log"><b>更新日志</b></a>
+## <a href="./fix_log.md"><b>更新日志</b></a>
