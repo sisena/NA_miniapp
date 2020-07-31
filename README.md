@@ -12,6 +12,8 @@ app.wpy 的 urlRequest 需要自行添加
 * Wepy 2.X
 * vant
 
+## <a href="./fix_log.md"><b>更新日志</b></a>
+
 ## 主要文件树
 ./src/<br>
 ...<br>
@@ -34,7 +36,6 @@ app.wpy 的 urlRequest 需要自行添加
 <br>
 ## todo
 * 面向网管主体功能
-* 或许还有别的功能
 * 优化各页面前端显示(特别是订单查看页面)
-
-## <a href="./fix_log.md"><b>更新日志</b></a>
+* 忘记密码功能
+* 或许还有别的功能
