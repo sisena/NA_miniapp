@@ -88,11 +88,11 @@ wepy.page({
           if(res.statusCode == 200){
             console.log(res)
             // console.log(jwt)
-            this.name=res.data.name
-            this.uid=res.data.uid
-            this.email=res.data.email
-            this.addres=res.data.Address
-            this.nickname=res.data.nickname
+            this.name=res.data.data.name
+            this.uid=res.data.data.uid
+            this.email=res.data.data.email
+            this.addres=res.data.data.Address
+            this.nickname=res.data.data.nickname
           }else{
             wx.redirectTo({
               url: '../login/index'

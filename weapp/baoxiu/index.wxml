@@ -4,42 +4,42 @@
   <van-panel bind_init="_initComponent" title="是否代报修" status="{{ daistatus }}">
     <van-row bind_init="_initComponent">
       <van-col bind_init="_initComponent" span="10" offset="1">
-      <van-switch bind_init="_initComponent" checked="{{ checked }}" size="24px" data-wpy-evt="9-14" bind:change="_proxy"></van-switch>
+      <van-switch bind_init="_initComponent" checked="{{ checked }}" size="24px" data-wpy-evt="9-210" bind:change="_proxy"></van-switch>
       </van-col>
     </van-row>
   </van-panel>
   <van-cell-group bind_init="_initComponent">
-    <van-field bind_init="_initComponent" value="{{ name }}" clearable label="姓名" left-icon="user-circle-o" placeholder="请输入报修人姓名" data-wpy-evt="9-15" bind:input="_proxy"></van-field>
-    <van-field bind_init="_initComponent" value="{{ uid }}" clearable label="学号/工号" left-icon="coupon-o" placeholder="请输入报修人学号/工号" data-wpy-evt="9-16" bind:input="_proxy"></van-field>
-    <van-field bind_init="_initComponent" value="{{ dormitory }}" clearable label="宿舍" left-icon="wap-home-o" placeholder="请输入报修宿舍" data-wpy-evt="9-17" bind:input="_proxy"></van-field>
+    <van-field bind_init="_initComponent" value="{{ name }}" clearable label="姓名" left-icon="user-circle-o" placeholder="请输入报修人姓名" data-wpy-evt="9-211" bind:input="_proxy"></van-field>
+    <van-field bind_init="_initComponent" value="{{ uid }}" clearable label="学号/工号" left-icon="coupon-o" placeholder="请输入报修人学号/工号" data-wpy-evt="9-212" bind:input="_proxy"></van-field>
+    <van-field bind_init="_initComponent" value="{{ dormitory }}" clearable label="宿舍" left-icon="wap-home-o" placeholder="请输入报修宿舍" data-wpy-evt="9-213" bind:input="_proxy"></van-field>
     </van-cell-group>
-    <van-collapse bind_init="_initComponent" value="{{ tickettime }}" data-wpy-evt="9-18" bind:change="_proxy">
+    <van-collapse bind_init="_initComponent" value="{{ tickettime }}" data-wpy-evt="9-214" bind:change="_proxy">
       <van-collapse-item bind_init="_initComponent" icon="clock-o" title="{{ timetag }}" name="1">
-        <van-radio-group bind_init="_initComponent" value="{{ quicktime }}" max="{{ 1 }}" data-wpy-evt="9-19" bind:change="_proxy">
+        <van-radio-group bind_init="_initComponent" value="{{ quicktime }}" max="{{ 1 }}" data-wpy-evt="9-215" bind:change="_proxy">
             <van-cell-group bind_init="_initComponent">  
               <van-cell bind_init="_initComponent" wx:for="{{ option1 }}" wx:for-index="index" wx:for-item="item" wx:key="index" title="{{ item.text }}" data-index="{{ index }}">
-              <van-radio bind_init="_initComponent" name="{{ item.value }}" data-wpy-evt="9-20" catch:tap="_proxy" class="radios-{{ index }}"></van-radio>
+              <van-radio bind_init="_initComponent" name="{{ item.value }}" data-wpy-evt="9-216" catch:tap="_proxy" class="radios-{{ index }}"></van-radio>
             </van-cell>
           </van-cell-group>
         </van-radio-group>
       </van-collapse-item>
     </van-collapse>
     <van-cell-group bind_init="_initComponent">
-    <van-field bind_init="_initComponent" value="{{ phone }}" clearable label="电话" left-icon="phone-circle-o" placeholder="请输入电话" data-wpy-evt="9-21" bind:input="_proxy"></van-field>
-    <van-collapse bind_init="_initComponent" value="{{ activeNames }}" data-wpy-evt="9-22" bind:change="_proxy">
+    <van-field bind_init="_initComponent" value="{{ phone }}" clearable label="电话" left-icon="phone-circle-o" placeholder="请输入电话" data-wpy-evt="9-217" bind:input="_proxy"></van-field>
+    <van-collapse bind_init="_initComponent" value="{{ activeNames }}" data-wpy-evt="9-218" bind:change="_proxy">
       <van-collapse-item bind_init="_initComponent" icon="logistics" title="快速选择报修简述" name="1">
-        <van-radio-group bind_init="_initComponent" value="{{ quick }}" max="{{ 1 }}" data-wpy-evt="9-23" bind:change="_proxy">
+        <van-radio-group bind_init="_initComponent" value="{{ quick }}" max="{{ 1 }}" data-wpy-evt="9-219" bind:change="_proxy">
           <van-cell-group bind_init="_initComponent">
               <van-cell bind_init="_initComponent" wx:for="{{ list }}" wx:key="index" title="{{ item }}" data-index="{{ index }}">
-              <van-radio bind_init="_initComponent" name="{{ item }}" data-wpy-evt="9-24" catch:tap="_proxy" class="radioboxes-{{ index }}"></van-radio>
+              <van-radio bind_init="_initComponent" name="{{ item }}" data-wpy-evt="9-220" catch:tap="_proxy" class="radioboxes-{{ index }}"></van-radio>
             </van-cell>
           </van-cell-group>
         </van-radio-group>
       </van-collapse-item>
     </van-collapse>
-    <van-field bind_init="_initComponent" value="{{ title }}" label="报修简述" type="textarea" autosize left-icon="orders-o" placeholder="请描述你的问题" border="{{ false }}" data-wpy-evt="9-25" bind:input="_proxy"></van-field>
+    <van-field bind_init="_initComponent" value="{{ title }}" label="报修简述" type="textarea" autosize left-icon="orders-o" placeholder="请描述你的问题" border="{{ false }}" data-wpy-evt="9-221" bind:input="_proxy"></van-field>
 
-    <van-field bind_init="_initComponent" value="{{ message }}" label="报修详情" type="textarea" autosize left-icon="edit" placeholder="请描述你的问题" border="{{ false }}" data-wpy-evt="9-26" bind:input="_proxy"></van-field>
-  <van-submit-bar bind_init="_initComponent" safe-area-inset-bottom button-text="提交" data-wpy-evt="9-27" bind:submit="_proxy"></van-submit-bar>
+    <van-field bind_init="_initComponent" value="{{ message }}" label="报修详情" type="textarea" autosize left-icon="edit" placeholder="请描述你的问题" border="{{ false }}" data-wpy-evt="9-222" bind:input="_proxy"></van-field>
+  <van-submit-bar bind_init="_initComponent" safe-area-inset-bottom button-text="提交" data-wpy-evt="9-223" bind:submit="_proxy"></van-submit-bar>
   </van-cell-group>
 </view>

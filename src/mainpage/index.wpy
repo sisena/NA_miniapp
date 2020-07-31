@@ -66,8 +66,8 @@ wepy.page({
     duration: 500,
     title: '',
     text: '',
-    news1: '',
-    news2: ''
+    news1: '无公告',
+    news2: '无公告'
   },
   methods: {
     showSupport(e) {
@@ -93,9 +93,18 @@ wepy.page({
           'Authorization': `Bearer ${ jwt }`
         },
         success: res=>{
+          console.log(res)
           if(res.statusCode == 200){
-            this.news1 = res.data[res.data.length-1].title + '=>' + res.data[res.data.length-1].text
-            this.news2 = res.data[res.data.length-2].title + '=>' + res.data[res.data.length-2].text
+            if(res.data.data[0] && res.data.data[1]){
+              this.news1 = res.data[res.data.data.length-1].title + '=>' + res.data.data[res.data.data.length-1].text
+              this.news2 = res.data[res.data.data.length-2].title + '=>' + res.data.data[res.data.data.length-2].text
+            }else if(res.data.data[0]){
+                this.news1 = res.data[res.data.data.length-1].title + '=>' + res.data.data[res.data.data.length-1].text
+                this.news2 = "只有这一条公告啦"
+            }else{
+                this.news1 = "没有公告啦"
+                this.news2 = "真的没有公告啦"
+            }
           }else{
             wx.redirectTo({
               url: '../login/index'

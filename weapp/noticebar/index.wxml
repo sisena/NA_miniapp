@@ -1,5 +1,6 @@
 
 <view>
+<view style="text-align:center;"><view>{{ Nonotice }}</view></view>
 <van-panel bind_init="_initComponent" wx:for="{{ notice }}" wx:for-index="index" wx:for-item="item" wx:key="index">
   <view slot="header">
     <van-divider bind_init="_initComponent" contentPosition="center" customStyle="color: #1989fa; border-color: #1989fa; font-size: 18px;">

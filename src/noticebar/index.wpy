@@ -2,6 +2,7 @@
 </style>
 <template>
 <view>
+<div style="text-align:center"><b>{{ Nonotice }}</b></div>
 <van-panel v-for="item in notice">
   <view slot="header">
     <van-divider
@@ -23,7 +24,8 @@
 import wepy from '@wepy/core'
 wepy.page({
   data: {
-    notice: []
+    notice: [],
+    Nonotice: ''
   },
   methods: {
     click(e) {
@@ -48,12 +50,16 @@ wepy.page({
         },
         success: res=>{
           if(res.statusCode == 200){
+            console.log(res)
             // for (var i=0;i<res.data.length;i++)
             //   { 
             //     this.noticetest[i] = {text: res.data[i].text, desc: res.data[i].title}
             //   }
             //   console.log(this.noticetest)
-            this.notice = res.data
+            if(res.data.data.length != 0){
+            }else{
+              this.Nonotice = "现在没有公告"
+            }
           }else{
             wx.redirectTo({
               url: '../login/index'

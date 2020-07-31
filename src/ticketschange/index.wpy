@@ -129,10 +129,11 @@ wepy.page({
     },
     noop() { },// 摆设
     messageGet(e) { // 拿用户的报修详情
-    this.message = e.$wx.detail.value
+    this.message = e.$wx.detail
     },
     titleGet(e) { // 拿用户的报修标题
-    this.title = e.$wx.detail.value
+    console.log(e)
+    this.title = e.$wx.detail
     },
     onSubmit(e) { // 提交
       const _jwt = wx.getStorageSync('jwt')
@@ -167,6 +168,10 @@ wepy.page({
         }
       })
       }else{
+        console.log(this.dormitory)
+        console.log(this.phone)
+        console.log(this.time)
+        console.log(this.title)
         Toast('请确认是否填写完所有信息')
       }
     }
@@ -189,12 +194,12 @@ wepy.page({
         },
         success: res=>{
           if(res.statusCode == 200){
-            this.dormitory=res.data.destination
-            this.phone=res.data.phone
-            this.message=res.data.description
-            this.title=res.data.title
-            this.name=res.data.name
-            this.uid=res.data.owner
+            this.dormitory=res.data.data.destination
+            this.phone=res.data.data.phone
+            this.message=res.data.data.description
+            this.title=res.data.data.title
+            this.name=res.data.data.name
+            this.uid=res.data.data.owner
             this.ticketid=e.ticketid
           }else{
             wx.redirectTo({
@@ -217,10 +222,10 @@ wepy.page({
         'Authorization': `Bearer ${ jwt }`
       },
       success: res=>{
-        for (var i=0,j=0;i<res.data.length;i++,j++)
+        for (var i=0,j=0;i<res.data.data.length;i++,j++)
           { 
-              this.option1[j].text=res.data[i].description
-              this.option1[j].value=res.data[i].id
+              this.option1[j].text=res.data.data[i].description
+              this.option1[j].value=res.data.data[i].id
           }
       }
     })

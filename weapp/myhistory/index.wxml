@@ -3,7 +3,7 @@
   {{ showtickets }}
 </view>
 <view wx:for="{{ datas }}" wx:for-index="index" wx:for-item="item" wx:key="index">
-<van-collapse bind_init="_initComponent" value="{{ activeNames }}" data-wpy-evt="11-0" bind:change="_proxy">
+<van-collapse bind_init="_initComponent" value="{{ activeNames }}" data-wpy-evt="11-1" bind:change="_proxy">
   <van-collapse-item bind_init="_initComponent" title="{{ item.schedule }}《状态={{ item.status }}》" name="{{ item.id }}">
     <van-cell-group bind_init="_initComponent">
       <van-cell bind_init="_initComponent" value="{{ item.staff }}" label="维修人" readonly></van-cell>

@@ -78,11 +78,12 @@ _core["default"].page({
     // 摆设
     messageGet: function messageGet(e) {
       // 拿用户的报修详情
-      this.message = e.$wx.detail.value;
+      this.message = e.$wx.detail;
     },
     titleGet: function titleGet(e) {
       // 拿用户的报修标题
-      this.title = e.$wx.detail.value;
+      console.log(e);
+      this.title = e.$wx.detail;
     },
     onSubmit: function onSubmit(e) {
       // 提交
@@ -119,6 +120,10 @@ _core["default"].page({
           }
         });
       } else {
+        console.log(this.dormitory);
+        console.log(this.phone);
+        console.log(this.time);
+        console.log(this.title);
         (0, _toast["default"])('请确认是否填写完所有信息');
       }
     }
@@ -144,12 +149,12 @@ _core["default"].page({
         },
         success: function success(res) {
           if (res.statusCode == 200) {
-            _this.dormitory = res.data.destination;
-            _this.phone = res.data.phone;
-            _this.message = res.data.description;
-            _this.title = res.data.title;
-            _this.name = res.data.name;
-            _this.uid = res.data.owner;
+            _this.dormitory = res.data.data.destination;
+            _this.phone = res.data.data.phone;
+            _this.message = res.data.data.description;
+            _this.title = res.data.data.title;
+            _this.name = res.data.data.name;
+            _this.uid = res.data.data.owner;
             _this.ticketid = e.ticketid;
           } else {
             wx.redirectTo({
@@ -172,9 +177,9 @@ _core["default"].page({
           'Authorization': "Bearer ".concat(jwt)
         },
         success: function success(res) {
-          for (var i = 0, j = 0; i < res.data.length; i++, j++) {
-            _this.option1[j].text = res.data[i].description;
-            _this.option1[j].value = res.data[i].id;
+          for (var i = 0, j = 0; i < res.data.data.length; i++, j++) {
+            _this.option1[j].text = res.data.data[i].description;
+            _this.option1[j].value = res.data.data[i].id;
           }
         }
       });
@@ -184,168 +189,168 @@ _core["default"].page({
       });
     }
   }
-}, {info: {"components":{"van-icon":{"path":"./../components/vant/icon/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-field":{"path":"./../components/vant/field/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-toast":{"path":"./../components/vant/toast/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"13-24":["input"],"13-25":["change"],"13-26":["change"],"13-27":["tap"],"13-28":["input"],"13-29":["input"],"13-30":["input"],"13-31":["submit"]}}, handlers: {'13-24': {"input": function proxy () {
+}, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-field":{"path":"./../components/vant/field/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-toast":{"path":"./../components/vant/toast/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"13-64":["input"],"13-65":["change"],"13-66":["change"],"13-67":["tap"],"13-68":["input"],"13-69":["input"],"13-70":["input"],"13-71":["submit"]}}, handlers: {'13-64': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.dormitoryGet($event);
       })();
     
-  }},'13-25': {"change": function proxy () {
+  }},'13-65': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.timeDrop($event);
       })();
     
-  }},'13-26': {"change": function proxy () {
+  }},'13-66': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.timeGet($event);
       })();
     
-  }},'13-27': {"tap": function proxy () {
+  }},'13-67': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.noop($event);
       })();
     
-  }},'13-28': {"input": function proxy () {
+  }},'13-68': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.phoneGet($event);
       })();
     
-  }},'13-29': {"input": function proxy () {
+  }},'13-69': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.titleGet($event);
       })();
     
-  }},'13-30': {"input": function proxy () {
+  }},'13-70': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.messageGet($event);
       })();
     
-  }},'13-31': {"submit": function proxy () {
+  }},'13-71': {"submit": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.onSubmit($event);
       })();
     
-  }}}, models: {}, refs: undefined }, {info: {"components":{"van-icon":{"path":"./../components/vant/icon/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-field":{"path":"./../components/vant/field/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-toast":{"path":"./../components/vant/toast/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"13-24":["input"],"13-25":["change"],"13-26":["change"],"13-27":["tap"],"13-28":["input"],"13-29":["input"],"13-30":["input"],"13-31":["submit"]}}, handlers: {'13-24': {"input": function proxy () {
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-field":{"path":"./../components/vant/field/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-toast":{"path":"./../components/vant/toast/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"13-64":["input"],"13-65":["change"],"13-66":["change"],"13-67":["tap"],"13-68":["input"],"13-69":["input"],"13-70":["input"],"13-71":["submit"]}}, handlers: {'13-64': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.dormitoryGet($event);
       })();
     
-  }},'13-25': {"change": function proxy () {
+  }},'13-65': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.timeDrop($event);
       })();
     
-  }},'13-26': {"change": function proxy () {
+  }},'13-66': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.timeGet($event);
       })();
     
-  }},'13-27': {"tap": function proxy () {
+  }},'13-67': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.noop($event);
       })();
     
-  }},'13-28': {"input": function proxy () {
+  }},'13-68': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.phoneGet($event);
       })();
     
-  }},'13-29': {"input": function proxy () {
+  }},'13-69': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.titleGet($event);
       })();
     
-  }},'13-30': {"input": function proxy () {
+  }},'13-70': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.messageGet($event);
       })();
     
-  }},'13-31': {"submit": function proxy () {
+  }},'13-71': {"submit": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.onSubmit($event);
       })();
     
-  }}}, models: {}, refs: undefined }, {info: {"components":{"van-icon":{"path":"./../components/vant/icon/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-field":{"path":"./../components/vant/field/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-toast":{"path":"./../components/vant/toast/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"13-24":["input"],"13-25":["change"],"13-26":["change"],"13-27":["tap"],"13-28":["input"],"13-29":["input"],"13-30":["input"],"13-31":["submit"]}}, handlers: {'13-24': {"input": function proxy () {
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-field":{"path":"./../components/vant/field/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-toast":{"path":"./../components/vant/toast/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"13-64":["input"],"13-65":["change"],"13-66":["change"],"13-67":["tap"],"13-68":["input"],"13-69":["input"],"13-70":["input"],"13-71":["submit"]}}, handlers: {'13-64': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.dormitoryGet($event);
       })();
     
-  }},'13-25': {"change": function proxy () {
+  }},'13-65': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.timeDrop($event);
       })();
     
-  }},'13-26': {"change": function proxy () {
+  }},'13-66': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.timeGet($event);
       })();
     
-  }},'13-27': {"tap": function proxy () {
+  }},'13-67': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.noop($event);
       })();
     
-  }},'13-28': {"input": function proxy () {
+  }},'13-68': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.phoneGet($event);
       })();
     
-  }},'13-29': {"input": function proxy () {
+  }},'13-69': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.titleGet($event);
       })();
     
-  }},'13-30': {"input": function proxy () {
+  }},'13-70': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.messageGet($event);
       })();
     
-  }},'13-31': {"submit": function proxy () {
+  }},'13-71': {"submit": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {

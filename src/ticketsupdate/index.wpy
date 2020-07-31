@@ -68,7 +68,7 @@
 import wepy from '@wepy/core'
 wepy.page({
   data: {
-    activeNames: ['1'],
+    activeNames: [''],
     datas: {
 
     },
@@ -78,6 +78,7 @@ wepy.page({
   },
   methods: {
     onChange(event) { // 打开下拉
+      console.log(event)
       this.activeNames=event.$wx.detail
       this.ticketid=event.$wx.detail[1]
     },
@@ -128,8 +129,9 @@ wepy.page({
           'Authorization': `Bearer ${ jwt }`
         },
         success: res => {
-          if(res.data[0]){
-            this.datas=res.data
+          if(res.data.data[0]){
+            console.log(res.data.data)
+            this.datas=res.data.data
           }else{
             this.showtickets='无报修单'
           }
