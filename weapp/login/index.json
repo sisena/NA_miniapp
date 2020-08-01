@@ -1,5 +1,5 @@
 {
-    "navigationBarTitleText": "个人资料",
+    "navigationBarTitleText": "登陆",
     "component": true,
     "usingComponents": {
         "van-tabbar": "./../components/vant/tabbar/index",
@@ -11,7 +11,8 @@
         "van-icon": "./../components/vant/icon/index",
         "van-field": "./../components/vant/field/index",
         "van-row": "./../components/vant/row/index",
+        "van-col": "./../components/vant/col/index",
         "van-toast": "./../components/vant/toast/index",
-        "van-col": "./../components/vant/col/index"
+        "van-divider": "./../components/vant/divider/index"
     }
 }

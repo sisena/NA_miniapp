@@ -57,6 +57,7 @@ wepy.page({
             //   }
             //   console.log(this.noticetest)
             if(res.data.data.length != 0){
+              this.notice = res.data.data
             }else{
               this.Nonotice = "现在没有公告"
             }

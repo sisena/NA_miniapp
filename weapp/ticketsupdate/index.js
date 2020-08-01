@@ -153,25 +153,4 @@ _core["default"].page({
         _vm.ticketChange($event);
       })();
     
-  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-button":{"path":"./../components/vant/button/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"}},"on":{"12-0":["change"],"12-1":["tap"],"12-2":["tap"]}}, handlers: {'12-0': {"change": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.onChange($event);
-      })();
-    
-  }},'12-1': {"tap": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.ticketDel($event);
-      })();
-    
-  }},'12-2': {"tap": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.ticketChange($event);
-      })();
-    
   }}}, models: {}, refs: undefined });

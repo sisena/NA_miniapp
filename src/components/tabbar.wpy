@@ -4,6 +4,7 @@
 <template>
   <van-tabbar active="{{ activeIndex }}" bind:change="onClick">
     <van-tabbar-item icon="aim">首页</van-tabbar-item>
+    <image src="https://cdn.jsdelivr.net/gh/tydaytygx/NA/NA%E5%9B%BE%E6%A0%87%E8%93%9D%E8%89%B2%E7%89%88.png" style="width:15%;height:100%;"/>
     <van-tabbar-item icon="aim">个人</van-tabbar-item>
   </van-tabbar>
 </template>

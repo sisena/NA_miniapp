@@ -31,11 +31,11 @@ app.wpy 的 urlRequest 需要自行添加
 │  └─img=>图片<br>
 ├─ticketschange=>报修单修改页面<br>
 ├─ticketsupdate=>查看报修单状态页面<br>
+├─fgpwd=>忘记密码页面<br>
 └─userinfo=>个人资料页面<br>
 ...
 <br>
 ## todo
 * 面向网管主体功能
 * 优化各页面前端显示(特别是订单查看页面)
-* 忘记密码功能
 * 或许还有别的功能

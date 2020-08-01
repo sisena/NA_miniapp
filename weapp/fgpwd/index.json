@@ -1,5 +1,5 @@
 {
-    "navigationBarTitleText": "首页",
+    "navigationBarTitleText": "忘记密码",
     "component": true,
     "usingComponents": {
         "van-tabbar": "./../components/vant/tabbar/index",
@@ -9,7 +9,10 @@
         "van-grid": "./../components/vant/grid/index",
         "van-grid-item": "./../components/vant/grid-item/index",
         "van-icon": "./../components/vant/icon/index",
-        "van-notice-bar": "./../components/vant/notice-bar/index",
-        "van-dialog": "./../components/vant/dialog/index"
+        "van-field": "./../components/vant/field/index",
+        "van-row": "./../components/vant/row/index",
+        "van-col": "./../components/vant/col/index",
+        "van-toast": "./../components/vant/toast/index",
+        "van-divider": "./../components/vant/divider/index"
     }
 }

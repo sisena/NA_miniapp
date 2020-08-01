@@ -65,7 +65,8 @@ wepy.app({
       'myhistory/index',
       'ticketsupdate/index',
       'ticketschange/index',
-      'noticebar/index'
+      'noticebar/index',
+      'fgpwd/index'
     ],
     window: {
       backgroundTextStyle: 'light',

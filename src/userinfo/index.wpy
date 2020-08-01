@@ -34,7 +34,7 @@
   </van-cell-group>
   <van-row>
   <van-col span="8" offset="16">
-  <van-button type="danger" bind:click="logOut">注销</van-button>
+  <van-button type="danger" round bind:click="logOut" icon="cross">注销</van-button>
   </van-col>
   </van-row>
 </div>
@@ -92,7 +92,11 @@ wepy.page({
             this.uid=res.data.data.uid
             this.email=res.data.data.email
             this.addres=res.data.data.Address
-            this.nickname=res.data.data.nickname
+            if(res.data.data.nickname){
+              this.nickname=res.data.data.nickname
+            }else{
+              this.nickname='无'
+            }
           }else{
             wx.redirectTo({
               url: '../login/index'

@@ -27,7 +27,7 @@ _core["default"].app({
   },
   globalData: {
     userInfo: null,
-    urlRequest: 'https://service.sise.edu.cn'
+    urlRequest: ''
   },
   onLaunch: function onLaunch() {
     this.testAsync();
@@ -75,4 +75,4 @@ _core["default"].app({
       }))();
     }
   }
-}, {info: {"noPromiseAPI":["createSelectorQuery"]}, handlers: {}, models: {}, refs: undefined });
+}, {info: {"noPromiseAPI":["createSelectorQuery"]}, handlers: {}, models: {}, refs: undefined }, {info: {"noPromiseAPI":["createSelectorQuery"]}, handlers: {}, models: {}, refs: undefined });

@@ -113,7 +113,7 @@ wepy.page({
         },
         success: res=>{
           if(res.statusCode == 200){
-            console.log(res)
+            // console.log(res)
             if(res.data.data[0] && res.data.data[1]){
               this.news1 = res.data.data[res.data.data.length-1].title + '=>' + res.data.data[res.data.data.length-1].text
               this.news2 = res.data.data[res.data.data.length-2].title + '=>' + res.data.data[res.data.data.length-2].text
