@@ -3,7 +3,7 @@
 app.wpy 的 urlRequest 需要自行添加
 ## 展示
 <div align=center>
-<img src="https://cdn.jsdelivr.net/gh/kirarasmile/smilecli-tools-ImageHosting/img/githubrep/NA-miniapp/index_index.png" width="30%" height="auto" alt="主页"/>
+<img src="https://cdn.jsdelivr.net/gh/kirarasmile/smilecli-tools-ImageHosting/img/githubrep/NA-miniapp/index_index_2.png" width="30%" height="auto" alt="主页"/>
 <img src="https://cdn.jsdelivr.net/gh/kirarasmile/smilecli-tools-ImageHosting/img/githubrep/NA-miniapp/baoxiu_index.png" width="30%" height="auto" alt="报修页面"/>
 <img src="https://cdn.jsdelivr.net/gh/kirarasmile/smilecli-tools-ImageHosting/img/githubrep/NA-miniapp/history_index.png" width="30%" height="auto" alt="保修历史"/>
 </div>
