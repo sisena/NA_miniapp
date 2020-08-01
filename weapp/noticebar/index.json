@@ -8,8 +8,8 @@
         "van-button": "./../components/vant/button/index",
         "van-icon": "./../components/vant/icon/index",
         "van-field": "./../components/vant/field/index",
-        "van-cell": "./../components/vant/cell/index",
         "van-cell-group": "./../components/vant/cell-group/index",
+        "van-cell": "./../components/vant/cell/index",
         "van-panel": "./../components/vant/panel/index",
         "van-divider": "./../components/vant/divider/index"
     }

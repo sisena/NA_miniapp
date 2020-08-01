@@ -8,21 +8,21 @@
         "van-button": "./../components/vant/button/index",
         "van-icon": "./../components/vant/icon/index",
         "van-dropdown-menu": "./../components/vant/dropdown-menu/index",
-        "van-dropdown-item": "./../components/vant/dropdown-item/index",
         "van-field": "./../components/vant/field/index",
         "van-switch": "./../components/vant/switch/index",
+        "van-dropdown-item": "./../components/vant/dropdown-item/index",
         "van-row": "./../components/vant/row/index",
+        "van-toast": "./../components/vant/toast/index",
         "van-col": "./../components/vant/col/index",
-        "van-cell": "./../components/vant/cell/index",
         "van-cell-group": "./../components/vant/cell-group/index",
+        "van-cell": "./../components/vant/cell/index",
         "van-panel": "./../components/vant/panel/index",
         "van-submit-bar": "./../components/vant/submit-bar/index",
-        "van-toast": "./../components/vant/toast/index",
         "van-checkbox": "./../components/vant/checkbox/index",
-        "van-radio": "./../components/vant/radio/index",
         "van-checkbox-group": "./../components/vant/checkbox-group/index",
-        "van-radio-group": "./../components/vant/radio-group/index",
+        "van-radio": "./../components/vant/radio/index",
         "van-collapse": "./../components/vant/collapse/index",
-        "van-collapse-item": "./../components/vant/collapse-item/index"
+        "van-collapse-item": "./../components/vant/collapse-item/index",
+        "van-radio-group": "./../components/vant/radio-group/index"
     }
 }
