@@ -62,7 +62,7 @@
         clearable
         label="电话"
         left-icon="phone-circle-o"
-        placeholder="请输入电话"
+        placeholder="请输入你的电话号码"
         bind:input="phoneGet"
       />
       <van-collapse value="{{ activeNames }}" bind:change="downDrop">
@@ -91,7 +91,7 @@
         type="textarea"
         autosize
         left-icon="orders-o"
-        placeholder="请描述你的问题"
+        placeholder="请描述你的问题或从上方快速选择"
         border="{{ false }}"
         bind:input="titleGet"
       />
@@ -102,7 +102,7 @@
         type="textarea"
         autosize
         left-icon="edit"
-        placeholder="请描述你的问题"
+        placeholder="请描述你的问题(可选填)"
         border="{{ false }}"
         bind:input="messageGet"
       />

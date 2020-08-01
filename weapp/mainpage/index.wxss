@@ -5,6 +5,14 @@
 .slide-image {
   position: relative;
   align: center;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+.slide-image-NAlogo {
+  position: relative;
+  align: center;
   left: 25%;
   height: 100%;
   width: 50%;

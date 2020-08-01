@@ -2,8 +2,14 @@
 <view>
   <view class="swiper">
       <swiper indicator-dots="{{ indicatorDots }}" autoplay="{{ autoplay }}" interval="{{ interval }}">
-        <swiper-item wx:for="{{ swiperData }}" wx:for-index="index" wx:for-item="item" wx:key="index">
-          <image src="{{ item.pic }}" mode="scaleToFill" class="slide-image"></image>
+        <swiper-item>
+          <image src="{{ swiperData[0].pic }}" mode="scaleToFill" class="slide-image"></image>
+        </swiper-item>
+        <swiper-item>
+          <image src="{{ swiperData[1].pic }}" mode="scaleToFill" class="slide-image"></image>
+        </swiper-item>
+        <swiper-item>
+          <image src="{{ swiperData[2].pic }}" mode="scaleToFill" class="slide-image-NAlogo"></image>
         </swiper-item>
       </swiper>
   </view>
@@ -15,7 +21,7 @@
       <van-grid-item bind_init="_initComponent" icon="aim" text="报修历史" url="../myhistory/index"></van-grid-item>
       <van-grid-item bind_init="_initComponent" icon="description" text="报修状态" url="../ticketsupdate/index"></van-grid-item>
       <van-grid-item bind_init="_initComponent" icon="warning-o" text="更多公告" url="../noticebar/index"></van-grid-item>
-      <van-grid-item bind_init="_initComponent" icon="service-o" text="联系客服" data-wpy-evt="6-10" bind:tap="_proxy"></van-grid-item>
+      <van-grid-item bind_init="_initComponent" icon="service-o" text="联系客服" data-wpy-evt="6-0" bind:tap="_proxy"></van-grid-item>
     </van-grid>
   </view>
   <van-dialog bind_init="_initComponent" id="van-dialog" use-slot>

@@ -3,21 +3,21 @@
     "component": true,
     "usingComponents": {
         "van-tabbar": "./../components/vant/tabbar/index",
-        "van-icon": "./../components/vant/icon/index",
-        "van-field": "./../components/vant/field/index",
         "van-tabbar-item": "./../components/vant/tabbar-item/index",
+        "ttabbar": "./../components/tabbar",
+        "van-icon": "./../components/vant/icon/index",
         "van-dropdown-menu": "./../components/vant/dropdown-menu/index",
-        "van-radio": "./../components/vant/radio/index",
-        "van-cell": "./../components/vant/cell/index",
-        "van-cell-group": "./../components/vant/cell-group/index",
-        "van-submit-bar": "./../components/vant/submit-bar/index",
-        "van-radio-group": "./../components/vant/radio-group/index",
         "van-dropdown-item": "./../components/vant/dropdown-item/index",
-        "van-collapse": "./../components/vant/collapse/index",
-        "van-collapse-item": "./../components/vant/collapse-item/index",
+        "van-field": "./../components/vant/field/index",
+        "van-cell-group": "./../components/vant/cell-group/index",
+        "van-toast": "./../components/vant/toast/index",
+        "van-cell": "./../components/vant/cell/index",
+        "van-submit-bar": "./../components/vant/submit-bar/index",
         "van-checkbox": "./../components/vant/checkbox/index",
         "van-checkbox-group": "./../components/vant/checkbox-group/index",
-        "van-toast": "./../components/vant/toast/index",
-        "ttabbar": "./../components/tabbar"
+        "van-radio": "./../components/vant/radio/index",
+        "van-collapse-item": "./../components/vant/collapse-item/index",
+        "van-collapse": "./../components/vant/collapse/index",
+        "van-radio-group": "./../components/vant/radio-group/index"
     }
 }

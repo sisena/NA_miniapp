@@ -57,8 +57,8 @@
       autosize
       readonly
       />
-      <van-button type="danger" bind:click="ticketDel" >取消订单 </van-button>
-      <van-button type="primary" bind:click="ticketChange" >修改订单</van-button>
+      <van-button type="danger" bind:click="ticketDel" >取消报修单 </van-button>
+      <van-button type="primary" bind:click="ticketChange" >修改报修单</van-button>
   </van-collapse-item>
 </van-collapse>
 </div>

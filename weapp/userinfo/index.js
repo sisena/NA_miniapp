@@ -76,14 +76,7 @@ _core["default"].page({
       });
     }
   }
-}, {info: {"components":{"van-grid":{"path":"./../components/vant/grid/index"},"van-button":{"path":"./../components/vant/button/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-grid-item":{"path":"./../components/vant/grid-item/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-field":{"path":"./../components/vant/field/index"},"van-row":{"path":"./../components/vant/row/index"},"van-col":{"path":"./../components/vant/col/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"10-1":["tap"]}}, handlers: {'10-1': {"tap": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.logOut($event);
-      })();
-    
-  }}}, models: {}, refs: undefined }, {info: {"components":{"van-grid":{"path":"./../components/vant/grid/index"},"van-button":{"path":"./../components/vant/button/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-grid-item":{"path":"./../components/vant/grid-item/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-field":{"path":"./../components/vant/field/index"},"van-row":{"path":"./../components/vant/row/index"},"van-col":{"path":"./../components/vant/col/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"10-1":["tap"]}}, handlers: {'10-1': {"tap": function proxy () {
+}, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-button":{"path":"./../components/vant/button/index"},"van-grid":{"path":"./../components/vant/grid/index"},"van-grid-item":{"path":"./../components/vant/grid-item/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-field":{"path":"./../components/vant/field/index"},"van-row":{"path":"./../components/vant/row/index"},"van-col":{"path":"./../components/vant/col/index"}},"on":{"10-0":["tap"]}}, handlers: {'10-0': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {

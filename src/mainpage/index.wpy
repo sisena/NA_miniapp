@@ -7,6 +7,14 @@
 .slide-image {
   position: relative;
   align: center;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+.slide-image-NAlogo {
+  position: relative;
+  align: center;
   left: 25%;
   height: 100%;
   width: 50%;
@@ -17,8 +25,14 @@
   <view>
     <view class="swiper">
         <swiper indicator-dots="{{ indicatorDots }}" autoplay="{{ autoplay }}" interval="{{ interval }}">
-          <swiper-item v-for="item in swiperData">
-            <image src="{{ item.pic }}" class="slide-image" mode="scaleToFill" />
+          <swiper-item>
+            <image src="{{ swiperData[0].pic }}" class="slide-image" mode="scaleToFill" />
+          </swiper-item>
+          <swiper-item>
+            <image src="{{ swiperData[1].pic }}" class="slide-image" mode="scaleToFill" />
+          </swiper-item>
+          <swiper-item>
+            <image src="{{ swiperData[2].pic }}" class="slide-image-NAlogo" mode="scaleToFill" />
           </swiper-item>
         </swiper>
     </view>
@@ -55,8 +69,8 @@ import Dialog from '../components/vant/dialog/dialog';
 wepy.page({
   data: {
     swiperData: [
-      {pic: 'https://cdn.jsdelivr.net/gh/tydaytygx/NA/output2.png'},
-      {pic: 'https://cdn.jsdelivr.net/gh/kirarasmile/smilecli-tools-ImageHosting/img/page-head-img/page20.jpg'},
+      {pic: 'https://cdn.jsdelivr.net/gh/kirarasmile/smilecli-tools-ImageHosting/img/work/school1.jpg'},
+      {pic: 'https://cdn.jsdelivr.net/gh/kirarasmile/smilecli-tools-ImageHosting/img/work/school2.jpg'},
       {pic: 'https://cdn.jsdelivr.net/gh/tydaytygx/NA/NA%E5%9B%BE%E6%A0%87%E8%93%9D%E8%89%B2%E7%89%88.png'}
       ],
     indicatorDots: true,
@@ -93,13 +107,13 @@ wepy.page({
           'Authorization': `Bearer ${ jwt }`
         },
         success: res=>{
-          console.log(res)
           if(res.statusCode == 200){
+            console.log(res)
             if(res.data.data[0] && res.data.data[1]){
-              this.news1 = res.data[res.data.data.length-1].title + '=>' + res.data.data[res.data.data.length-1].text
-              this.news2 = res.data[res.data.data.length-2].title + '=>' + res.data.data[res.data.data.length-2].text
+              this.news1 = res.data.data[res.data.data.length-1].title + '=>' + res.data.data[res.data.data.length-1].text
+              this.news2 = res.data.data[res.data.data.length-2].title + '=>' + res.data.data[res.data.data.length-2].text
             }else if(res.data.data[0]){
-                this.news1 = res.data[res.data.data.length-1].title + '=>' + res.data.data[res.data.data.length-1].text
+                this.news1 = res.data.data[res.data.data[0].length-1].title + '=>' + res.data.data[res.data.data.length-1].text
                 this.news2 = "只有这一条公告啦"
             }else{
                 this.news1 = "没有公告啦"
