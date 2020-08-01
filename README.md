@@ -3,9 +3,9 @@
 app.wpy 的 urlRequest 需要自行添加
 ## 展示
 <div align=center>
-<img src="https://cdn.jsdelivr.net/gh/kirarasmile/smilecli-tools-ImageHosting/img/githubrep/NA-miniapp/index.png" width="30%" height="auto" alt="主页"/>
-<img src="https://cdn.jsdelivr.net/gh/kirarasmile/smilecli-tools-ImageHosting/img/githubrep/NA-miniapp/baoxiu.png" width="30%" height="auto" alt="报修页面"/>
-<img src="https://cdn.jsdelivr.net/gh/kirarasmile/smilecli-tools-ImageHosting/img/githubrep/NA-miniapp/history.png" width="30%" height="auto" alt="保修历史"/>
+<img src="https://cdn.jsdelivr.net/gh/kirarasmile/smilecli-tools-ImageHosting/img/githubrep/NA-miniapp/index_1.0.0.png" width="30%" height="auto" alt="主页"/>
+<img src="https://cdn.jsdelivr.net/gh/kirarasmile/smilecli-tools-ImageHosting/img/githubrep/NA-miniapp/baoxiu.png_1.0.0.png" width="30%" height="auto" alt="报修页面"/>
+<img src="https://cdn.jsdelivr.net/gh/kirarasmile/smilecli-tools-ImageHosting/img/githubrep/NA-miniapp/history.png_1.0.0.png" width="30%" height="auto" alt="保修历史"/>
 </div>
 
 ## 技术栈

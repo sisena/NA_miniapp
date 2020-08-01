@@ -7,7 +7,7 @@
         "ttabbar": "./../components/tabbar",
         "van-button": "./../components/vant/button/index",
         "van-cell": "./../components/vant/cell/index",
-        "van-collapse-item": "./../components/vant/collapse-item/index",
-        "van-collapse": "./../components/vant/collapse/index"
+        "van-collapse": "./../components/vant/collapse/index",
+        "van-collapse-item": "./../components/vant/collapse-item/index"
     }
 }
