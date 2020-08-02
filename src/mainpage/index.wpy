@@ -57,18 +57,13 @@
         <van-grid-item icon="aim" text="报修历史" url="../myhistory/index"/>
         <van-grid-item icon="description" text="报修状态" url="../ticketsupdate/index"/>
         <van-grid-item icon="warning-o" text="更多公告" url="../noticebar/index"/>
-        <van-grid-item icon="service-o" text="联系客服" bind:click="showSupport" />
       </van-grid>
     </view>
-    <van-dialog id="van-dialog" use-slot>
-      <image src="../static/img/support.jpg" />
-    </van-dialog>
   </view>
   <ttabbar v-bind:activeIndex="0"></ttabbar>
 </template>
 <script>
 import wepy from '@wepy/core'
-import Dialog from '../components/vant/dialog/dialog';
 wepy.page({
   data: {
     swiperData: [
@@ -89,14 +84,6 @@ wepy.page({
     news2: '无公告'
   },
   methods: {
-    showSupport(e) {
-      Dialog.alert({
-        title: '截图保存二维码后扫描',
-        
-      }).then(() => {
-        // on close
-      })
-    }
   },
   onLoad: function (e) { // 拿到公告
     const _jwt = wx.getStorageSync('jwt')

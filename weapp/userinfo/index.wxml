@@ -7,10 +7,14 @@
     <van-field bind_init="_initComponent" value="{{ email }}" left-icon="envelop-o" label="邮箱" disabled></van-field>
     <van-field bind_init="_initComponent" value="{{ addres }}" left-icon="location-o" label="宿舍号" disabled></van-field>
   </van-cell-group>
+  <van-divider bind_init="_initComponent" dashed></van-divider>
   <van-row bind_init="_initComponent">
-  <van-col bind_init="_initComponent" span="8" offset="16">
-  <van-button bind_init="_initComponent" type="danger" round icon="cross" data-wpy-evt="10-0" bind:tap="_proxy">注销</van-button>
-  </van-col>
+    <van-col bind_init="_initComponent" span="8" offset="4">
+      <van-button bind_init="_initComponent" icon="service-o" round plain type="primary" open-type="contact" data-wpy-evt="10-0" bind:contact="_proxy">客服</van-button>
+    </van-col>
+    <van-col bind_init="_initComponent" span="8" offset="3">
+      <van-button bind_init="_initComponent" type="danger" round plain icon="cross" data-wpy-evt="10-1" bind:tap="_proxy">注销</van-button>
+    </van-col>
   </van-row>
 </view>
   <ttabbar bind_init="_initComponent" activeIndex="{{ 1 }}"></ttabbar>

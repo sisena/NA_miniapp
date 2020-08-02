@@ -5,8 +5,8 @@
         "van-tabbar": "./../components/vant/tabbar/index",
         "van-tabbar-item": "./../components/vant/tabbar-item/index",
         "ttabbar": "./../components/tabbar",
-        "van-cell": "./../components/vant/cell/index",
         "van-cell-group": "./../components/vant/cell-group/index",
+        "van-cell": "./../components/vant/cell/index",
         "van-collapse": "./../components/vant/collapse/index",
         "van-collapse-item": "./../components/vant/collapse-item/index"
     }

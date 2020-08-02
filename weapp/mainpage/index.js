@@ -2,8 +2,6 @@
 
 var _core = _interopRequireDefault(require('./../vendor.js')(1));
 
-var _dialog = _interopRequireDefault(require('./../components/vant/dialog/dialog.js'));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 _core["default"].page({
@@ -29,14 +27,7 @@ _core["default"].page({
     news1: '无公告',
     news2: '无公告'
   },
-  methods: {
-    showSupport: function showSupport(e) {
-      _dialog["default"].alert({
-        title: '截图保存二维码后扫描'
-      }).then(function () {// on close
-      });
-    }
-  },
+  methods: {},
   onLoad: function onLoad(e) {
     var _this = this;
 
@@ -83,25 +74,4 @@ _core["default"].page({
       });
     }
   }
-}, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-button":{"path":"./../components/vant/button/index"},"van-grid":{"path":"./../components/vant/grid/index"},"van-grid-item":{"path":"./../components/vant/grid-item/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-notice-bar":{"path":"./../components/vant/notice-bar/index"},"van-dialog":{"path":"./../components/vant/dialog/index"}},"on":{"6-0":["tap"]}}, handlers: {'6-0': {"tap": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.showSupport($event);
-      })();
-    
-  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-button":{"path":"./../components/vant/button/index"},"van-grid":{"path":"./../components/vant/grid/index"},"van-grid-item":{"path":"./../components/vant/grid-item/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-notice-bar":{"path":"./../components/vant/notice-bar/index"},"van-dialog":{"path":"./../components/vant/dialog/index"}},"on":{"6-0":["tap"]}}, handlers: {'6-0': {"tap": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.showSupport($event);
-      })();
-    
-  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-button":{"path":"./../components/vant/button/index"},"van-grid":{"path":"./../components/vant/grid/index"},"van-grid-item":{"path":"./../components/vant/grid-item/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-notice-bar":{"path":"./../components/vant/notice-bar/index"},"van-dialog":{"path":"./../components/vant/dialog/index"}},"on":{"6-0":["tap"]}}, handlers: {'6-0': {"tap": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.showSupport($event);
-      })();
-    
-  }}}, models: {}, refs: undefined });
+}, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-button":{"path":"./../components/vant/button/index"},"van-grid-item":{"path":"./../components/vant/grid-item/index"},"van-grid":{"path":"./../components/vant/grid/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-notice-bar":{"path":"./../components/vant/notice-bar/index"},"van-dialog":{"path":"./../components/vant/dialog/index"}},"on":{}}, handlers: {}, models: {}, refs: undefined });

@@ -32,10 +32,14 @@
       disabled
     />
   </van-cell-group>
+  <van-divider dashed />
   <van-row>
-  <van-col span="8" offset="16">
-  <van-button type="danger" round bind:click="logOut" icon="cross">注销</van-button>
-  </van-col>
+    <van-col span="8" offset="4">
+      <van-button icon="service-o" round plain type="primary" open-type="contact" bindcontact="handleContact">客服</van-button>
+    </van-col>
+    <van-col span="8" offset="3">
+      <van-button type="danger" round plain bind:click="logOut" icon="cross">注销</van-button>
+    </van-col>
   </van-row>
 </div>
   <ttabbar v-bind:activeIndex="1"></ttabbar>
@@ -130,7 +134,8 @@ wepy.page({
     "ttabbar": "../components/tabbar",
     "van-field": "../components/vant/field/index",
     "van-row": "../components/vant/row/index",
-    "van-col": "../components/vant/col/index"
+    "van-col": "../components/vant/col/index",
+    "van-divider": "../components/vant/divider/index"
   }
 }
 </config>

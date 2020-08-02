@@ -25,11 +25,11 @@
         />
       <van-divider />
       <van-row>
-        <van-col span="8" offset="4">
-          <van-button type="warning" round bind:click="pwdGo" icon="fail"></van-button>
+        <van-col span="8" offset="2">
+          <van-button type="warning" round plain bind:click="pwdGo" icon="fail">忘记密码</van-button>
         </van-col>
         <van-col span="8" offset="4">
-          <van-button type="info" round bind:click="loginIn" icon="arrow"></van-button>
+          <van-button type="info" round plain bind:click="loginIn" icon="arrow">点击登陆</van-button>
         </van-col>
       </van-row>
   </div>
