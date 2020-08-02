@@ -1,4 +1,6 @@
 # NA报修网小程序前端
+## 简介
+NA报修网的小程序端，用wepy和vant高强度乐高积木式编程，感觉自己在前端的路上渐行渐远
 ## notice
 app.wpy 的 urlRequest 需要自行添加
 ## 展示
