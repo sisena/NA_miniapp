@@ -4,10 +4,10 @@
     "usingComponents": {
         "van-tabbar": "./vant/tabbar/index",
         "van-tabbar-item": "./vant/tabbar-item/index",
-        "van-button": "./vant/button/index",
-        "van-grid-item": "./vant/grid-item/index",
         "van-grid": "./vant/grid/index",
+        "van-button": "./vant/button/index",
         "van-icon": "./vant/icon/index",
+        "van-grid-item": "./vant/grid-item/index",
         "van-dropdown-menu": "./vant/dropdown-menu/index",
         "van-dropdown-item": "./vant/dropdown-item/index",
         "van-field": "./vant/field/index",

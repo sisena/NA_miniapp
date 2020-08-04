@@ -71,7 +71,7 @@ wepy.page({
             console.log('LOGIN YES')
             const _token = JSON.stringify(res.data.token)
             wx.setStorageSync('jwt', _token)
-            wx.switchTab({
+            wx.reLaunch({
               url: '../userinfo/index'
             })
           }else{
@@ -83,9 +83,6 @@ wepy.page({
           console.log('REQUEST FAIL')
         }
       })     
-    },
-    fgPwd() {
-      Toast('忘记密码请去网页端进行重新设置，小程序端暂不提供忘记密码功能')
     }
   },
   onLoad: function () { // 把左上角的返回按钮藏起来了

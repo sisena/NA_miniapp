@@ -241,98 +241,196 @@ _core["default"].page({
       });
     }
   }
-}, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-button":{"path":"./../components/vant/button/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-field":{"path":"./../components/vant/field/index"},"van-switch":{"path":"./../components/vant/switch/index"},"van-row":{"path":"./../components/vant/row/index"},"van-col":{"path":"./../components/vant/col/index"},"van-toast":{"path":"./../components/vant/toast/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-panel":{"path":"./../components/vant/panel/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"}},"on":{"9-0":["change"],"9-1":["input"],"9-2":["input"],"9-3":["input"],"9-4":["change"],"9-5":["change"],"9-6":["tap"],"9-7":["input"],"9-8":["change"],"9-9":["change"],"9-10":["tap"],"9-11":["input"],"9-12":["input"],"9-13":["submit"]}}, handlers: {'9-0': {"change": function proxy () {
+}, {info: {"components":{"van-button":{"path":"./../components/vant/button/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-field":{"path":"./../components/vant/field/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-switch":{"path":"./../components/vant/switch/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-panel":{"path":"./../components/vant/panel/index"},"van-row":{"path":"./../components/vant/row/index"},"van-col":{"path":"./../components/vant/col/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-toast":{"path":"./../components/vant/toast/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"9-28":["change"],"9-29":["input"],"9-30":["input"],"9-31":["input"],"9-32":["change"],"9-33":["change"],"9-34":["tap"],"9-35":["input"],"9-36":["change"],"9-37":["change"],"9-38":["tap"],"9-39":["input"],"9-40":["input"],"9-41":["submit"]}}, handlers: {'9-28': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.onCheck($event);
       })();
     
-  }},'9-1': {"input": function proxy () {
+  }},'9-29': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.nameGet($event);
       })();
     
-  }},'9-2': {"input": function proxy () {
+  }},'9-30': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.uidGet($event);
       })();
     
-  }},'9-3': {"input": function proxy () {
+  }},'9-31': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.dormitoryGet($event);
       })();
     
-  }},'9-4': {"change": function proxy () {
+  }},'9-32': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.timeDrop($event);
       })();
     
-  }},'9-5': {"change": function proxy () {
+  }},'9-33': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.timeGet($event);
       })();
     
-  }},'9-6': {"tap": function proxy () {
+  }},'9-34': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.noop($event);
       })();
     
-  }},'9-7': {"input": function proxy () {
+  }},'9-35': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.phoneGet($event);
       })();
     
-  }},'9-8': {"change": function proxy () {
+  }},'9-36': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.downDrop($event);
       })();
     
-  }},'9-9': {"change": function proxy () {
+  }},'9-37': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.quickGet($event);
       })();
     
-  }},'9-10': {"tap": function proxy () {
+  }},'9-38': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.noop($event);
       })();
     
-  }},'9-11': {"input": function proxy () {
+  }},'9-39': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.titleGet($event);
       })();
     
-  }},'9-12': {"input": function proxy () {
+  }},'9-40': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.messageGet($event);
       })();
     
-  }},'9-13': {"submit": function proxy () {
+  }},'9-41': {"submit": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onSubmit($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-button":{"path":"./../components/vant/button/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-field":{"path":"./../components/vant/field/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-switch":{"path":"./../components/vant/switch/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-panel":{"path":"./../components/vant/panel/index"},"van-row":{"path":"./../components/vant/row/index"},"van-col":{"path":"./../components/vant/col/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-toast":{"path":"./../components/vant/toast/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"9-28":["change"],"9-29":["input"],"9-30":["input"],"9-31":["input"],"9-32":["change"],"9-33":["change"],"9-34":["tap"],"9-35":["input"],"9-36":["change"],"9-37":["change"],"9-38":["tap"],"9-39":["input"],"9-40":["input"],"9-41":["submit"]}}, handlers: {'9-28': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onCheck($event);
+      })();
+    
+  }},'9-29': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.nameGet($event);
+      })();
+    
+  }},'9-30': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.uidGet($event);
+      })();
+    
+  }},'9-31': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.dormitoryGet($event);
+      })();
+    
+  }},'9-32': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.timeDrop($event);
+      })();
+    
+  }},'9-33': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.timeGet($event);
+      })();
+    
+  }},'9-34': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.noop($event);
+      })();
+    
+  }},'9-35': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.phoneGet($event);
+      })();
+    
+  }},'9-36': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.downDrop($event);
+      })();
+    
+  }},'9-37': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.quickGet($event);
+      })();
+    
+  }},'9-38': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.noop($event);
+      })();
+    
+  }},'9-39': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.titleGet($event);
+      })();
+    
+  }},'9-40': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.messageGet($event);
+      })();
+    
+  }},'9-41': {"submit": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {

@@ -22,8 +22,10 @@
     <van-grid bind_init="_initComponent" column-num="2" gutter="{{ 10 }}">
       <van-grid-item bind_init="_initComponent" icon="records" text="报修填写" url="../baoxiu/index"></van-grid-item>
       <van-grid-item bind_init="_initComponent" icon="aim" text="报修历史" url="../myhistory/index"></van-grid-item>
-      <van-grid-item bind_init="_initComponent" icon="description" text="报修状态" url="../ticketsupdate/index"></van-grid-item>
+      <van-grid-item bind_init="_initComponent" icon="description" text="修改报修单" url="../ticketsupdate/index"></van-grid-item>
       <van-grid-item bind_init="_initComponent" icon="warning-o" text="更多公告" url="../noticebar/index"></van-grid-item>
+      <van-grid-item bind_init="_initComponent" icon="clock-o" text="未接单" url="../uncompletetickets/index" style="display:{{ display }};"></van-grid-item>
+      <van-grid-item bind_init="_initComponent" icon="flag-o" text="我的工作" url="../myjob/index" style="display:{{ display }};"></van-grid-item>
     </van-grid>
   </view>
 </view>

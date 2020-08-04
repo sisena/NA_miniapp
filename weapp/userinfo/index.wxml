@@ -10,10 +10,10 @@
   <van-divider bind_init="_initComponent" dashed></van-divider>
   <van-row bind_init="_initComponent">
     <van-col bind_init="_initComponent" span="8" offset="4">
-      <van-button bind_init="_initComponent" icon="service-o" round plain type="primary" open-type="contact" data-wpy-evt="10-0" bind:contact="_proxy">客服</van-button>
+      <van-button bind_init="_initComponent" icon="service-o" round plain type="primary" open-type="contact" data-wpy-evt="10-20" bind:contact="_proxy">客服</van-button>
     </van-col>
     <van-col bind_init="_initComponent" span="8" offset="3">
-      <van-button bind_init="_initComponent" type="danger" round plain icon="cross" data-wpy-evt="10-1" bind:tap="_proxy">注销</van-button>
+      <van-button bind_init="_initComponent" type="danger" round plain icon="cross" data-wpy-evt="10-21" bind:tap="_proxy">注销</van-button>
     </van-col>
   </van-row>
 </view>

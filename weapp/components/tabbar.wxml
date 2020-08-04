@@ -1,5 +1,5 @@
 
-<van-tabbar bind_init="_initComponent" active="{{ activeIndex }}" data-wpy-evt="26-0" bind:change="_proxy">
+<van-tabbar bind_init="_initComponent" active="{{ activeIndex }}" data-wpy-evt="30-0" bind:change="_proxy">
   <van-tabbar-item bind_init="_initComponent" icon="aim">首页</van-tabbar-item>
   <image src="https://cdn.jsdelivr.net/gh/tydaytygx/NA/NA%E5%9B%BE%E6%A0%87%E8%93%9D%E8%89%B2%E7%89%88.png" style="width:15%;height:100%;"></image>
   <van-tabbar-item bind_init="_initComponent" icon="aim">个人</van-tabbar-item>

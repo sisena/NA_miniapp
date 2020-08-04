@@ -16,11 +16,12 @@ _core["default"].page({
     onChange: function onChange(event) {
       // 打开下拉
       console.log(event);
-      this.activeNames = event.$wx.detail;
-      this.ticketid = event.$wx.detail[1];
+      this.activeNames = event.$wx.detail; // this.ticketid=event.$wx.detail[1]
     },
     ticketDel: function ticketDel(e) {
       // 删单
+      this.ticketid = e;
+
       var _jwt = wx.getStorageSync('jwt');
 
       var jwt = JSON.parse(_jwt);
@@ -46,8 +47,10 @@ _core["default"].page({
         }
       });
     },
-    ticketChange: function ticketChange() {
+    ticketChange: function ticketChange(e) {
       // 更新报修单
+      // console.log(e)
+      this.ticketid = e;
       wx.redirectTo({
         url: '../ticketschange/index?ticketid=' + this.ticketid
       });
@@ -90,25 +93,46 @@ _core["default"].page({
       });
     }
   }
-}, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-button":{"path":"./../components/vant/button/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"}},"on":{"12-0":["change"],"12-1":["tap"],"12-2":["tap"]}}, handlers: {'12-0': {"change": function proxy () {
+}, {info: {"components":{"van-button":{"path":"./../components/vant/button/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-row":{"path":"./../components/vant/row/index"},"van-col":{"path":"./../components/vant/col/index"},"van-divider":{"path":"./../components/vant/divider/index"}},"on":{"12-73":["change"],"12-74":["tap"],"12-75":["tap"]}}, handlers: {'12-73': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.onChange($event);
       })();
     
-  }},'12-1': {"tap": function proxy () {
-    var $event = arguments[arguments.length - 1];
+  }},'12-74': {"tap": function proxy (item) {
+    
     var _vm=this;
       return (function () {
-        _vm.ticketDel($event);
+        _vm.ticketDel(item.id);
       })();
     
-  }},'12-2': {"tap": function proxy () {
+  }},'12-75': {"tap": function proxy (item) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.ticketChange(item.id);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-button":{"path":"./../components/vant/button/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-row":{"path":"./../components/vant/row/index"},"van-col":{"path":"./../components/vant/col/index"},"van-divider":{"path":"./../components/vant/divider/index"}},"on":{"12-73":["change"],"12-74":["tap"],"12-75":["tap"]}}, handlers: {'12-73': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
-        _vm.ticketChange($event);
+        _vm.onChange($event);
+      })();
+    
+  }},'12-74': {"tap": function proxy (item) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.ticketDel(item.id);
+      })();
+    
+  }},'12-75': {"tap": function proxy (item) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.ticketChange(item.id);
       })();
     
   }}}, models: {}, refs: undefined });

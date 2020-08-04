@@ -59,17 +59,29 @@ wepy.page({
   },
   methods: {
     logOut() {
-      wx.removeStorage({
-        key: '_jwt',
-        success (res) {
-           wx.removeStorage({
-             key: 'jwt',
-             success (res) {
-                     wx.redirectTo({
-                      url: '../login/index'
-                    })
-             }
-           })
+      // wx.removeStorage({
+      //   key: '_jwt',
+      //   success (res) {
+      //      wx.removeStorage({
+      //        key: 'jwt',
+      //        success (res) {
+      //           wx.removeStorage({
+      //             key: 'jwtDecode',
+      //             success (res) {
+      //               wx.redirectTo({
+      //                 url: '../login/index'
+      //               })
+      //             }
+      //           })
+      //        }
+      //      })
+      //   }
+      // })
+      wx.clearStorage({
+        success (e) {
+          wx.redirectTo({
+            url: '../login/index'
+          })  
         }
       })
     }

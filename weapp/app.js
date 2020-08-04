@@ -27,7 +27,7 @@ _core["default"].app({
   },
   globalData: {
     userInfo: null,
-    urlRequest: 'https://service.sise.edu.cn'
+    urlRequest: ''
   },
   onLaunch: function onLaunch() {
     this.testAsync();

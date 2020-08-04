@@ -4,7 +4,7 @@
 </div>
 <div v-for="item in datas">
 <van-collapse value="{{ activeNames }}" bind:change="onChange">
-  <van-collapse-item title="{{ item.schedule }}《状态={{ item.status }}》" name="{{ item.id }}">
+  <van-collapse-item v-if="item.status != '未完成'" title="{{ item.schedule }}《{{ item.status }}》" name="{{ item.id }}">
     <van-cell-group>
       <van-cell 
         value="{{ item.staff }}"
@@ -67,7 +67,7 @@
 import wepy from '@wepy/core'
 wepy.page({
   data: {
-    activeNames: ['1'],
+    activeNames: [''],
     datas: [{
 
     }],
@@ -89,7 +89,7 @@ wepy.page({
         url: this.$app.$options.globalData.urlRequest + '/api/v1/ticket/getmyhistory',
         method: 'GET',
         data: {
-          jwt: jwt,
+          jwt: this.jwt,
           current: 1,
           pageSize: 100
         },

@@ -197,10 +197,10 @@ wepy.page({
     },
     noop() { },// 摆设
     messageGet(e) { // 拿用户的报修详情
-    this.message = e.$wx.detail
+      this.message = e.$wx.detail
     },
     titleGet(e) { // 拿用户的报修标题
-    this.title = e.$wx.detail
+      this.title = e.$wx.detail
     },
     onSubmit(e) { // 提交按钮
       console.log(e)

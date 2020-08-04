@@ -17,7 +17,7 @@
         "van-radio": "./../components/vant/radio/index",
         "van-checkbox-group": "./../components/vant/checkbox-group/index",
         "van-radio-group": "./../components/vant/radio-group/index",
-        "van-collapse": "./../components/vant/collapse/index",
-        "van-collapse-item": "./../components/vant/collapse-item/index"
+        "van-collapse-item": "./../components/vant/collapse-item/index",
+        "van-collapse": "./../components/vant/collapse/index"
     }
 }

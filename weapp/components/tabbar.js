@@ -22,7 +22,1288 @@ _core["default"].component({
       });
     }
   }
-}, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"26-0":["change"]}}, handlers: {'26-0': {"change": function proxy () {
+}, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./vant/tabbar/index"},"van-tabbar-item":{"path":"./vant/tabbar-item/index"}},"on":{"30-0":["change"]}}, handlers: {'30-0': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {

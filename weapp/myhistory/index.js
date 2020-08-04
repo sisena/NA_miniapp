@@ -6,7 +6,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 _core["default"].page({
   data: {
-    activeNames: ['1'],
+    activeNames: [''],
     datas: [{}],
     datassave: [{}],
     showtickets: ''
@@ -28,7 +28,7 @@ _core["default"].page({
         url: this.$app.$options.globalData.urlRequest + '/api/v1/ticket/getmyhistory',
         method: 'GET',
         data: {
-          jwt: jwt,
+          jwt: this.jwt,
           current: 1,
           pageSize: 100
         },
@@ -61,7 +61,14 @@ _core["default"].page({
       });
     }
   }
-}, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"}},"on":{"11-0":["change"]}}, handlers: {'11-0': {"change": function proxy () {
+}, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"van-cell":{"path":"./../components/vant/cell/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"11-4":["change"]}}, handlers: {'11-4': {"change": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.onChange($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"van-cell":{"path":"./../components/vant/cell/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"11-4":["change"]}}, handlers: {'11-4': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {

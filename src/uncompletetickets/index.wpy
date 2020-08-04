@@ -6,12 +6,6 @@
 <van-collapse value="{{ activeNames }}" bind:change="onChange">
   <van-divider borderColor="#6495ed" />
   <van-collapse-item icon="todo-list-o" title="{{ item.schedule }}《{{ item.status }}》" name="{{ item.id }}">
-    <van-cell 
-      value="{{ item.staff }}"
-      icon="manager-o"
-      label="维修人"
-      readonly
-      />
       <van-cell
       value="{{ item.name }}"
       icon="user-o"
@@ -59,17 +53,13 @@
       readonly
       />
       <van-row>
-        <van-col span="8" offset="2">
-          <van-button type="danger" round plain bind:click="ticketDel(item.id)" icon="cross">取消报修</van-button>
+        <van-col span="8" offset="18">
+        <van-button type="info" round plain bind:click="ticketGet(item.id)" icon="success">接单</van-button>
         </van-col>
-        <van-col span="8" offset="5">
-          <van-button type="primary" round plain bind:click="ticketChange(item.id)" icon="edit">修改单据</van-button>
-        </van-col>
-      </van-row>    
+      </van-row>
   </van-collapse-item>
 </van-collapse>
 </div>
-  
 </template>
 <script>
 import wepy from '@wepy/core'
@@ -81,7 +71,8 @@ wepy.page({
     },
     ticketid: '',
     getTime: '',
-    showtickets: ''
+    showtickets: '',
+    ticketid: ''
   },
   methods: {
     onChange(event) { // 打开下拉
@@ -89,13 +80,16 @@ wepy.page({
       this.activeNames=event.$wx.detail
       // this.ticketid=event.$wx.detail[1]
     },
-    ticketDel(e) { // 删单
+    ticketGet(e) { // 接单！
+      // wx.redirectTo({
+      //   url: '../ticketschange/index?ticketid='+this.ticketid
+      // })
       this.ticketid = e
       const _jwt = wx.getStorageSync('jwt')
       const jwt = JSON.parse(_jwt)
       wx.request({
-        url: this.$app.$options.globalData.urlRequest + '/api/v1/ticket/cancelticket?ticketid='+this.ticketid,
-        method: 'DELETE',
+        url: this.$app.$options.globalData.urlRequest + '/api/v1/ticket/acceptticket?ticketid=' + this.ticketid,
+        method: 'PUT',
         data: {
           jwt: this.jwt,
           ticketid: this.ticketid
@@ -103,37 +97,28 @@ wepy.page({
         header:{ // 不带jwt过不了验证
           'Authorization': `Bearer ${ jwt }`
         },
-        success: res => {
-          console.log('DELETE SUCCESS')
+        success: res=> {
           wx.redirectTo({
-              url: './index'
-            }
-          )
-
+            url: './index'
+          })
         },
         fail :res => {
-          console.log('DELETE FAIL')
+          console.log('怎么接不了单？')
         }
-      })
-    },
-    ticketChange(e) { // 更新报修单
-      // console.log(e)
-      this.ticketid = e
-      wx.redirectTo({
-        url: '../ticketschange/index?ticketid='+this.ticketid
       })
     }
   },
-  onLoad: function() {// 加载报修单
-    this.getTime=wx.getStorageSync("time")
+  onLoad: function() {// 加载未修单
     const _jwt = wx.getStorageSync('jwt')
     if(_jwt){
       const jwt = JSON.parse(_jwt)
       wx.request({ 
-        url: this.$app.$options.globalData.urlRequest + '/api/v1/ticket/getmyunfixticket',
+        url: this.$app.$options.globalData.urlRequest + '/api/v1/ticket/getuncompletetickets',
         method: 'GET',
         data: {
-          jwt: this.jwt
+          jwt: this.jwt,
+          current: 1,
+          pageSize: 100
         },
         header:{
           'Authorization': `Bearer ${ jwt }`
@@ -143,8 +128,9 @@ wepy.page({
             console.log(res.data.data)
             this.datas=res.data.data
           }else{
-            this.showtickets='无报修单'
+            this.showtickets='无未修单'
           }
+            console.log(res)
         },
         fail :res => {
           console.log(res)
@@ -160,7 +146,7 @@ wepy.page({
 </script>
 <config>
 {
-  navigationBarTitleText: '修改报修单',
+  navigationBarTitleText: '未接单',
   usingComponents: {
     "van-button": "../components/vant/button/index",
     "van-tabbar": "../components/vant/tabbar/index",
@@ -175,4 +161,3 @@ wepy.page({
   }
 }
 </config>
-

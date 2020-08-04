@@ -25,17 +25,29 @@ _core["default"].page({
     title: '',
     text: '',
     news1: '无公告',
-    news2: '无公告'
+    news2: '无公告',
+    display: 'None'
   },
   methods: {},
   onLoad: function onLoad(e) {
     var _this = this;
 
     // 拿到公告
+    var jwtDecode = require('./../vendor.js')(6);
+
     var _jwt = wx.getStorageSync('jwt');
 
     if (_jwt) {
-      var jwt = JSON.parse(_jwt);
+      var jwt = JSON.parse(_jwt); // console.log(jwt)
+      // console.log(jwtDecode(jwt))
+      // if(jwtDecode(jwt).rolename == 'admin' || jwtDecode(jwt).rolename == 'staff'){
+      //   console.log('ready')
+      //   this.display = ''
+      // }else{
+      //   this.display = 'None'
+      //   console.log('Notready')
+      // }
+
       wx.request({
         url: this.$app.$options.globalData.urlRequest + '/api/v1/ann/getann',
         method: 'GET',
@@ -59,9 +71,11 @@ _core["default"].page({
               _this.news2 = "真的没有公告啦";
             }
           } else {
-            wx.redirectTo({
-              url: '../login/index'
-            });
+            // wx.redirectTo({
+            //   url: '../login/index'
+            // })
+            _this.news1 = "没有公告啦";
+            _this.news2 = "真的没有公告啦";
           }
         },
         fail: function fail(res) {
@@ -73,5 +87,29 @@ _core["default"].page({
         url: '../login/index'
       });
     }
+  },
+  onShow: function onShow(e) {
+    // const jwtDecode = require('jwt-decode')
+    // const _jwt = wx.getStorageSync('jwt')
+    // console.log(this.jwt)
+    // if(jwtDecode(this.jwt).rolename == 'admin' || jwtDecode(this.jwt).rolename == 'staff'){
+    //   console.log('ready')
+    //   this.display = ''
+    // }else{
+    //   this.display = 'None'
+    //   console.log('Notready')
+    // }
+    // console.log('onShow')
+    var jwtDecode = require('./../vendor.js')(6);
+
+    var _jwt = wx.getStorageSync('jwt');
+
+    var jwt = JSON.parse(_jwt);
+
+    if (jwtDecode(jwt).rolename == 'admin' || jwtDecode(jwt).rolename == 'staff') {
+      this.display = ''; // console.log('readyaaa')
+    } else {
+      this.display = 'None'; // console.log('Notready')
+    }
   }
-}, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-button":{"path":"./../components/vant/button/index"},"van-grid-item":{"path":"./../components/vant/grid-item/index"},"van-grid":{"path":"./../components/vant/grid/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-notice-bar":{"path":"./../components/vant/notice-bar/index"},"van-dialog":{"path":"./../components/vant/dialog/index"}},"on":{}}, handlers: {}, models: {}, refs: undefined });
+}, {info: {"components":{"van-button":{"path":"./../components/vant/button/index"},"van-grid":{"path":"./../components/vant/grid/index"},"van-grid-item":{"path":"./../components/vant/grid-item/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-dialog":{"path":"./../components/vant/dialog/index"},"van-notice-bar":{"path":"./../components/vant/notice-bar/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{}}, handlers: {}, models: {}, refs: undefined }, {info: {"components":{"van-button":{"path":"./../components/vant/button/index"},"van-grid":{"path":"./../components/vant/grid/index"},"van-grid-item":{"path":"./../components/vant/grid-item/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-dialog":{"path":"./../components/vant/dialog/index"},"van-notice-bar":{"path":"./../components/vant/notice-bar/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{}}, handlers: {}, models: {}, refs: undefined });

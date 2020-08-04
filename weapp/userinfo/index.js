@@ -17,16 +17,28 @@ _core["default"].page({
   },
   methods: {
     logOut: function logOut() {
-      wx.removeStorage({
-        key: '_jwt',
-        success: function success(res) {
-          wx.removeStorage({
-            key: 'jwt',
-            success: function success(res) {
-              wx.redirectTo({
-                url: '../login/index'
-              });
-            }
+      // wx.removeStorage({
+      //   key: '_jwt',
+      //   success (res) {
+      //      wx.removeStorage({
+      //        key: 'jwt',
+      //        success (res) {
+      //           wx.removeStorage({
+      //             key: 'jwtDecode',
+      //             success (res) {
+      //               wx.redirectTo({
+      //                 url: '../login/index'
+      //               })
+      //             }
+      //           })
+      //        }
+      //      })
+      //   }
+      // })
+      wx.clearStorage({
+        success: function success(e) {
+          wx.redirectTo({
+            url: '../login/index'
           });
         }
       });
@@ -81,14 +93,28 @@ _core["default"].page({
       });
     }
   }
-}, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-button":{"path":"./../components/vant/button/index"},"van-grid-item":{"path":"./../components/vant/grid-item/index"},"van-grid":{"path":"./../components/vant/grid/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-field":{"path":"./../components/vant/field/index"},"van-row":{"path":"./../components/vant/row/index"},"van-col":{"path":"./../components/vant/col/index"},"van-divider":{"path":"./../components/vant/divider/index"}},"on":{"10-0":["contact"],"10-1":["tap"]}}, handlers: {'10-0': {"contact": function proxy () {
+}, {info: {"components":{"van-button":{"path":"./../components/vant/button/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-grid":{"path":"./../components/vant/grid/index"},"van-grid-item":{"path":"./../components/vant/grid-item/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-field":{"path":"./../components/vant/field/index"},"van-row":{"path":"./../components/vant/row/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-col":{"path":"./../components/vant/col/index"},"van-divider":{"path":"./../components/vant/divider/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"10-20":["contact"],"10-21":["tap"]}}, handlers: {'10-20': {"contact": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.handleContact($event);
       })();
     
-  }},'10-1': {"tap": function proxy () {
+  }},'10-21': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.logOut($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-button":{"path":"./../components/vant/button/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-grid":{"path":"./../components/vant/grid/index"},"van-grid-item":{"path":"./../components/vant/grid-item/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-field":{"path":"./../components/vant/field/index"},"van-row":{"path":"./../components/vant/row/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-col":{"path":"./../components/vant/col/index"},"van-divider":{"path":"./../components/vant/divider/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"10-20":["contact"],"10-21":["tap"]}}, handlers: {'10-20': {"contact": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleContact($event);
+      })();
+    
+  }},'10-21': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {

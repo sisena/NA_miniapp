@@ -55,8 +55,10 @@
       <van-grid column-num="2" gutter="{{ 10 }}">
         <van-grid-item icon="records" text="报修填写" url="../baoxiu/index" />
         <van-grid-item icon="aim" text="报修历史" url="../myhistory/index"/>
-        <van-grid-item icon="description" text="报修状态" url="../ticketsupdate/index"/>
+        <van-grid-item icon="description" text="修改报修单" url="../ticketsupdate/index"/>
         <van-grid-item icon="warning-o" text="更多公告" url="../noticebar/index"/>
+        <van-grid-item icon="clock-o" style="display:{{ display }}" text="未接单" url="../uncompletetickets/index"/>
+        <van-grid-item icon="flag-o" style="display:{{ display }}" text="我的工作" url="../myjob/index"/>
       </van-grid>
     </view>
   </view>
@@ -81,14 +83,25 @@ wepy.page({
     title: '',
     text: '',
     news1: '无公告',
-    news2: '无公告'
+    news2: '无公告',
+    display: 'None'
   },
   methods: {
   },
   onLoad: function (e) { // 拿到公告
+    const jwtDecode = require('jwt-decode')
     const _jwt = wx.getStorageSync('jwt')
     if(_jwt){
       const jwt = JSON.parse(_jwt)
+      // console.log(jwt)
+      // console.log(jwtDecode(jwt))
+      // if(jwtDecode(jwt).rolename == 'admin' || jwtDecode(jwt).rolename == 'staff'){
+      //   console.log('ready')
+      //   this.display = ''
+      // }else{
+      //   this.display = 'None'
+      //   console.log('Notready')
+      // }
       wx.request({
         url: this.$app.$options.globalData.urlRequest + '/api/v1/ann/getann',
         method: 'GET',
@@ -112,9 +125,11 @@ wepy.page({
                 this.news2 = "真的没有公告啦"
             }
           }else{
-            wx.redirectTo({
-              url: '../login/index'
-            })
+            // wx.redirectTo({
+            //   url: '../login/index'
+            // })
+                this.news1 = "没有公告啦"
+                this.news2 = "真的没有公告啦"
           }
 
         },
@@ -126,6 +141,29 @@ wepy.page({
       wx.redirectTo({
         url: '../login/index'
       })
+    }
+  },
+  onShow: function (e) {
+    // const jwtDecode = require('jwt-decode')
+    // const _jwt = wx.getStorageSync('jwt')
+    // console.log(this.jwt)
+    // if(jwtDecode(this.jwt).rolename == 'admin' || jwtDecode(this.jwt).rolename == 'staff'){
+    //   console.log('ready')
+    //   this.display = ''
+    // }else{
+    //   this.display = 'None'
+    //   console.log('Notready')
+    // }
+    // console.log('onShow')
+    const jwtDecode = require('jwt-decode')
+    const _jwt = wx.getStorageSync('jwt')
+    const jwt = JSON.parse(_jwt)
+    if(jwtDecode(jwt).rolename == 'admin' || jwtDecode(jwt).rolename == 'staff'){
+      this.display = ''
+      // console.log('readyaaa')
+    }else{
+        this.display = 'None'
+        // console.log('Notready')
     }
   }
 })

@@ -9,7 +9,9 @@
         "ticketsupdate/index",
         "ticketschange/index",
         "noticebar/index",
-        "fgpwd/index"
+        "fgpwd/index",
+        "uncompletetickets/index",
+        "myjob/index"
     ],
     "window": {
         "backgroundTextStyle": "light",
