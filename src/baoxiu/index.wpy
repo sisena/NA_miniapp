@@ -4,6 +4,7 @@
 <template>
   <view>
     <van-toast id="van-toast" />
+    <van-dialog id="van-dialog" />
     <van-panel title="是否代报修"  status="{{ daistatus }}">
       <van-row>
         <van-col span="10" offset="1">
@@ -91,7 +92,7 @@
         type="textarea"
         autosize
         left-icon="orders-o"
-        placeholder="请描述你的问题或从上方快速选择"
+        placeholder="{{ titleAll }}"
         border="{{ false }}"
         bind:input="titleGet"
       />
@@ -102,7 +103,7 @@
         type="textarea"
         autosize
         left-icon="edit"
-        placeholder="请描述你的问题(可选填)"
+        placeholder="{{ messageAll }}"
         border="{{ false }}"
         bind:input="messageGet"
       />
@@ -118,6 +119,7 @@
 <script>
 import wepy from '@wepy/core'
 import Toast from '../components/vant/toast/toast'
+import Dialog from '../components/vant/dialog/dialog'
 wepy.page({
   data: {
     test:'',
@@ -145,7 +147,9 @@ wepy.page({
     list: ["上不了网", "更换水晶头", "网络卡顿"],
     activeNames: [],
     oriname: '',
-    schedule: ''
+    schedule: '',
+    titleAll: '',
+    messageAll: ''
   },
   methods: {
     nameGet(e) { // 拿用户的名字
@@ -207,6 +211,12 @@ wepy.page({
       const _jwt = wx.getStorageSync('jwt')
       const jwt = JSON.parse(_jwt)
       if(this.name&&this.dormitory&&this.phone&&this.time&&this.title){
+        Toast.loading({
+          message: 'wait...',
+          forbidClick: true,
+          mask: true,
+          duration: 0
+        });
         // 确认所有空都填写完毕
         wx.request({
         url: this.$app.$options.globalData.urlRequest + '/api/v1/ticket/createticket',
@@ -225,6 +235,15 @@ wepy.page({
           'Authorization': `Bearer ${ jwt }`
         },
         success: res=>{
+          // wx.requestSubscribeMessage({
+          //   tmplIds: ['uoueIiQtZbZecn2zumz1_wbmnBUw6obaePtF-hxebKg'],
+          //   success (res) {
+          //     // console.log(res)
+          //   },
+          //   fail (res) {
+          //     // console.log(res)
+          //   },
+          // })
           wx.redirectTo({
               url: '../ticketsupdate/index'
             }
@@ -250,6 +269,12 @@ wepy.page({
     }
   },
   onLoad: function () { // 判断用户是否登陆，没有登陆就跳转login指引登陆
+    Toast.loading({
+      message: '报修单祈祷中...',
+      forbidClick: true,
+      mask: true,
+      duration: 0
+    });
     const _jwt = wx.getStorageSync('jwt')
     if(_jwt){
       const jwt = JSON.parse(_jwt)
@@ -268,6 +293,7 @@ wepy.page({
             this.oriname=res.data.data.name
             this.uid=res.data.data.uid
             this.dormitory=res.data.data.Address
+            Toast.clear()
           }else{
             wx.redirectTo({
               url: '../login/index'
@@ -319,6 +345,24 @@ wepy.page({
         url: '../login/index'
       })
     }
+    Dialog.alert({
+      title: '提示',
+      message: '水管、灯泡、空调、水龙头等宿舍问题请自行前往 <导航网-安全报修-宿舍设施报修> 进行报修，该小程序只提供网络故障报修，非网络故障报修会直接取消，望周知',
+      theme: 'round-button',
+      transition: 'none',
+      asyncClose: true
+    }).then(() => {
+      // on close
+      // 为了防止原生组件覆盖，等到弹窗消失之后再加载
+      Dialog.close();
+        setTimeout(() => {
+          this.titleAll = '请描述你的问题或从上方快速选择',
+          this.messageAll = '请描述你的问题(可选填)'
+        }, 200);
+    });
+
+  },
+  onShow() {
   }
 })
 </script>
@@ -348,6 +392,7 @@ wepy.page({
     "van-radio": "../components/vant/radio/index",
     "van-radio-group": "../components/vant/radio-group/index",
     "van-collapse": "../components/vant/collapse/index",
+    "van-dialog": "../components/vant/dialog/index",
     "van-collapse-item": "../components/vant/collapse-item/index",
     "van-toast": "../components/vant/toast/index"
   }

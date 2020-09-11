@@ -10,6 +10,7 @@
         "van-field": "./../components/vant/field/index",
         "van-divider": "./../components/vant/divider/index",
         "van-cell-group": "./../components/vant/cell-group/index",
+        "van-toast": "./../components/vant/toast/index",
         "van-panel": "./../components/vant/panel/index",
         "van-cell": "./../components/vant/cell/index"
     }

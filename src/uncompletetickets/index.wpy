@@ -1,11 +1,12 @@
 <template>
+<van-toast id="van-toast" />
 <div>
   {{ showtickets }}
 </div>
 <div v-for="item in datas">
 <van-collapse value="{{ activeNames }}" bind:change="onChange">
   <van-divider borderColor="#6495ed" />
-  <van-collapse-item icon="todo-list-o" title="{{ item.schedule }}《{{ item.status }}》" name="{{ item.id }}">
+  <van-collapse-item icon="todo-list-o" title="{{ item.schedule }}《{{ item.destination }}》" name="{{ item.id }}">
       <van-cell
       value="{{ item.name }}"
       icon="user-o"
@@ -63,6 +64,7 @@
 </template>
 <script>
 import wepy from '@wepy/core'
+import Toast from '../components/vant/toast/toast'
 wepy.page({
   data: {
     activeNames: [''],
@@ -84,6 +86,12 @@ wepy.page({
       // wx.redirectTo({
       //   url: '../ticketschange/index?ticketid='+this.ticketid
       // })
+      Toast.loading({
+        message: '接单中...',
+        forbidClick: true,
+        mask: true,
+        duration: 0
+      });
       this.ticketid = e
       const _jwt = wx.getStorageSync('jwt')
       const jwt = JSON.parse(_jwt)
@@ -109,6 +117,12 @@ wepy.page({
     }
   },
   onLoad: function() {// 加载未修单
+    Toast.loading({
+      message: '报修单祈祷中...',
+      forbidClick: true,
+      mask: true,
+      duration: 0
+    });
     const _jwt = wx.getStorageSync('jwt')
     if(_jwt){
       const jwt = JSON.parse(_jwt)
@@ -127,10 +141,12 @@ wepy.page({
           if(res.data.data[0]){
             console.log(res.data.data)
             this.datas=res.data.data
+            Toast.clear()
           }else{
             this.showtickets='无未修单'
+            Toast.clear()
           }
-            console.log(res)
+            // console.log(res)
         },
         fail :res => {
           console.log(res)
@@ -157,7 +173,8 @@ wepy.page({
     "van-col": "../components/vant/col/index",
     "van-collapse": "../components/vant/collapse/index",
     "van-divider": "../components/vant/divider/index",
-    "van-collapse-item": "../components/vant/collapse-item/index"
+    "van-collapse-item": "../components/vant/collapse-item/index",
+    "van-toast": "../components/vant/toast/index"
   }
 }
 </config>

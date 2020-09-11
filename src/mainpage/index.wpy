@@ -22,8 +22,8 @@
 }
 </style>
 <template>
-  <view>
-    <view class="swiper">
+  <div>
+    <div class="swiper">
         <swiper indicator-dots="{{ indicatorDots }}" autoplay="{{ autoplay }}" interval="{{ interval }}">
           <swiper-item>
             <image src="{{ swiperData[0].pic }}" class="slide-image" mode="scaleToFill" />
@@ -38,20 +38,23 @@
             <image src="{{ swiperData[3].pic }}" class="slide-image-NAlogo" mode="scaleToFill" />
           </swiper-item>
         </swiper>
-    </view>
+    </div>
+    <div>
       <van-notice-bar
         left-icon="warning-o"
         backgroundColor="#8FBC8F"
         color="black"
         speed="30"
         text="{{ news1 }}"
+        wrapable
       />
       <van-notice-bar
         left-icon="comment-circle-o"
         text="{{ news2 }}"
         wrapable
       />
-    <view>
+    </div>
+    <div>
       <van-grid column-num="2" gutter="{{ 10 }}">
         <van-grid-item icon="records" text="报修填写" url="../baoxiu/index" />
         <van-grid-item icon="aim" text="报修历史" url="../myhistory/index"/>
@@ -60,8 +63,9 @@
         <van-grid-item icon="clock-o" style="display:{{ display }}" text="未接单" url="../uncompletetickets/index"/>
         <van-grid-item icon="flag-o" style="display:{{ display }}" text="我的工作" url="../myjob/index"/>
       </van-grid>
-    </view>
-  </view>
+    </div>
+    <div style="height: 5rem;"></div>
+  </div>
   <ttabbar v-bind:activeIndex="0"></ttabbar>
 </template>
 <script>
@@ -115,10 +119,10 @@ wepy.page({
           if(res.statusCode == 200){
             // console.log(res)
             if(res.data.data[0] && res.data.data[1]){
-              this.news1 = res.data.data[res.data.data.length-1].title + '=>' + res.data.data[res.data.data.length-1].text
-              this.news2 = res.data.data[res.data.data.length-2].title + '=>' + res.data.data[res.data.data.length-2].text
+              this.news1 = res.data.data[res.data.data.length-1].title + '>:' + res.data.data[res.data.data.length-1].text
+              this.news2 = res.data.data[res.data.data.length-2].title + '>:' + res.data.data[res.data.data.length-2].text
             }else if(res.data.data[0]){
-                this.news1 = res.data.data[res.data.data[0].length-1].title + '=>' + res.data.data[res.data.data.length-1].text
+                this.news1 = res.data.data[res.data.data[0].length-1].title + '>:' + res.data.data[res.data.data.length-1].text
                 this.news2 = "只有这一条公告啦"
             }else{
                 this.news1 = "没有公告啦"
@@ -157,13 +161,19 @@ wepy.page({
     // console.log('onShow')
     const jwtDecode = require('jwt-decode')
     const _jwt = wx.getStorageSync('jwt')
-    const jwt = JSON.parse(_jwt)
-    if(jwtDecode(jwt).rolename == 'admin' || jwtDecode(jwt).rolename == 'staff'){
-      this.display = ''
-      // console.log('readyaaa')
+    if(_jwt){
+      const jwt = JSON.parse(_jwt)
+      if(jwtDecode(jwt).rolename == 'admin' || jwtDecode(jwt).rolename == 'staff'){
+        this.display = ''
+        // console.log('readyaaa')
+      }else{
+          this.display = 'None'
+          // console.log('Notready')
+      }
     }else{
-        this.display = 'None'
-        // console.log('Notready')
+      wx.redirectTo({
+        url: '../login/index'
+      })
     }
   }
 })

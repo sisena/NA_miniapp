@@ -1,6 +1,8 @@
 "use strict";
 
-var _core = _interopRequireDefault(require('./../vendor.js')(1));
+var _core = _interopRequireDefault(require('./../vendor.js')(0));
+
+var _toast = _interopRequireDefault(require('./../components/vant/toast/toast.js'));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -25,6 +27,13 @@ _core["default"].page({
       // wx.redirectTo({
       //   url: '../ticketschange/index?ticketid='+this.ticketid
       // })
+      _toast["default"].loading({
+        message: '接单中...',
+        forbidClick: true,
+        mask: true,
+        duration: 0
+      });
+
       this.ticketid = e;
 
       var _jwt = wx.getStorageSync('jwt');
@@ -56,6 +65,13 @@ _core["default"].page({
     var _this = this;
 
     // 加载未修单
+    _toast["default"].loading({
+      message: '报修单祈祷中...',
+      forbidClick: true,
+      mask: true,
+      duration: 0
+    });
+
     var _jwt = wx.getStorageSync('jwt');
 
     if (_jwt) {
@@ -75,11 +91,14 @@ _core["default"].page({
           if (res.data.data[0]) {
             console.log(res.data.data);
             _this.datas = res.data.data;
+
+            _toast["default"].clear();
           } else {
             _this.showtickets = '无未修单';
-          }
 
-          console.log(res);
+            _toast["default"].clear();
+          } // console.log(res)
+
         },
         fail: function fail(res) {
           console.log(res);
@@ -91,28 +110,28 @@ _core["default"].page({
       });
     }
   }
-}, {info: {"components":{"van-button":{"path":"./../components/vant/button/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-row":{"path":"./../components/vant/row/index"},"van-col":{"path":"./../components/vant/col/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-divider":{"path":"./../components/vant/divider/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"71-46":["change"],"71-47":["tap"]}}, handlers: {'71-46': {"change": function proxy () {
+}, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-button":{"path":"./../components/vant/button/index"},"van-row":{"path":"./../components/vant/row/index"},"van-col":{"path":"./../components/vant/col/index"},"van-divider":{"path":"./../components/vant/divider/index"},"van-toast":{"path":"./../components/vant/toast/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"}},"on":{"16-0":["change"],"16-1":["tap"]}}, handlers: {'16-0': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.onChange($event);
       })();
     
-  }},'71-47': {"tap": function proxy (item) {
+  }},'16-1': {"tap": function proxy (item) {
     
     var _vm=this;
       return (function () {
         _vm.ticketGet(item.id);
       })();
     
-  }}}, models: {}, refs: undefined }, {info: {"components":{"van-button":{"path":"./../components/vant/button/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-row":{"path":"./../components/vant/row/index"},"van-col":{"path":"./../components/vant/col/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-divider":{"path":"./../components/vant/divider/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"71-46":["change"],"71-47":["tap"]}}, handlers: {'71-46': {"change": function proxy () {
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-button":{"path":"./../components/vant/button/index"},"van-row":{"path":"./../components/vant/row/index"},"van-col":{"path":"./../components/vant/col/index"},"van-divider":{"path":"./../components/vant/divider/index"},"van-toast":{"path":"./../components/vant/toast/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"}},"on":{"16-0":["change"],"16-1":["tap"]}}, handlers: {'16-0': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.onChange($event);
       })();
     
-  }},'71-47': {"tap": function proxy (item) {
+  }},'16-1': {"tap": function proxy (item) {
     
     var _vm=this;
       return (function () {

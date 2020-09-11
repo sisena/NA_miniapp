@@ -1,4 +1,5 @@
 <template>
+<van-toast id="van-toast" />
 <div>
   {{ showtickets }}
 </div>
@@ -73,6 +74,7 @@
 </template>
 <script>
 import wepy from '@wepy/core'
+import Toast from '../components/vant/toast/toast'
 wepy.page({
   data: {
     activeNames: [''],
@@ -90,6 +92,12 @@ wepy.page({
       // this.ticketid=event.$wx.detail[1]
     },
     ticketDel(e) { // 删单
+      Toast.loading({
+        message: '删除保修单中...',
+        forbidClick: true,
+        mask: true,
+        duration: 0
+      });
       this.ticketid = e
       const _jwt = wx.getStorageSync('jwt')
       const jwt = JSON.parse(_jwt)
@@ -104,20 +112,27 @@ wepy.page({
           'Authorization': `Bearer ${ jwt }`
         },
         success: res => {
-          console.log('DELETE SUCCESS')
+          // console.log('DELETE SUCCESS')
+          Toast.clear()
           wx.redirectTo({
               url: './index'
             }
           )
-
         },
         fail :res => {
-          console.log('DELETE FAIL')
+          Toast('删除失败');
+          // console.log('DELETE FAIL')
         }
       })
     },
     ticketChange(e) { // 更新报修单
       // console.log(e)
+      Toast.loading({
+        message: '正在跳转至指定报修单...',
+        forbidClick: true,
+        mask: true,
+        duration: 0
+      });
       this.ticketid = e
       wx.redirectTo({
         url: '../ticketschange/index?ticketid='+this.ticketid
@@ -125,6 +140,12 @@ wepy.page({
     }
   },
   onLoad: function() {// 加载报修单
+    Toast.loading({
+      message: '报修单祈祷中...',
+      forbidClick: true,
+      mask: true,
+      duration: 0
+    });
     this.getTime=wx.getStorageSync("time")
     const _jwt = wx.getStorageSync('jwt')
     if(_jwt){
@@ -142,12 +163,15 @@ wepy.page({
           if(res.data.data[0]){
             console.log(res.data.data)
             this.datas=res.data.data
+            Toast.clear()
           }else{
             this.showtickets='无报修单'
+            Toast.clear()
           }
         },
         fail :res => {
-          console.log(res)
+          // console.log(res)
+          Toast('加载失败');
         }
       })
     }else{
@@ -171,7 +195,8 @@ wepy.page({
     "van-col": "../components/vant/col/index",
     "van-collapse": "../components/vant/collapse/index",
     "van-divider": "../components/vant/divider/index",
-    "van-collapse-item": "../components/vant/collapse-item/index"
+    "van-collapse-item": "../components/vant/collapse-item/index",
+    "van-toast": "../components/vant/toast/index"
   }
 }
 </config>

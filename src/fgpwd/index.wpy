@@ -20,16 +20,21 @@
         bind:blur="bidGet"
         left-icon="user-o"
       />
+      <van-row>
+        <van-col span="8" offset="8">
+          <van-button type="primary" round plain bind:click="rePage" icon="replay">刷新验证码</van-button>
+        </van-col>
+      </van-row>
       <div style="text-align:center;">
         <img src="{{ b64s }}" />
       </div>
       <van-divider />
       <van-row>
-        <van-col span="8" offset="4">
-          <van-button type="info" round bind:click="bkLogin" icon="arrow-left"></van-button>
+        <van-col span="8" offset="2">
+          <van-button type="info" round plain bind:click="bkLogin" icon="arrow-left">返回登陆</van-button>
         </van-col>
-        <van-col span="8" offset="4">
-          <van-button type="warning" round bind:click="fgPwd" icon="arrow"></van-button>
+        <van-col span="8" offset="5">
+          <van-button type="warning" round plain bind:click="fgPwd" icon="arrow">发送请求</van-button>
         </van-col>
       </van-row>
   </div>
@@ -43,7 +48,8 @@ wepy.page({
     uid: '',
     b64s: '',
     bid: '',
-    captcha: ''
+    captcha: '',
+    second: 5
   },
   methods: {
     uidGet(e) { // 拿到用户的账号
@@ -57,7 +63,18 @@ wepy.page({
         url: "../login/index"
       })
     },
-    fgPwd(){ // 登陆
+    rePage() {
+      wx.redirectTo({
+        url: "./index"
+      })
+    },
+    fgPwd(){ // 忘记密码
+      Toast.loading({
+        message: '正在提交请求...',
+        forbidClick: true,
+        mask: true,
+        duration: 0
+      });  
       wx.request({
         url: this.$app.$options.globalData.urlRequest + '/api/newforget?uid=' + this.uid + '&CaptchaId=' + this.bid + '&Captcha=' + this.captcha,
         method: 'GET',
@@ -65,9 +82,30 @@ wepy.page({
           'content-type':'application/json'
         },
         success: res => {
-          console.log(res)
+          Toast.clear()
+          // console.log(res)
           if(res.data.code == 201){
-            Toast('重置密码邮件已发送，请检查mysise邮箱')
+            const toast = Toast.loading({
+              duration: 0, // 持续展示 toast
+              forbidClick: true,
+              mask: true,
+              message: '重置密码邮件已发送，请检查mysise邮箱',
+              loadingType: 'spinner',
+            });
+            const timer = setInterval(() => {
+              if (this.second) {
+                this.second--;
+                toast.setData({
+                  message: `重置密码邮件已发送，请检查mysise邮箱( ${this.second} )`,
+                });
+              }else{
+                clearInterval(timer);
+                Toast.clear();
+                wx.reLaunch({
+                  url: '../login/index'
+                })
+              }
+            }, 1000);
           }else{
             Toast('请检查学号/验证码是否输入正确')
             console.log('LOGIN FAIL1')

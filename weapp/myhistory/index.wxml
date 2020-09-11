@@ -1,9 +1,11 @@
 
+<van-toast bind_init="_initComponent" id="van-toast"></van-toast>
 <view>
   {{ showtickets }}
 </view>
 <view wx:for="{{ datas }}" wx:for-index="index" wx:for-item="item" wx:key="index">
-<van-collapse bind_init="_initComponent" value="{{ activeNames }}" data-wpy-evt="11-4" bind:change="_proxy">
+<van-collapse bind_init="_initComponent" value="{{ activeNames }}" data-wpy-evt="11-0" bind:change="_proxy">
+  <van-divider borderColor="#6495ed"></van-divider>
   <van-collapse-item bind_init="_initComponent" wx:if="{{ item.status != '未完成' }}" title="{{ item.schedule }}《{{ item.status }}》" name="{{ item.id }}">
     <van-cell-group bind_init="_initComponent">
       <van-cell bind_init="_initComponent" value="{{ item.staff }}" label="维修人" readonly></van-cell>

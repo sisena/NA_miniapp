@@ -1,8 +1,10 @@
 "use strict";
 
-var _core = _interopRequireDefault(require('./../vendor.js')(1));
+var _core = _interopRequireDefault(require('./../vendor.js')(0));
 
 var _toast = _interopRequireDefault(require('./../components/vant/toast/toast.js'));
+
+var _dialog = _interopRequireDefault(require('./../components/vant/dialog/dialog.js'));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -44,7 +46,9 @@ _core["default"].page({
     list: ["上不了网", "更换水晶头", "网络卡顿"],
     activeNames: [],
     oriname: '',
-    schedule: ''
+    schedule: '',
+    titleAll: '',
+    messageAll: ''
   },
   methods: {
     nameGet: function nameGet(e) {
@@ -124,7 +128,14 @@ _core["default"].page({
       var jwt = JSON.parse(_jwt);
 
       if (this.name && this.dormitory && this.phone && this.time && this.title) {
-        // 确认所有空都填写完毕
+        _toast["default"].loading({
+          message: 'wait...',
+          forbidClick: true,
+          mask: true,
+          duration: 0
+        }); // 确认所有空都填写完毕
+
+
         wx.request({
           url: this.$app.$options.globalData.urlRequest + '/api/v1/ticket/createticket',
           method: 'POST',
@@ -142,6 +153,15 @@ _core["default"].page({
             'Authorization': "Bearer ".concat(jwt)
           },
           success: function success(res) {
+            // wx.requestSubscribeMessage({
+            //   tmplIds: ['uoueIiQtZbZecn2zumz1_wbmnBUw6obaePtF-hxebKg'],
+            //   success (res) {
+            //     // console.log(res)
+            //   },
+            //   fail (res) {
+            //     // console.log(res)
+            //   },
+            // })
             wx.redirectTo({
               url: '../ticketsupdate/index'
             });
@@ -169,6 +189,13 @@ _core["default"].page({
     var _this = this;
 
     // 判断用户是否登陆，没有登陆就跳转login指引登陆
+    _toast["default"].loading({
+      message: '报修单祈祷中...',
+      forbidClick: true,
+      mask: true,
+      duration: 0
+    });
+
     var _jwt = wx.getStorageSync('jwt');
 
     if (_jwt) {
@@ -189,6 +216,8 @@ _core["default"].page({
             _this.oriname = res.data.data.name;
             _this.uid = res.data.data.uid;
             _this.dormitory = res.data.data.Address;
+
+            _toast["default"].clear();
           } else {
             wx.redirectTo({
               url: '../login/index'
@@ -240,197 +269,214 @@ _core["default"].page({
         url: '../login/index'
       });
     }
-  }
-}, {info: {"components":{"van-button":{"path":"./../components/vant/button/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-field":{"path":"./../components/vant/field/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-switch":{"path":"./../components/vant/switch/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-panel":{"path":"./../components/vant/panel/index"},"van-row":{"path":"./../components/vant/row/index"},"van-col":{"path":"./../components/vant/col/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-toast":{"path":"./../components/vant/toast/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"9-28":["change"],"9-29":["input"],"9-30":["input"],"9-31":["input"],"9-32":["change"],"9-33":["change"],"9-34":["tap"],"9-35":["input"],"9-36":["change"],"9-37":["change"],"9-38":["tap"],"9-39":["input"],"9-40":["input"],"9-41":["submit"]}}, handlers: {'9-28': {"change": function proxy () {
+
+    _dialog["default"].alert({
+      title: '提示',
+      message: '水管、灯泡、空调、水龙头等宿舍问题请自行前往 <导航网-安全报修-宿舍设施报修> 进行报修，该小程序只提供网络故障报修，非网络故障报修会直接取消，望周知',
+      theme: 'round-button',
+      transition: 'none',
+      asyncClose: true
+    }).then(function () {
+      // on close
+      // 为了防止原生组件覆盖，等到弹窗消失之后再加载
+      _dialog["default"].close();
+
+      setTimeout(function () {
+        _this.titleAll = '请描述你的问题或从上方快速选择', _this.messageAll = '请描述你的问题(可选填)';
+      }, 200);
+    });
+  },
+  onShow: function onShow() {}
+}, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-button":{"path":"./../components/vant/button/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-field":{"path":"./../components/vant/field/index"},"van-switch":{"path":"./../components/vant/switch/index"},"van-dialog":{"path":"./../components/vant/dialog/index"},"van-row":{"path":"./../components/vant/row/index"},"van-col":{"path":"./../components/vant/col/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-toast":{"path":"./../components/vant/toast/index"},"van-panel":{"path":"./../components/vant/panel/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"}},"on":{"9-0":["change"],"9-1":["input"],"9-2":["input"],"9-3":["input"],"9-4":["change"],"9-5":["change"],"9-6":["tap"],"9-7":["input"],"9-8":["change"],"9-9":["change"],"9-10":["tap"],"9-11":["input"],"9-12":["input"],"9-13":["submit"]}}, handlers: {'9-0': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.onCheck($event);
       })();
     
-  }},'9-29': {"input": function proxy () {
+  }},'9-1': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.nameGet($event);
       })();
     
-  }},'9-30': {"input": function proxy () {
+  }},'9-2': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.uidGet($event);
       })();
     
-  }},'9-31': {"input": function proxy () {
+  }},'9-3': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.dormitoryGet($event);
       })();
     
-  }},'9-32': {"change": function proxy () {
+  }},'9-4': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.timeDrop($event);
       })();
     
-  }},'9-33': {"change": function proxy () {
+  }},'9-5': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.timeGet($event);
       })();
     
-  }},'9-34': {"tap": function proxy () {
+  }},'9-6': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.noop($event);
       })();
     
-  }},'9-35': {"input": function proxy () {
+  }},'9-7': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.phoneGet($event);
       })();
     
-  }},'9-36': {"change": function proxy () {
+  }},'9-8': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.downDrop($event);
       })();
     
-  }},'9-37': {"change": function proxy () {
+  }},'9-9': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.quickGet($event);
       })();
     
-  }},'9-38': {"tap": function proxy () {
+  }},'9-10': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.noop($event);
       })();
     
-  }},'9-39': {"input": function proxy () {
+  }},'9-11': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.titleGet($event);
       })();
     
-  }},'9-40': {"input": function proxy () {
+  }},'9-12': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.messageGet($event);
       })();
     
-  }},'9-41': {"submit": function proxy () {
+  }},'9-13': {"submit": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.onSubmit($event);
       })();
     
-  }}}, models: {}, refs: undefined }, {info: {"components":{"van-button":{"path":"./../components/vant/button/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-field":{"path":"./../components/vant/field/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-switch":{"path":"./../components/vant/switch/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-panel":{"path":"./../components/vant/panel/index"},"van-row":{"path":"./../components/vant/row/index"},"van-col":{"path":"./../components/vant/col/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-toast":{"path":"./../components/vant/toast/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"9-28":["change"],"9-29":["input"],"9-30":["input"],"9-31":["input"],"9-32":["change"],"9-33":["change"],"9-34":["tap"],"9-35":["input"],"9-36":["change"],"9-37":["change"],"9-38":["tap"],"9-39":["input"],"9-40":["input"],"9-41":["submit"]}}, handlers: {'9-28': {"change": function proxy () {
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-button":{"path":"./../components/vant/button/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-field":{"path":"./../components/vant/field/index"},"van-switch":{"path":"./../components/vant/switch/index"},"van-dialog":{"path":"./../components/vant/dialog/index"},"van-row":{"path":"./../components/vant/row/index"},"van-col":{"path":"./../components/vant/col/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-toast":{"path":"./../components/vant/toast/index"},"van-panel":{"path":"./../components/vant/panel/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"}},"on":{"9-0":["change"],"9-1":["input"],"9-2":["input"],"9-3":["input"],"9-4":["change"],"9-5":["change"],"9-6":["tap"],"9-7":["input"],"9-8":["change"],"9-9":["change"],"9-10":["tap"],"9-11":["input"],"9-12":["input"],"9-13":["submit"]}}, handlers: {'9-0': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.onCheck($event);
       })();
     
-  }},'9-29': {"input": function proxy () {
+  }},'9-1': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.nameGet($event);
       })();
     
-  }},'9-30': {"input": function proxy () {
+  }},'9-2': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.uidGet($event);
       })();
     
-  }},'9-31': {"input": function proxy () {
+  }},'9-3': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.dormitoryGet($event);
       })();
     
-  }},'9-32': {"change": function proxy () {
+  }},'9-4': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.timeDrop($event);
       })();
     
-  }},'9-33': {"change": function proxy () {
+  }},'9-5': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.timeGet($event);
       })();
     
-  }},'9-34': {"tap": function proxy () {
+  }},'9-6': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.noop($event);
       })();
     
-  }},'9-35': {"input": function proxy () {
+  }},'9-7': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.phoneGet($event);
       })();
     
-  }},'9-36': {"change": function proxy () {
+  }},'9-8': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.downDrop($event);
       })();
     
-  }},'9-37': {"change": function proxy () {
+  }},'9-9': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.quickGet($event);
       })();
     
-  }},'9-38': {"tap": function proxy () {
+  }},'9-10': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.noop($event);
       })();
     
-  }},'9-39': {"input": function proxy () {
+  }},'9-11': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.titleGet($event);
       })();
     
-  }},'9-40': {"input": function proxy () {
+  }},'9-12': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.messageGet($event);
       })();
     
-  }},'9-41': {"submit": function proxy () {
+  }},'9-13': {"submit": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {

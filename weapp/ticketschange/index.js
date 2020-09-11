@@ -1,6 +1,6 @@
 "use strict";
 
-var _core = _interopRequireDefault(require('./../vendor.js')(1));
+var _core = _interopRequireDefault(require('./../vendor.js')(0));
 
 var _toast = _interopRequireDefault(require('./../components/vant/toast/toast.js'));
 
@@ -92,6 +92,13 @@ _core["default"].page({
       var jwt = JSON.parse(_jwt);
 
       if (this.dormitory && this.phone && this.time && this.title && this.message) {
+        _toast["default"].loading({
+          message: 'wait...',
+          forbidClick: true,
+          mask: true,
+          duration: 0
+        });
+
         wx.request({
           url: this.$app.$options.globalData.urlRequest + '/api/v1/ticket/ticketupdate',
           method: 'PUT',
@@ -133,6 +140,13 @@ _core["default"].page({
     var _this = this;
 
     // 拿到对应订单的消息
+    _toast["default"].loading({
+      message: '报修单祈祷中...',
+      forbidClick: true,
+      mask: true,
+      duration: 0
+    });
+
     var _jwt = wx.getStorageSync('jwt');
 
     if (_jwt) {
@@ -156,6 +170,8 @@ _core["default"].page({
             _this.name = res.data.data.name;
             _this.uid = res.data.data.owner;
             _this.ticketid = e.ticketid;
+
+            _toast["default"].clear();
           } else {
             wx.redirectTo({
               url: '../login/index'
@@ -177,6 +193,8 @@ _core["default"].page({
           'Authorization': "Bearer ".concat(jwt)
         },
         success: function success(res) {
+          if (res.data.data.length) {}
+
           for (var i = 0, j = 0; i < res.data.data.length; i++, j++) {
             _this.option1[j].text = res.data.data[i].description;
             _this.option1[j].value = res.data.data[i].id;
@@ -189,7 +207,7 @@ _core["default"].page({
       });
     }
   }
-}, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-icon":{"path":"./../components/vant/icon/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-field":{"path":"./../components/vant/field/index"},"van-toast":{"path":"./../components/vant/toast/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"van-collapse":{"path":"./../components/vant/collapse/index"}},"on":{"13-0":["input"],"13-1":["change"],"13-2":["change"],"13-3":["tap"],"13-4":["input"],"13-5":["input"],"13-6":["input"],"13-7":["submit"]}}, handlers: {'13-0': {"input": function proxy () {
+}, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-field":{"path":"./../components/vant/field/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-toast":{"path":"./../components/vant/toast/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"}},"on":{"13-0":["input"],"13-1":["change"],"13-2":["change"],"13-3":["tap"],"13-4":["input"],"13-5":["input"],"13-6":["input"],"13-7":["submit"]}}, handlers: {'13-0': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
@@ -245,231 +263,7 @@ _core["default"].page({
         _vm.onSubmit($event);
       })();
     
-  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-icon":{"path":"./../components/vant/icon/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-field":{"path":"./../components/vant/field/index"},"van-toast":{"path":"./../components/vant/toast/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"van-collapse":{"path":"./../components/vant/collapse/index"}},"on":{"13-0":["input"],"13-1":["change"],"13-2":["change"],"13-3":["tap"],"13-4":["input"],"13-5":["input"],"13-6":["input"],"13-7":["submit"]}}, handlers: {'13-0': {"input": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.dormitoryGet($event);
-      })();
-    
-  }},'13-1': {"change": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.timeDrop($event);
-      })();
-    
-  }},'13-2': {"change": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.timeGet($event);
-      })();
-    
-  }},'13-3': {"tap": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.noop($event);
-      })();
-    
-  }},'13-4': {"input": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.phoneGet($event);
-      })();
-    
-  }},'13-5': {"input": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.titleGet($event);
-      })();
-    
-  }},'13-6': {"input": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.messageGet($event);
-      })();
-    
-  }},'13-7': {"submit": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.onSubmit($event);
-      })();
-    
-  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-icon":{"path":"./../components/vant/icon/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-field":{"path":"./../components/vant/field/index"},"van-toast":{"path":"./../components/vant/toast/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"van-collapse":{"path":"./../components/vant/collapse/index"}},"on":{"13-0":["input"],"13-1":["change"],"13-2":["change"],"13-3":["tap"],"13-4":["input"],"13-5":["input"],"13-6":["input"],"13-7":["submit"]}}, handlers: {'13-0': {"input": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.dormitoryGet($event);
-      })();
-    
-  }},'13-1': {"change": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.timeDrop($event);
-      })();
-    
-  }},'13-2': {"change": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.timeGet($event);
-      })();
-    
-  }},'13-3': {"tap": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.noop($event);
-      })();
-    
-  }},'13-4': {"input": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.phoneGet($event);
-      })();
-    
-  }},'13-5': {"input": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.titleGet($event);
-      })();
-    
-  }},'13-6': {"input": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.messageGet($event);
-      })();
-    
-  }},'13-7': {"submit": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.onSubmit($event);
-      })();
-    
-  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-icon":{"path":"./../components/vant/icon/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-field":{"path":"./../components/vant/field/index"},"van-toast":{"path":"./../components/vant/toast/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"van-collapse":{"path":"./../components/vant/collapse/index"}},"on":{"13-0":["input"],"13-1":["change"],"13-2":["change"],"13-3":["tap"],"13-4":["input"],"13-5":["input"],"13-6":["input"],"13-7":["submit"]}}, handlers: {'13-0': {"input": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.dormitoryGet($event);
-      })();
-    
-  }},'13-1': {"change": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.timeDrop($event);
-      })();
-    
-  }},'13-2': {"change": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.timeGet($event);
-      })();
-    
-  }},'13-3': {"tap": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.noop($event);
-      })();
-    
-  }},'13-4': {"input": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.phoneGet($event);
-      })();
-    
-  }},'13-5': {"input": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.titleGet($event);
-      })();
-    
-  }},'13-6': {"input": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.messageGet($event);
-      })();
-    
-  }},'13-7': {"submit": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.onSubmit($event);
-      })();
-    
-  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-icon":{"path":"./../components/vant/icon/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-field":{"path":"./../components/vant/field/index"},"van-toast":{"path":"./../components/vant/toast/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"van-collapse":{"path":"./../components/vant/collapse/index"}},"on":{"13-0":["input"],"13-1":["change"],"13-2":["change"],"13-3":["tap"],"13-4":["input"],"13-5":["input"],"13-6":["input"],"13-7":["submit"]}}, handlers: {'13-0': {"input": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.dormitoryGet($event);
-      })();
-    
-  }},'13-1': {"change": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.timeDrop($event);
-      })();
-    
-  }},'13-2': {"change": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.timeGet($event);
-      })();
-    
-  }},'13-3': {"tap": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.noop($event);
-      })();
-    
-  }},'13-4': {"input": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.phoneGet($event);
-      })();
-    
-  }},'13-5': {"input": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.titleGet($event);
-      })();
-    
-  }},'13-6': {"input": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.messageGet($event);
-      })();
-    
-  }},'13-7': {"submit": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.onSubmit($event);
-      })();
-    
-  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-icon":{"path":"./../components/vant/icon/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-field":{"path":"./../components/vant/field/index"},"van-toast":{"path":"./../components/vant/toast/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"van-collapse":{"path":"./../components/vant/collapse/index"}},"on":{"13-0":["input"],"13-1":["change"],"13-2":["change"],"13-3":["tap"],"13-4":["input"],"13-5":["input"],"13-6":["input"],"13-7":["submit"]}}, handlers: {'13-0': {"input": function proxy () {
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-field":{"path":"./../components/vant/field/index"},"van-cell-group":{"path":"./../components/vant/cell-group/index"},"van-toast":{"path":"./../components/vant/toast/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-submit-bar":{"path":"./../components/vant/submit-bar/index"},"van-checkbox":{"path":"./../components/vant/checkbox/index"},"van-checkbox-group":{"path":"./../components/vant/checkbox-group/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"}},"on":{"13-0":["input"],"13-1":["change"],"13-2":["change"],"13-3":["tap"],"13-4":["input"],"13-5":["input"],"13-6":["input"],"13-7":["submit"]}}, handlers: {'13-0': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {

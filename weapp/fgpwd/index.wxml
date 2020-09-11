@@ -6,16 +6,21 @@
       <van-field bind_init="_initComponent" value="{{ uid }}" placeholder="请输入学号/工号" clearable border="{{ false }}" left-icon="user-o" data-wpy-evt="15-0" bind:blur="_proxy"></van-field>
     <van-divider bind_init="_initComponent"></van-divider>
     <van-field bind_init="_initComponent" value="{{ captcha }}" placeholder="验证码" clearable border="{{ false }}" left-icon="user-o" data-wpy-evt="15-1" bind:blur="_proxy"></van-field>
+    <van-row bind_init="_initComponent">
+      <van-col bind_init="_initComponent" span="8" offset="8">
+        <van-button bind_init="_initComponent" type="primary" round plain icon="replay" data-wpy-evt="15-2" bind:tap="_proxy">刷新验证码</van-button>
+      </van-col>
+    </van-row>
     <view style="text-align:center;">
       <image src="{{ b64s }}"></image>
     </view>
     <van-divider bind_init="_initComponent"></van-divider>
     <van-row bind_init="_initComponent">
-      <van-col bind_init="_initComponent" span="8" offset="4">
-        <van-button bind_init="_initComponent" type="info" round icon="arrow-left" data-wpy-evt="15-2" bind:tap="_proxy"></van-button>
+      <van-col bind_init="_initComponent" span="8" offset="2">
+        <van-button bind_init="_initComponent" type="info" round plain icon="arrow-left" data-wpy-evt="15-3" bind:tap="_proxy">返回登陆</van-button>
       </van-col>
-      <van-col bind_init="_initComponent" span="8" offset="4">
-        <van-button bind_init="_initComponent" type="warning" round icon="arrow" data-wpy-evt="15-3" bind:tap="_proxy"></van-button>
+      <van-col bind_init="_initComponent" span="8" offset="5">
+        <van-button bind_init="_initComponent" type="warning" round plain icon="arrow" data-wpy-evt="15-4" bind:tap="_proxy">发送请求</van-button>
       </van-col>
     </van-row>
 </view>

@@ -1,25 +1,26 @@
 
+<van-toast bind_init="_initComponent" id="van-toast"></van-toast>
 <view>
   {{ showtickets }}
 </view>
-<van-dialog bind_init="_initComponent" use-slot show="{{ showdialog }}" show-cancel-button title="在这里回复噢" data-wpy-evt="72-258" bind:cancel="_proxy" bind:confirm="_proxy">
-    <van-collapse bind_init="_initComponent" value="{{ pickerNames }}" data-wpy-evt="72-260" bind:change="_proxy">
+<van-dialog bind_init="_initComponent" use-slot show="{{ showdialog }}" show-cancel-button title="在这里回复噢" data-wpy-evt="17-0" bind:cancel="_proxy" bind:confirm="_proxy">
+    <van-collapse bind_init="_initComponent" value="{{ pickerNames }}" data-wpy-evt="17-2" bind:change="_proxy">
     <van-collapse-item bind_init="_initComponent" icon="logistics" title="快速选择回复" name="1">
-        <van-radio-group bind_init="_initComponent" value="{{ quick }}" max="{{ 1 }}" data-wpy-evt="72-261" bind:change="_proxy">
+        <van-radio-group bind_init="_initComponent" value="{{ quick }}" max="{{ 1 }}" data-wpy-evt="17-3" bind:change="_proxy">
         <van-cell-group>
             <van-cell bind_init="_initComponent" wx:for="{{ list }}" wx:key="index" title="{{ item }}" data-index="{{ index }}">
-            <van-radio bind_init="_initComponent" name="{{ item }}" data-wpy-evt="72-262" catch:tap="_proxy" class="radioboxes-{{ index }}"></van-radio>
+            <van-radio bind_init="_initComponent" name="{{ item }}" data-wpy-evt="17-4" catch:tap="_proxy" class="radioboxes-{{ index }}"></van-radio>
             </van-cell>
         </van-cell-group>
         </van-radio-group>
     </van-collapse-item>
     </van-collapse>
-    <van-field bind_init="_initComponent" value="{{ reply }}" type="textarea" placeholder="请输入回复" autosize border="{{ true }}" data-wpy-evt="72-263" bind:input="_proxy"></van-field>
+    <van-field bind_init="_initComponent" value="{{ reply }}" type="textarea" placeholder="请输入回复" autosize border="{{ true }}" data-wpy-evt="17-5" bind:input="_proxy"></van-field>
 </van-dialog>
 <view wx:for="{{ datas }}" wx:for-index="index" wx:for-item="item" wx:key="index">
-<van-collapse bind_init="_initComponent" value="{{ activeNames }}" data-wpy-evt="72-264" bind:change="_proxy">
+<van-collapse bind_init="_initComponent" value="{{ activeNames }}" data-wpy-evt="17-6" bind:change="_proxy">
   <van-divider bind_init="_initComponent" borderColor="#6495ed"></van-divider>
-  <van-collapse-item bind_init="_initComponent" icon="todo-list-o" title="{{ item.schedule }}《{{ item.status }}》" name="{{ item.id }}">
+  <van-collapse-item bind_init="_initComponent" icon="todo-list-o" title="{{ item.schedule }}《{{ item.destination }}》\n{{ item.status }}" name="{{ item.id }}">
       <van-cell bind_init="_initComponent" value="{{ item.name }}" icon="user-o" label="报修人" readonly></van-cell>
       <van-cell bind_init="_initComponent" value="{{ item.owner }}" icon="user-circle-o" label="报修人学号" readonly></van-cell>
       <van-cell bind_init="_initComponent" value="{{ item.phone }}" icon="phone-o" label="报修人电话" readonly></van-cell>
@@ -30,10 +31,10 @@
       <van-cell bind_init="_initComponent" wx:if="{{ item.status == '维修完成' }}" value="{{ item.reply }}" label="回复" type="textarea" autosize readonly></van-cell>
       <van-row bind_init="_initComponent" wx:if="{{ item.status != '维修完成' }}">
         <van-col bind_init="_initComponent" span="8" offset="2">
-          <van-button bind_init="_initComponent" type="danger" round plain icon="cross" data-wpy-evt="72-265" bind:tap="_proxy" data-wpytap-a="{{ item }}">退单</van-button>
+          <van-button bind_init="_initComponent" type="danger" round plain icon="cross" data-wpy-evt="17-7" bind:tap="_proxy" data-wpytap-a="{{ item }}">退单</van-button>
         </van-col>
         <van-col bind_init="_initComponent" span="8" offset="6">
-          <van-button bind_init="_initComponent" type="primary" round plain icon="success" data-wpy-evt="72-266" bind:tap="_proxy" data-wpytap-a="{{ item }}">消单</van-button>
+          <van-button bind_init="_initComponent" type="primary" round plain icon="success" data-wpy-evt="17-8" bind:tap="_proxy" data-wpytap-a="{{ item }}">消单</van-button>
         </van-col>
       </van-row>
   </van-collapse-item>

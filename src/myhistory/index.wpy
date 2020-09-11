@@ -1,9 +1,11 @@
 <template>
+<van-toast id="van-toast" />
 <div>
   {{ showtickets }}
 </div>
 <div v-for="item in datas">
 <van-collapse value="{{ activeNames }}" bind:change="onChange">
+  <van-divider borderColor="#6495ed" />
   <van-collapse-item v-if="item.status != '未完成'" title="{{ item.schedule }}《{{ item.status }}》" name="{{ item.id }}">
     <van-cell-group>
       <van-cell 
@@ -65,6 +67,7 @@
 </template>
 <script>
 import wepy from '@wepy/core'
+import Toast from '../components/vant/toast/toast'
 wepy.page({
   data: {
     activeNames: [''],
@@ -82,6 +85,12 @@ wepy.page({
     }
   },
   onLoad: function() {
+    Toast.loading({
+      message: '报修单祈祷中...',
+      forbidClick: true,
+      mask: true,
+      duration: 0
+    });
     const _jwt = wx.getStorageSync('jwt')
     if(_jwt){
       const jwt = JSON.parse(_jwt)
@@ -97,7 +106,7 @@ wepy.page({
           'Authorization': `Bearer ${ jwt }`
         },
         success: res => {
-          console.log(res)
+          // console.log(res)
           if(res.data.data[0]){
             for(var i=0,j=0;i<res.data.data.length;i++)
               {
@@ -105,9 +114,11 @@ wepy.page({
                 j++
               } 
             this.datas=this.datassave
-            console.log(this.datas)
+            // console.log(this.datas)
+            Toast.clear()
           }else{
             this.showtickets='无报修单'
+            Toast.clear()
           }
         },
         fail :res => {
@@ -132,7 +143,8 @@ wepy.page({
     "ttabbar": "../components/tabbar",
     "van-cell": "../components/vant/cell/index",
     "van-collapse": "../components/vant/collapse/index",
-    "van-collapse-item": "../components/vant/collapse-item/index"
+    "van-collapse-item": "../components/vant/collapse-item/index",
+    "van-toast": "../components/vant/toast/index"
   }
 }
 </config>

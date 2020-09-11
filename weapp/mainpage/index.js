@@ -1,6 +1,6 @@
 "use strict";
 
-var _core = _interopRequireDefault(require('./../vendor.js')(1));
+var _core = _interopRequireDefault(require('./../vendor.js')(0));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -61,10 +61,10 @@ _core["default"].page({
           if (res.statusCode == 200) {
             // console.log(res)
             if (res.data.data[0] && res.data.data[1]) {
-              _this.news1 = res.data.data[res.data.data.length - 1].title + '=>' + res.data.data[res.data.data.length - 1].text;
-              _this.news2 = res.data.data[res.data.data.length - 2].title + '=>' + res.data.data[res.data.data.length - 2].text;
+              _this.news1 = res.data.data[res.data.data.length - 1].title + '>:' + res.data.data[res.data.data.length - 1].text;
+              _this.news2 = res.data.data[res.data.data.length - 2].title + '>:' + res.data.data[res.data.data.length - 2].text;
             } else if (res.data.data[0]) {
-              _this.news1 = res.data.data[res.data.data[0].length - 1].title + '=>' + res.data.data[res.data.data.length - 1].text;
+              _this.news1 = res.data.data[res.data.data[0].length - 1].title + '>:' + res.data.data[res.data.data.length - 1].text;
               _this.news2 = "只有这一条公告啦";
             } else {
               _this.news1 = "没有公告啦";
@@ -104,12 +104,18 @@ _core["default"].page({
 
     var _jwt = wx.getStorageSync('jwt');
 
-    var jwt = JSON.parse(_jwt);
+    if (_jwt) {
+      var jwt = JSON.parse(_jwt);
 
-    if (jwtDecode(jwt).rolename == 'admin' || jwtDecode(jwt).rolename == 'staff') {
-      this.display = ''; // console.log('readyaaa')
+      if (jwtDecode(jwt).rolename == 'admin' || jwtDecode(jwt).rolename == 'staff') {
+        this.display = ''; // console.log('readyaaa')
+      } else {
+        this.display = 'None'; // console.log('Notready')
+      }
     } else {
-      this.display = 'None'; // console.log('Notready')
+      wx.redirectTo({
+        url: '../login/index'
+      });
     }
   }
-}, {info: {"components":{"van-button":{"path":"./../components/vant/button/index"},"van-grid":{"path":"./../components/vant/grid/index"},"van-grid-item":{"path":"./../components/vant/grid-item/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-dialog":{"path":"./../components/vant/dialog/index"},"van-notice-bar":{"path":"./../components/vant/notice-bar/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{}}, handlers: {}, models: {}, refs: undefined }, {info: {"components":{"van-button":{"path":"./../components/vant/button/index"},"van-grid":{"path":"./../components/vant/grid/index"},"van-grid-item":{"path":"./../components/vant/grid-item/index"},"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-dialog":{"path":"./../components/vant/dialog/index"},"van-notice-bar":{"path":"./../components/vant/notice-bar/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{}}, handlers: {}, models: {}, refs: undefined });
+}, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-button":{"path":"./../components/vant/button/index"},"van-grid":{"path":"./../components/vant/grid/index"},"van-grid-item":{"path":"./../components/vant/grid-item/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-dialog":{"path":"./../components/vant/dialog/index"},"van-notice-bar":{"path":"./../components/vant/notice-bar/index"}},"on":{}}, handlers: {}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-button":{"path":"./../components/vant/button/index"},"van-grid":{"path":"./../components/vant/grid/index"},"van-grid-item":{"path":"./../components/vant/grid-item/index"},"van-icon":{"path":"./../components/vant/icon/index"},"van-dialog":{"path":"./../components/vant/dialog/index"},"van-notice-bar":{"path":"./../components/vant/notice-bar/index"}},"on":{}}, handlers: {}, models: {}, refs: undefined });

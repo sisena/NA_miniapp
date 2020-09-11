@@ -2,6 +2,7 @@
 </style>
 <template>
 <view>
+<van-toast id="van-toast" />
 <div style="text-align:center"><b>{{ Nonotice }}</b></div>
 <van-panel v-for="item in notice">
   <view slot="header">
@@ -22,6 +23,7 @@
 </template>
 <script>
 import wepy from '@wepy/core'
+import Toast from '../components/vant/toast/toast'
 wepy.page({
   data: {
     notice: [],
@@ -36,6 +38,12 @@ wepy.page({
   computed: {
   },
   onLoad: function (e) { // 拿到公告
+    Toast.loading({
+      message: '公告祈祷中...',
+      forbidClick: true,
+      mask: true,
+      duration: 0
+    });  
     const _jwt = wx.getStorageSync('jwt')
     if(_jwt){
       const jwt = JSON.parse(_jwt)
@@ -61,6 +69,7 @@ wepy.page({
             }else{
               this.Nonotice = "现在没有公告"
             }
+          Toast.clear()
           }else{
             wx.redirectTo({
               url: '../login/index'
@@ -94,7 +103,8 @@ wepy.page({
     "ttabbar": "../components/tabbar",
     "van-panel": "../components/vant/panel/index",
     "van-button": "../components/vant/button/index",
-    "van-divider": "../components/vant/divider/index"
+    "van-divider": "../components/vant/divider/index",
+    "van-toast": "../components/vant/toast/index"
   }
 }
 </config>

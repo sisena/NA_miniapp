@@ -1,8 +1,10 @@
 "use strict";
 
-var _core = _interopRequireDefault(require('./../vendor.js')(1));
+var _core = _interopRequireDefault(require('./../vendor.js')(0));
 
 var _dialog = _interopRequireDefault(require('./../components/vant/dialog/dialog.js'));
+
+var _toast = _interopRequireDefault(require('./../components/vant/toast/toast.js'));
 
 var _data;
 
@@ -37,6 +39,13 @@ _core["default"].page({
     ticketComplete: function ticketComplete() {
       // console.log(this.reply)
       // console.log(this.ticketid)
+      _toast["default"].loading({
+        message: 'wait...',
+        forbidClick: true,
+        mask: true,
+        duration: 0
+      });
+
       var _jwt = wx.getStorageSync('jwt');
 
       var jwt = JSON.parse(_jwt);
@@ -85,6 +94,13 @@ _core["default"].page({
     noop: function noop() {},
     // 摆设
     ticketReturn: function ticketReturn(e) {
+      _toast["default"].loading({
+        message: 'wait...',
+        forbidClick: true,
+        mask: true,
+        duration: 0
+      });
+
       this.ticketid = e;
 
       var _jwt = wx.getStorageSync('jwt');
@@ -115,6 +131,13 @@ _core["default"].page({
     var _this = this;
 
     // 加载未修单
+    _toast["default"].loading({
+      message: '报修单祈祷中...',
+      forbidClick: true,
+      mask: true,
+      duration: 0
+    });
+
     var _jwt = wx.getStorageSync('jwt');
 
     if (_jwt) {
@@ -131,19 +154,20 @@ _core["default"].page({
           'Authorization': "Bearer ".concat(jwt)
         },
         success: function success(res) {
-          console.log(res);
-
+          // console.log(res)
           if (res.data.data[0]) {
-            console.log(res.data.data);
+            // console.log(res.data.data)
             _this.datas = res.data.data;
+
+            _toast["default"].clear();
           } else {
             _this.showtickets = '无未修单';
-          }
 
-          console.log(res);
+            _toast["default"].clear();
+          } // console.log(res)
+
         },
-        fail: function fail(res) {
-          console.log(res);
+        fail: function fail(res) {// console.log(res)
         }
       });
     } else {
@@ -152,7 +176,7 @@ _core["default"].page({
       });
     }
   }
-}, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-button":{"path":"./../components/vant/button/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-col":{"path":"./../components/vant/col/index"},"van-row":{"path":"./../components/vant/row/index"},"van-dialog":{"path":"./../components/vant/dialog/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-divider":{"path":"./../components/vant/divider/index"},"van-field":{"path":"./../components/vant/field/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"72-258":["cancel","confirm"],"72-260":["change"],"72-261":["change"],"72-262":["tap"],"72-263":["input"],"72-264":["change"],"72-265":["tap"],"72-266":["tap"]}}, handlers: {'72-258': {"cancel": function proxy () {
+}, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-button":{"path":"./../components/vant/button/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-field":{"path":"./../components/vant/field/index"},"van-dialog":{"path":"./../components/vant/dialog/index"},"van-row":{"path":"./../components/vant/row/index"},"van-col":{"path":"./../components/vant/col/index"},"van-divider":{"path":"./../components/vant/divider/index"},"van-toast":{"path":"./../components/vant/toast/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"}},"on":{"17-0":["cancel","confirm"],"17-2":["change"],"17-3":["change"],"17-4":["tap"],"17-5":["input"],"17-6":["change"],"17-7":["tap"],"17-8":["tap"]}}, handlers: {'17-0': {"cancel": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
@@ -166,56 +190,56 @@ _core["default"].page({
         _vm.ticketComplete($event);
       })();
     
-  }},'72-260': {"change": function proxy () {
+  }},'17-2': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.downDrop($event);
       })();
     
-  }},'72-261': {"change": function proxy () {
+  }},'17-3': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.quickGet($event);
       })();
     
-  }},'72-262': {"tap": function proxy () {
+  }},'17-4': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.noop($event);
       })();
     
-  }},'72-263': {"input": function proxy () {
+  }},'17-5': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.replyGet($event);
       })();
     
-  }},'72-264': {"change": function proxy () {
+  }},'17-6': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.onChange($event);
       })();
     
-  }},'72-265': {"tap": function proxy (item) {
+  }},'17-7': {"tap": function proxy (item) {
     
     var _vm=this;
       return (function () {
         _vm.ticketReturn(item.id);
       })();
     
-  }},'72-266': {"tap": function proxy (item) {
+  }},'17-8': {"tap": function proxy (item) {
     
     var _vm=this;
       return (function () {
         _vm.ticketReply(item.id);
       })();
     
-  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-button":{"path":"./../components/vant/button/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"van-col":{"path":"./../components/vant/col/index"},"van-row":{"path":"./../components/vant/row/index"},"van-dialog":{"path":"./../components/vant/dialog/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-divider":{"path":"./../components/vant/divider/index"},"van-field":{"path":"./../components/vant/field/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"ttabbar":{"path":"./../components/tabbar"}},"on":{"72-258":["cancel","confirm"],"72-260":["change"],"72-261":["change"],"72-262":["tap"],"72-263":["input"],"72-264":["change"],"72-265":["tap"],"72-266":["tap"]}}, handlers: {'72-258': {"cancel": function proxy () {
+  }}}, models: {}, refs: undefined }, {info: {"components":{"van-tabbar":{"path":"./../components/vant/tabbar/index"},"van-tabbar-item":{"path":"./../components/vant/tabbar-item/index"},"ttabbar":{"path":"./../components/tabbar"},"van-button":{"path":"./../components/vant/button/index"},"van-dropdown-item":{"path":"./../components/vant/dropdown-item/index"},"van-dropdown-menu":{"path":"./../components/vant/dropdown-menu/index"},"van-field":{"path":"./../components/vant/field/index"},"van-dialog":{"path":"./../components/vant/dialog/index"},"van-row":{"path":"./../components/vant/row/index"},"van-col":{"path":"./../components/vant/col/index"},"van-divider":{"path":"./../components/vant/divider/index"},"van-toast":{"path":"./../components/vant/toast/index"},"van-cell":{"path":"./../components/vant/cell/index"},"van-radio-group":{"path":"./../components/vant/radio-group/index"},"van-radio":{"path":"./../components/vant/radio/index"},"van-collapse":{"path":"./../components/vant/collapse/index"},"van-collapse-item":{"path":"./../components/vant/collapse-item/index"}},"on":{"17-0":["cancel","confirm"],"17-2":["change"],"17-3":["change"],"17-4":["tap"],"17-5":["input"],"17-6":["change"],"17-7":["tap"],"17-8":["tap"]}}, handlers: {'17-0': {"cancel": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
@@ -229,49 +253,49 @@ _core["default"].page({
         _vm.ticketComplete($event);
       })();
     
-  }},'72-260': {"change": function proxy () {
+  }},'17-2': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.downDrop($event);
       })();
     
-  }},'72-261': {"change": function proxy () {
+  }},'17-3': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.quickGet($event);
       })();
     
-  }},'72-262': {"tap": function proxy () {
+  }},'17-4': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.noop($event);
       })();
     
-  }},'72-263': {"input": function proxy () {
+  }},'17-5': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.replyGet($event);
       })();
     
-  }},'72-264': {"change": function proxy () {
+  }},'17-6': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.onChange($event);
       })();
     
-  }},'72-265': {"tap": function proxy (item) {
+  }},'17-7': {"tap": function proxy (item) {
     
     var _vm=this;
       return (function () {
         _vm.ticketReturn(item.id);
       })();
     
-  }},'72-266': {"tap": function proxy (item) {
+  }},'17-8': {"tap": function proxy (item) {
     
     var _vm=this;
       return (function () {

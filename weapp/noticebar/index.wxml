@@ -1,5 +1,6 @@
 
 <view>
+<van-toast bind_init="_initComponent" id="van-toast"></van-toast>
 <view style="text-align:center;"><view>{{ Nonotice }}</view></view>
 <van-panel bind_init="_initComponent" wx:for="{{ notice }}" wx:for-index="index" wx:for-item="item" wx:key="index">
   <view slot="header">

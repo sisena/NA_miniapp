@@ -41,6 +41,7 @@
       <van-button type="danger" round plain bind:click="logOut" icon="cross">注销</van-button>
     </van-col>
   </van-row>
+  <div style="height: 5rem;"></div>
 </div>
   <ttabbar v-bind:activeIndex="1"></ttabbar>
 </template>

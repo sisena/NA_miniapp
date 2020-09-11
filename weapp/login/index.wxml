@@ -3,16 +3,16 @@
     <van-toast bind_init="_initComponent" id="van-toast"></van-toast>
     <view style="text-align:center;"><image src="https://cdn.jsdelivr.net/gh/tydaytygx/NA/NA_icon_report_1080_.png"></image></view>
     <van-divider bind_init="_initComponent" customStyle="color: #1989fa; border-color: #1989fa; font-size: 18px;"></van-divider>
-      <van-field bind_init="_initComponent" value="{{ uid }}" placeholder="请输入学号/工号" clearable border="{{ false }}" left-icon="user-o" data-wpy-evt="7-16" bind:blur="_proxy"></van-field>
+      <van-field bind_init="_initComponent" value="{{ uid }}" placeholder="请输入学号/工号" clearable border="{{ false }}" left-icon="user-o" data-wpy-evt="7-0" bind:blur="_proxy"></van-field>
     <van-divider bind_init="_initComponent"></van-divider>
-    <van-field bind_init="_initComponent" value="{{ password }}" placeholder="请输入密码" password border="{{ false }}" left-icon="warn-o" data-wpy-evt="7-17" bind:blur="_proxy"></van-field>
+    <van-field bind_init="_initComponent" value="{{ password }}" placeholder="请输入密码" password border="{{ false }}" left-icon="warn-o" data-wpy-evt="7-1" bind:blur="_proxy"></van-field>
     <van-divider bind_init="_initComponent"></van-divider>
     <van-row bind_init="_initComponent">
       <van-col bind_init="_initComponent" span="8" offset="2">
-        <van-button bind_init="_initComponent" type="warning" round plain icon="fail" data-wpy-evt="7-18" bind:tap="_proxy">忘记密码</van-button>
+        <van-button bind_init="_initComponent" type="warning" round plain icon="fail" data-wpy-evt="7-2" bind:tap="_proxy">忘记密码</van-button>
       </van-col>
       <van-col bind_init="_initComponent" span="8" offset="4">
-        <van-button bind_init="_initComponent" type="info" round plain icon="arrow" data-wpy-evt="7-19" bind:tap="_proxy">点击登陆</van-button>
+        <van-button bind_init="_initComponent" type="info" round plain icon="arrow" data-wpy-evt="7-3" bind:tap="_proxy">点击登陆</van-button>
       </van-col>
     </van-row>
 </view>

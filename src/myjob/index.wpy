@@ -1,4 +1,5 @@
 <template>
+<van-toast id="van-toast" />
 <div>
   {{ showtickets }}
 </div>
@@ -42,7 +43,7 @@
 <div v-for="item in datas">
 <van-collapse value="{{ activeNames }}" bind:change="onChange">
   <van-divider borderColor="#6495ed" />
-  <van-collapse-item icon="todo-list-o" title="{{ item.schedule }}《{{ item.status }}》" name="{{ item.id }}">
+  <van-collapse-item icon="todo-list-o" title="{{ item.schedule }}《{{ item.destination }}》\n{{ item.status }}" name="{{ item.id }}">
       <van-cell
       value="{{ item.name }}"
       icon="user-o"
@@ -112,6 +113,7 @@
 <script>
 import wepy from '@wepy/core'
 import Dialog from '../components/vant/dialog/dialog'
+import Toast from '../components/vant/toast/toast'
 wepy.page({
   data: {
     activeNames: [''],
@@ -148,6 +150,12 @@ wepy.page({
     ticketComplete() {
         // console.log(this.reply)
         // console.log(this.ticketid)
+        Toast.loading({
+          message: 'wait...',
+          forbidClick: true,
+          mask: true,
+          duration: 0
+        });
         const _jwt = wx.getStorageSync('jwt')
         const jwt = JSON.parse(_jwt)
         wx.request({
@@ -193,6 +201,12 @@ wepy.page({
     },
     noop() { },// 摆设
     ticketReturn(e) {
+        Toast.loading({
+          message: 'wait...',
+          forbidClick: true,
+          mask: true,
+          duration: 0
+        });
         this.ticketid = e
         const _jwt = wx.getStorageSync('jwt')
         const jwt = JSON.parse(_jwt)
@@ -218,6 +232,12 @@ wepy.page({
     }
   },
   onLoad: function() {// 加载未修单
+    Toast.loading({
+      message: '报修单祈祷中...',
+      forbidClick: true,
+      mask: true,
+      duration: 0
+    });
     const _jwt = wx.getStorageSync('jwt')
     if(_jwt){
       const jwt = JSON.parse(_jwt)
@@ -233,17 +253,19 @@ wepy.page({
           'Authorization': `Bearer ${ jwt }`
         },
         success: res => {
-            console.log(res)
+            // console.log(res)
           if(res.data.data[0]){
-            console.log(res.data.data)
+            // console.log(res.data.data)
             this.datas=res.data.data
+            Toast.clear()
           }else{
             this.showtickets='无未修单'
+            Toast.clear()
           }
-            console.log(res)
+            // console.log(res)
         },
         fail :res => {
-          console.log(res)
+          // console.log(res)
         }
       })
     }else{
@@ -273,7 +295,9 @@ wepy.page({
     "van-dropdown-menu": "../components/vant/dropdown-menu/index",
     "van-dropdown-item": "../components/vant/dropdown-item/index",
     "van-radio-group": "../components/vant/radio-group/index",
-    "van-collapse-item": "../components/vant/collapse-item/index"
+    "van-collapse-item": "../components/vant/collapse-item/index",
+    "van-toast": "../components/vant/toast/index"
+
   }
 }
 </config>

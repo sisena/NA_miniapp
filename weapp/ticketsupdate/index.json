@@ -2,15 +2,16 @@
     "navigationBarTitleText": "修改报修单",
     "component": true,
     "usingComponents": {
-        "van-button": "./../components/vant/button/index",
         "van-tabbar": "./../components/vant/tabbar/index",
         "van-tabbar-item": "./../components/vant/tabbar-item/index",
-        "van-cell": "./../components/vant/cell/index",
-        "van-collapse": "./../components/vant/collapse/index",
-        "van-collapse-item": "./../components/vant/collapse-item/index",
         "ttabbar": "./../components/tabbar",
+        "van-button": "./../components/vant/button/index",
         "van-row": "./../components/vant/row/index",
         "van-col": "./../components/vant/col/index",
-        "van-divider": "./../components/vant/divider/index"
+        "van-divider": "./../components/vant/divider/index",
+        "van-toast": "./../components/vant/toast/index",
+        "van-cell": "./../components/vant/cell/index",
+        "van-collapse": "./../components/vant/collapse/index",
+        "van-collapse-item": "./../components/vant/collapse-item/index"
     }
 }
