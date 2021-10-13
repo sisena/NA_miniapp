@@ -107,20 +107,24 @@ wepy.page({
         },
         success: res => {
           // console.log(res)
-          if(res.data.data[0]){
-            for(var i=0,j=0;i<res.data.data.length;i++)
+          if(res.data.code == '200') { // 判断是否拿到了数据
+            if(res.data.data){ // 这人不会没报过修叭
+              for(var i=0,j=0;i<res.data.data.length;i++)
               {
                 this.datassave[j]=res.data.data[i]
                 j++
-              } 
-            this.datas=this.datassave
-            // console.log(this.datas)
-            Toast.clear()
-          }else{
-            this.showtickets='无报修单'
-            Toast.clear()
+              }
+              if(this.datassave.length > 0){ //报的单还在修着
+                this.datas=this.datassave
+              } else {
+                this.showtickets='无报修单'
+              }
+              Toast.clear()
+            }else{ // 还真没报过
+              this.showtickets='无报修单'
+              Toast.clear()
           }
-        },
+        }},
         fail :res => {
           console.log(res)
         }
