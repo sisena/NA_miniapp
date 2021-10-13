@@ -244,11 +244,14 @@ wepy.page({
           //     // console.log(res)
           //   },
           // })
-          wx.redirectTo({
+          if(res.data.code == 201) { //判断是否新增成功，不成功显示错误信息
+            wx.redirectTo({
               url: '../ticketsupdate/index'
-            }
-          )
-          console.log('YES')
+            })
+            console.log('YES')
+            } else {
+            Toast.fail(res.data.message)
+          }
         },
         fail: res=>{
           console.log('FAIL')
@@ -288,7 +291,7 @@ wepy.page({
           'Authorization': `Bearer ${ jwt }`
         },
         success: res=>{
-          if(res.statusCode == 200){
+          if(res.data.code == 200){
             this.name=res.data.data.name
             this.oriname=res.data.data.name
             this.uid=res.data.data.uid
@@ -304,25 +307,6 @@ wepy.page({
           console.log('Timeout')
         }
       })
-    wx.request({
-        url: this.$app.$options.globalData.urlRequest + '/api/v1/schedule/getavailschedules',
-        method: 'GET',
-        data: {
-          jwt: this.jwt
-        },
-        header:{
-          'Authorization': `Bearer ${ jwt }`
-        },
-        success: res=>{
-          // console.log(res.data[1].data[0].description)
-          if(res.data.data[0].description == "当前为假期暂不开放"){
-            console.log(res)
-            wx.redirectTo({
-              url: '../mainpage/index'
-            })
-          }
-        }
-    })
     wx.request({ // 从后台拿允许的报修时间
       url: this.$app.$options.globalData.urlRequest + '/api/v1/schedule/getavailschedules',
       method: 'GET',
@@ -333,11 +317,15 @@ wepy.page({
         'Authorization': `Bearer ${ jwt }`
       },
       success: res=>{
+        if(res.data.code == 200) {
         for (var i=0,j=0;i<res.data.data.length;i++,j++)
           {   
               this.option1[j].text=res.data.data[i].description
               this.option1[j].value=res.data.data[i].id
           }
+        }else {
+          Toast.fail(res.data.message)
+        }
       }
     })
     }else{
