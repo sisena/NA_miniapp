@@ -163,11 +163,14 @@ wepy.page({
           'Authorization': `Bearer ${ jwt }`
         },
         success: res=>{
-          wx.redirectTo({
+          if(res.data.code == 204) {
+             wx.redirectTo({
               url: '../ticketsupdate/index'
-            }
-          )
+            })
           console.log('YES')
+          }else {
+            Toast.fail(res.data.message)
+          }     
         },
         fail: res=>{
           console.log('FAIL')
@@ -235,12 +238,15 @@ wepy.page({
         'Authorization': `Bearer ${ jwt }`
       },
       success: res=>{
-        if(res.data.data.length){}
+        if(res.data.code == 200) {
         for (var i=0,j=0;i<res.data.data.length;i++,j++)
           { 
               this.option1[j].text=res.data.data[i].description
               this.option1[j].value=res.data.data[i].id
           }
+          }else {
+          Toast.fail(res.data.message)
+        }
       }
     })
     }else{
