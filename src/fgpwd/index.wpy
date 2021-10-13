@@ -108,6 +108,11 @@ wepy.page({
             }, 1000);
           }else{
             Toast('请检查学号/验证码是否输入正确')
+            setTimeout(() => { // 1秒后重新刷新页面，不然那个验证码还是旧的失效验证码
+              wx.redirectTo({
+                url: "./index"
+              })
+            }, 1000)
             console.log('LOGIN FAIL1')
           }
         },
