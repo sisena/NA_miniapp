@@ -1,7 +1,0 @@
-{
-    "component": true,
-    "usingComponents": {
-        "van-tabbar": "./vant/tabbar/index",
-        "van-tabbar-item": "./vant/tabbar-item/index"
-    }
-}
