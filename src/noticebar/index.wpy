@@ -58,18 +58,23 @@ wepy.page({
         },
         success: res=>{
           if(res.statusCode == 200){
-            console.log(res)
-            // for (var i=0;i<res.data.length;i++)
-            //   { 
-            //     this.noticetest[i] = {text: res.data[i].text, desc: res.data[i].title}
-            //   }
-            //   console.log(this.noticetest)
-            if(res.data.data.length != 0){
-              this.notice = res.data.data
-            }else{
-              this.Nonotice = "现在没有公告"
+            if(res.data.code == 200){
+              console.log(res)
+              // for (var i=0;i<res.data.length;i++)
+              //   { 
+              //     this.noticetest[i] = {text: res.data[i].text, desc: res.data[i].title}
+              //   }
+              //   console.log(this.noticetest)
+              if(res.data.data.length != 0){
+                this.notice = res.data.data
+              }else{
+                this.Nonotice = "现在没有公告"
+              }
+              Toast.clear()
+            } else {
+              Toast.clear()
+              Toast.fail(res.data.message)
             }
-          Toast.clear()
           }else{
             wx.redirectTo({
               url: '../login/index'

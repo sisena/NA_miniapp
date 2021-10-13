@@ -70,6 +70,7 @@
 </template>
 <script>
 import wepy from '@wepy/core'
+import Toast from '../components/vant/toast/toast'
 wepy.page({
   data: {
     swiperData: [
@@ -116,24 +117,26 @@ wepy.page({
           'Authorization': `Bearer ${ jwt }`
         },
         success: res=>{
-          if(res.statusCode == 200){
-            // console.log(res)
-            if(res.data.data[0] && res.data.data[1]){
-              this.news1 = res.data.data[res.data.data.length-1].title + '>:' + res.data.data[res.data.data.length-1].text
-              this.news2 = res.data.data[res.data.data.length-2].title + '>:' + res.data.data[res.data.data.length-2].text
-            }else if(res.data.data[0]){
+          if(res.statusCode == 200){ // 如果状态码不是200基本上确认是没有登录或登录过期了
+            if(res.data.code == 200) {
+              // console.log(res)
+              if(res.data.data[0] && res.data.data[1]){
+                this.news1 = res.data.data[res.data.data.length-1].title + '>:' + res.data.data[res.data.data.length-1].text
+                this.news2 = res.data.data[res.data.data.length-2].title + '>:' + res.data.data[res.data.data.length-2].text
+              }else if(res.data.data[0]){
                 this.news1 = res.data.data[res.data.data[0].length-1].title + '>:' + res.data.data[res.data.data.length-1].text
                 this.news2 = "只有这一条公告啦"
-            }else{
+              }else{
                 this.news1 = "没有公告啦"
                 this.news2 = "真的没有公告啦"
+              }
+            }else {
+              Toast.fail(res.data.message)
             }
           }else{
-            // wx.redirectTo({
-            //   url: '../login/index'
-            // })
-                this.news1 = "没有公告啦"
-                this.news2 = "真的没有公告啦"
+            wx.redirectTo({
+              url: '../login/index'
+            })
           }
 
         },
