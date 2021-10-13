@@ -71,9 +71,9 @@ import Toast from '../components/vant/toast/toast'
 wepy.page({
   data: {
     activeNames: [''],
-    datas: [{
+    datas: [
 
-    }],
+    ],
     datassave: [{
 
     }],
@@ -124,6 +124,8 @@ wepy.page({
               this.showtickets='无报修单'
               Toast.clear()
           }
+        } else {
+          Toast.fail(res.data.message)
         }},
         fail :res => {
           console.log(res)
