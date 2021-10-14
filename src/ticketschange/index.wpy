@@ -216,7 +216,9 @@ wepy.page({
             this.name=res.data.data.name
             this.uid=res.data.data.owner
             this.ticketid=e.ticketid
-            Toast.clear()
+            setTimeout(() => { // 异步原因接口速度可能比组件渲染快，Toast的loading和clear的调用可能出现先后问题，导致无限loading
+                Toast.clear()
+              },500)
           }else{
             wx.redirectTo({
               url: '../login/index'

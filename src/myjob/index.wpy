@@ -266,10 +266,14 @@ wepy.page({
                if(res.data.data){
                 // console.log(res.data.data)
                 this.datas=res.data.data
+                setTimeout(() => { // 异步原因接口速度可能比组件渲染快，Toast的loading和clear的调用可能出现先后问题，导致无限loading
                 Toast.clear()
+              },500)
               }else{
                 this.showtickets='无未修单'
+                setTimeout(() => { // 异步原因接口速度可能比组件渲染快，Toast的loading和clear的调用可能出现先后问题，导致无限loading
                 Toast.clear()
+              },500)
             }
             // console.log(res)
             } else {

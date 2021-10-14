@@ -114,7 +114,6 @@ wepy.page({
         success: res => {
           // console.log('DELETE SUCCESS')
           if (res.data.code == 204) {
-            Toast.clear()
             wx.redirectTo({
               url: './index'
             })
@@ -166,10 +165,14 @@ wepy.page({
             if(res.data.data){
               console.log(res.data.data)
               this.datas=res.data.data
-              Toast.clear()
+              setTimeout(() => { // 异步原因接口速度可能比组件渲染快，Toast的loading和clear的调用可能出现先后问题，导致无限loading
+                Toast.clear()
+              },500)
             }else{
               this.showtickets='无报修单'
-              Toast.clear()
+              setTimeout(() => { // 异步原因接口速度可能比组件渲染快，Toast的loading和clear的调用可能出现先后问题，导致无限loading
+                Toast.clear()
+              },500)
             }
           }
         },

@@ -70,9 +70,13 @@ wepy.page({
               }else{
                 this.Nonotice = "现在没有公告"
               }
-              Toast.clear()
+              setTimeout(() => { // 异步原因接口速度可能比组件渲染快，Toast的loading和clear的调用可能出现先后问题，导致无限loading
+                Toast.clear()
+              },500)
             } else {
-              Toast.clear()
+              setTimeout(() => { // 异步原因接口速度可能比组件渲染快，Toast的loading和clear的调用可能出现先后问题，导致无限loading
+                Toast.clear()
+              },500)
               Toast.fail(res.data.message)
             }
           }else{
