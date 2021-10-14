@@ -16,7 +16,6 @@
   "author": "kirarasmile <genji15019223356@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@vant/weapp": "^1.1.0",
     "@wepy/core": "^2.0.0-alpha.9",
     "@wepy/x": "^2.0.2",
     "jwt-decode": "^2.2.0",
