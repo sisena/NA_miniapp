@@ -1,11 +1,17 @@
 import { VantComponent } from '../common/component';
-import { ROW_HEIGHT, getNextDay, compareDay, copyDates, calcDateNum, formatMonthTitle, compareMonth, getMonths } from './utils';
+import { ROW_HEIGHT, getPrevDay, getNextDay, getToday, compareDay, copyDates, calcDateNum, formatMonthTitle, compareMonth, getMonths, getDayByOffset, } from './utils';
 import Toast from '../toast/toast';
+import { requestAnimationFrame } from '../common/utils';
+const initialMinDate = getToday().getTime();
+const initialMaxDate = (() => {
+    const now = getToday();
+    return new Date(now.getFullYear(), now.getMonth() + 6, now.getDate()).getTime();
+})();
 VantComponent({
     props: {
         title: {
             type: String,
-            value: '日期选择'
+            value: '日期选择',
         },
         color: String,
         show: {
@@ -15,89 +21,101 @@ VantComponent({
                     this.initRect();
                     this.scrollIntoView();
                 }
-            }
+            },
         },
         formatter: null,
         confirmText: {
             type: String,
-            value: '确定'
+            value: '确定',
+        },
+        confirmDisabledText: {
+            type: String,
+            value: '确定',
         },
         rangePrompt: String,
+        showRangePrompt: {
+            type: Boolean,
+            value: true,
+        },
         defaultDate: {
-            type: [Number, Array],
+            type: null,
             observer(val) {
                 this.setData({ currentDate: val });
                 this.scrollIntoView();
-            }
+            },
         },
         allowSameDay: Boolean,
-        confirmDisabledText: String,
         type: {
             type: String,
             value: 'single',
-            observer: 'reset'
+            observer: 'reset',
         },
         minDate: {
-            type: null,
-            value: Date.now()
+            type: Number,
+            value: initialMinDate,
         },
         maxDate: {
-            type: null,
-            value: new Date(new Date().getFullYear(), new Date().getMonth() + 6, new Date().getDate()).getTime()
+            type: Number,
+            value: initialMaxDate,
         },
         position: {
             type: String,
-            value: 'bottom'
+            value: 'bottom',
         },
         rowHeight: {
-            type: [Number, String],
-            value: ROW_HEIGHT
+            type: null,
+            value: ROW_HEIGHT,
         },
         round: {
             type: Boolean,
-            value: true
+            value: true,
         },
         poppable: {
             type: Boolean,
-            value: true
+            value: true,
         },
         showMark: {
             type: Boolean,
-            value: true
+            value: true,
         },
         showTitle: {
             type: Boolean,
-            value: true
+            value: true,
         },
         showConfirm: {
             type: Boolean,
-            value: true
+            value: true,
         },
         showSubtitle: {
             type: Boolean,
-            value: true
+            value: true,
         },
         safeAreaInsetBottom: {
             type: Boolean,
-            value: true
+            value: true,
         },
         closeOnClickOverlay: {
             type: Boolean,
-            value: true
+            value: true,
         },
         maxRange: {
-            type: [Number, String],
-            value: null
-        }
+            type: null,
+            value: null,
+        },
+        firstDayOfWeek: {
+            type: Number,
+            value: 0,
+        },
+        readonly: Boolean,
     },
     data: {
         subtitle: '',
         currentDate: null,
-        scrollIntoView: ''
+        scrollIntoView: '',
     },
     created() {
         this.setData({
-            currentDate: this.getInitialDate()
+            currentDate: this.getInitialDate(this.data.defaultDate),
         });
     },
     mounted() {
@@ -117,34 +135,55 @@ VantComponent({
             }
             const contentObserver = this.createIntersectionObserver({
                 thresholds: [0, 0.1, 0.9, 1],
-                observeAll: true
+                observeAll: true,
             });
             this.contentObserver = contentObserver;
             contentObserver.relativeTo('.van-calendar__body');
-            contentObserver.observe('.month', res => {
+            contentObserver.observe('.month', (res) => {
                 if (res.boundingClientRect.top <= res.relativeRect.top) {
                     // @ts-ignore
                     this.setData({ subtitle: formatMonthTitle(res.dataset.date) });
                 }
             });
         },
-        getInitialDate() {
-            const { type, defaultDate, minDate } = this.data;
+        limitDateRange(date, minDate = null, maxDate = null) {
+            minDate = minDate || this.data.minDate;
+            maxDate = maxDate || this.data.maxDate;
+            if (compareDay(date, minDate) === -1) {
+                return minDate;
+            }
+            if (compareDay(date, maxDate) === 1) {
+                return maxDate;
+            }
+            return date;
+        },
+        getInitialDate(defaultDate = null) {
+            const { type, minDate, maxDate } = this.data;
+            const now = getToday().getTime();
             if (type === 'range') {
+                if (!Array.isArray(defaultDate)) {
+                    defaultDate = [];
+                }
                 const [startDay, endDay] = defaultDate || [];
-                return [
-                    startDay || minDate,
-                    endDay || getNextDay(new Date(minDate)).getTime()
-                ];
+                const start = this.limitDateRange(startDay || now, minDate, getPrevDay(new Date(maxDate)).getTime());
+                const end = this.limitDateRange(endDay || now, getNextDay(new Date(minDate)).getTime());
+                return [start, end];
             }
             if (type === 'multiple') {
-                return [defaultDate || minDate];
+                if (Array.isArray(defaultDate)) {
+                    return defaultDate.map((date) => this.limitDateRange(date));
+                }
+                return [this.limitDateRange(now)];
             }
-            return defaultDate || minDate;
+            if (!defaultDate || Array.isArray(defaultDate)) {
+                defaultDate = now;
+            }
+            return this.limitDateRange(defaultDate);
         },
         scrollIntoView() {
-            setTimeout(() => {
-                const { currentDate, type, show, poppable, minDate, maxDate } = this.data;
+            requestAnimationFrame(() => {
+                const { currentDate, type, show, poppable, minDate, maxDate, } = this.data;
+                // @ts-ignore
                 const targetDate = type === 'single' ? currentDate : currentDate[0];
                 const displayed = show || !poppable;
                 if (!targetDate || !displayed) {
@@ -158,7 +197,7 @@ VantComponent({
                     }
                     return false;
                 });
-            }, 100);
+            });
         },
         onOpen() {
             this.$emit('open');
@@ -173,9 +212,13 @@ VantComponent({
             this.$emit('closed');
         },
         onClickDay(event) {
+            if (this.data.readonly) {
+                return;
+            }
             const { date } = event.detail;
             const { type, currentDate, allowSameDay } = this.data;
             if (type === 'range') {
+                // @ts-ignore
                 const [startDay, endDay] = currentDate;
                 if (startDay && !endDay) {
                     const compareToStart = compareDay(date, startDay);
@@ -195,6 +238,7 @@ VantComponent({
             }
             else if (type === 'multiple') {
                 let selectedIndex;
+                // @ts-ignore
                 const selected = currentDate.some((dateItem, index) => {
                     const equal = compareDay(dateItem, date) === 0;
                     if (equal) {
@@ -203,10 +247,13 @@ VantComponent({
                     return equal;
                 });
                 if (selected) {
-                    currentDate.splice(selectedIndex, 1);
+                    // @ts-ignore
+                    const cancelDate = currentDate.splice(selectedIndex, 1);
                     this.setData({ currentDate });
+                    this.unselect(cancelDate);
                 }
                 else {
+                    // @ts-ignore
                     this.select([...currentDate, date]);
                 }
             }
@@ -214,37 +261,67 @@ VantComponent({
                 this.select(date, true);
             }
         },
+        unselect(dateArray) {
+            const date = dateArray[0];
+            if (date) {
+                this.$emit('unselect', copyDates(date));
+            }
+        },
         select(date, complete) {
-            const getTime = (date) => (date instanceof Date ? date.getTime() : date);
-            this.setData({
-                currentDate: Array.isArray(date) ? date.map(getTime) : getTime(date)
-            });
-            this.$emit('select', copyDates(date));
             if (complete && this.data.type === 'range') {
-                const valid = this.checkRange();
+                const valid = this.checkRange(date);
                 if (!valid) {
+                    // auto selected to max range if showConfirm
+                    if (this.data.showConfirm) {
+                        this.emit([
+                            date[0],
+                            getDayByOffset(date[0], this.data.maxRange - 1),
+                        ]);
+                    }
+                    else {
+                        this.emit(date);
+                    }
                     return;
                 }
             }
+            this.emit(date);
             if (complete && !this.data.showConfirm) {
                 this.onConfirm();
             }
         },
-        checkRange() {
-            const { maxRange, currentDate, rangePrompt } = this.data;
-            if (maxRange && calcDateNum(currentDate) > maxRange) {
-                Toast(rangePrompt || `选择天数不能超过 ${maxRange} 天`);
+        emit(date) {
+            const getTime = (date) => date instanceof Date ? date.getTime() : date;
+            this.setData({
+                currentDate: Array.isArray(date) ? date.map(getTime) : getTime(date),
+            });
+            this.$emit('select', copyDates(date));
+        },
+        checkRange(date) {
+            const { maxRange, rangePrompt, showRangePrompt } = this.data;
+            if (maxRange && calcDateNum(date) > maxRange) {
+                if (showRangePrompt) {
+                    Toast({
+                        context: this,
+                        message: rangePrompt || `选择天数不能超过 ${maxRange} 天`,
+                    });
+                }
+                this.$emit('over-range');
                 return false;
             }
             return true;
         },
         onConfirm() {
-            if (this.data.type === 'range' && !this.checkRange()) {
+            if (this.data.type === 'range' &&
+                !this.checkRange(this.data.currentDate)) {
                 return;
             }
             wx.nextTick(() => {
+                // @ts-ignore
                 this.$emit('confirm', copyDates(this.data.currentDate));
             });
-        }
-    }
+        },
+        onClickSubtitle(event) {
+            this.$emit('click-subtitle', event);
+        },
+    },
 });

@@ -1,3 +1,4 @@
+import { useParent } from '../common/relation';
 import { VantComponent } from '../common/component';
 function emit(target, value) {
     target.$emit('input', value);
@@ -5,30 +6,30 @@ function emit(target, value) {
 }
 VantComponent({
     field: true,
-    relation: {
-        name: 'checkbox-group',
-        type: 'ancestor',
-        current: 'checkbox',
-    },
+    relation: useParent('checkbox-group'),
     classes: ['icon-class', 'label-class'],
     props: {
         value: Boolean,
         disabled: Boolean,
         useIconSlot: Boolean,
         checkedColor: String,
-        labelPosition: String,
+        labelPosition: {
+            type: String,
+            value: 'right',
+        },
         labelDisabled: Boolean,
         shape: {
             type: String,
-            value: 'round'
+            value: 'round',
         },
         iconSize: {
             type: null,
-            value: 20
-        }
+            value: 20,
+        },
     },
     data: {
-        parentDisabled: false
+        parentDisabled: false,
+        direction: 'vertical',
     },
     methods: {
         emitChange(value) {
@@ -71,6 +72,6 @@ VantComponent({
                     emit(parent, parentValue);
                 }
             }
-        }
-    }
+        },
+    },
 });

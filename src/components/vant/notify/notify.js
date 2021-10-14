@@ -6,13 +6,17 @@ const defaultOptions = {
     background: '',
     duration: 3000,
     zIndex: 110,
+    top: 0,
     color: WHITE,
     safeAreaInsetTop: false,
     onClick: () => { },
     onOpened: () => { },
-    onClose: () => { }
+    onClose: () => { },
 };
 function parseOptions(message) {
+    if (message == null) {
+        return {};
+    }
     return typeof message === 'string' ? { message } : message;
 }
 function getContext() {

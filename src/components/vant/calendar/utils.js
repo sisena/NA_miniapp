@@ -36,7 +36,7 @@ export function compareDay(day1, day2) {
     }
     return compareMonthResult;
 }
-function getDayByOffset(date, offset) {
+export function getDayByOffset(date, offset) {
     date = new Date(date);
     date.setDate(date.getDate() + offset);
     return date;
@@ -47,6 +47,11 @@ export function getPrevDay(date) {
 export function getNextDay(date) {
     return getDayByOffset(date, 1);
 }
+export function getToday() {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return today;
+}
 export function calcDateNum(date) {
     const day1 = new Date(date[0]).getTime();
     const day2 = new Date(date[1]).getTime();
@@ -54,7 +59,7 @@ export function calcDateNum(date) {
 }
 export function copyDates(dates) {
     if (Array.isArray(dates)) {
-        return dates.map(date => {
+        return dates.map((date) => {
             if (date === null) {
                 return date;
             }

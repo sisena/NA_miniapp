@@ -1,41 +1,45 @@
 import { VantComponent } from '../../../common/component';
-import { getMonthEndDay, compareDay, getPrevDay, getNextDay } from '../../utils';
+import { getMonthEndDay, compareDay, getPrevDay, getNextDay, } from '../../utils';
 VantComponent({
     props: {
         date: {
             type: null,
-            observer: 'setDays'
+            observer: 'setDays',
         },
         type: {
             type: String,
-            observer: 'setDays'
+            observer: 'setDays',
         },
         color: String,
         minDate: {
             type: null,
-            observer: 'setDays'
+            observer: 'setDays',
         },
         maxDate: {
             type: null,
-            observer: 'setDays'
+            observer: 'setDays',
         },
         showMark: Boolean,
-        rowHeight: [Number, String],
+        rowHeight: null,
         formatter: {
             type: null,
-            observer: 'setDays'
+            observer: 'setDays',
         },
         currentDate: {
-            type: [null, Array],
-            observer: 'setDays'
+            type: null,
+            observer: 'setDays',
+        },
+        firstDayOfWeek: {
+            type: Number,
+            observer: 'setDays',
         },
         allowSameDay: Boolean,
         showSubtitle: Boolean,
-        showMonthTitle: Boolean
+        showMonthTitle: Boolean,
     },
     data: {
         visible: true,
-        days: []
+        days: [],
     },
     methods: {
         onClick(event) {
@@ -58,7 +62,7 @@ VantComponent({
                     date,
                     type,
                     text: day,
-                    bottomInfo: this.getBottomInfo(type)
+                    bottomInfo: this.getBottomInfo(type),
                 };
                 if (this.data.formatter) {
                     config = this.data.formatter(config);
@@ -72,7 +76,7 @@ VantComponent({
             if (!Array.isArray(currentDate)) {
                 return '';
             }
-            const isSelected = date => currentDate.some(item => compareDay(item, date) === 0);
+            const isSelected = (date) => currentDate.some((item) => compareDay(item, date) === 0);
             if (isSelected(day)) {
                 const prevDay = getPrevDay(day);
                 const nextDay = getNextDay(day);
@@ -91,11 +95,11 @@ VantComponent({
         getRangeDayType(day) {
             const { currentDate, allowSameDay } = this.data;
             if (!Array.isArray(currentDate)) {
-                return;
+                return '';
             }
             const [startDay, endDay] = currentDate;
             if (!startDay) {
-                return;
+                return '';
             }
             const compareToStart = compareDay(day, startDay);
             if (!endDay) {
@@ -114,6 +118,7 @@ VantComponent({
             if (compareToStart > 0 && compareToEnd < 0) {
                 return 'middle';
             }
+            return '';
         },
         getDayType(day) {
             const { type, minDate, maxDate, currentDate } = this.data;
@@ -130,6 +135,7 @@ VantComponent({
             if (type === 'range') {
                 return this.getRangeDayType(day);
             }
+            return '';
         },
         getBottomInfo(type) {
             if (this.data.type === 'range') {
@@ -143,6 +149,6 @@ VantComponent({
                     return '开始/结束';
                 }
             }
-        }
-    }
+        },
+    },
 });
