@@ -1,7 +1,31 @@
 <wxs src="./index.wxs" module="computed" />
 
 <view class="van-picker custom-class">
-  <include wx:if="{{ toolbarPosition === 'top' }}" src="./toolbar.wxml" />
+  <view wx:if="{{ toolbarPosition === 'top' }}">
+    <view wx:if="{{ showToolbar }}" class="van-picker__toolbar toolbar-class">
+    <view
+      class="van-picker__cancel"
+      hover-class="van-picker__cancel--hover"
+      hover-stay-time="70"
+      data-type="cancel"
+      bindtap="emit"
+    >
+      {{ cancelButtonText }}
+    </view>
+    <view wx:if="{{ title }}" class="van-picker__title van-ellipsis">{{
+      title
+    }}</view>
+    <view
+      class="van-picker__confirm"
+      hover-class="van-picker__confirm--hover"
+      hover-stay-time="70"
+    data-type="confirm"
+        bindtap="emit"
+    >
+    {{ confirmButtonText }}
+    </view>
+  </view>
+</view>
 
   <view wx:if="{{ loading }}" class="van-picker__loading">
     <loading color="#1989fa"/>
@@ -33,5 +57,28 @@
     />
   </view>
 
-  <include wx:if="{{ toolbarPosition === 'bottom' }}" src="./toolbar.wxml" />
+  <view wx:if="{{ toolbarPosition === 'bottom' }}">
+    <view wx:if="{{ showToolbar }}" class="van-picker__toolbar toolbar-class">
+    <view
+      class="van-picker__cancel"
+      hover-class="van-picker__cancel--hover"
+      hover-stay-time="70"
+      data-type="cancel"
+      bindtap="emit"
+    >
+      {{ cancelButtonText }}
+    </view>
+    <view wx:if="{{ title }}" class="van-picker__title van-ellipsis">{{
+      title
+    }}</view>
+    <view
+      class="van-picker__confirm"
+      hover-class="van-picker__confirm--hover"
+      hover-stay-time="70"
+    data-type="confirm"
+        bindtap="emit"
+    >
+    {{ confirmButtonText }}
+    </view>
+  </view>
 </view>
