@@ -11,7 +11,7 @@
           placeholder="请输入学号/工号"
           clearable
           border="{{ false }}"
-          bind:blur="uidGet"
+          bind:input="uidGet"
           left-icon="user-o"
         />
       <van-divider />
@@ -20,7 +20,7 @@
           placeholder="请输入密码"
           password
           border="{{ false }}"
-          bind:blur="pwdGet"
+          bind:input="pwdGet"
           left-icon="warn-o"
         />
       <van-divider />
@@ -45,10 +45,10 @@ wepy.page({
   },
   methods: {
     uidGet(e) { // 拿到用户的账号
-      this.uid = e.$wx.detail.value
+      this.uid = e.$wx.detail
     },
     pwdGet(e) { // 拿到用户的密码
-      this.password = e.$wx.detail.value
+      this.password = e.$wx.detail
     },
     pwdGo() {
       wx.redirectTo({
