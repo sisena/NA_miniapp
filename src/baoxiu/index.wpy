@@ -336,9 +336,7 @@ wepy.page({
     Dialog.alert({
       title: '提示',
       message: '水管、灯泡、空调、水龙头等宿舍问题请自行前往 <导航网-安全报修-宿舍设施报修> 进行报修，该小程序只提供网络故障报修，非网络故障报修会直接取消，望周知',
-      theme: 'round-button',
-      transition: 'none',
-      asyncClose: true
+      theme: 'round-button'
     }).then(() => {
       // on close
       // 为了防止原生组件覆盖，等到弹窗消失之后再加载
